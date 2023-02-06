@@ -1,0 +1,129 @@
+\documentclass{report}
+
+\input{preamble}
+\input{macros}
+\input{letterfonts}
+
+\begin{document}
+
+\setcounter{chapter}{4}
+\chapter{Sobolev and interpolation inequalities}
+\section{Interpolation inequalities}
+
+\ex{}
+{
+    \begin{equation} \label{eq:1}
+        \|u\|_{L^{2}}^{2} \leq \|u\|_{L^{2}} \|u'\|_{L^{2}} \text{ for } u \in \mathcal{C}^{\infty}(\mathbb{R}) 
+    \end{equation}
+}
+
+\begin{proof}
+    Idea: use that $(u^2)' = 2uu'$ and Newton-Leibniz
+    \begin{align*}
+        u^2(x) &= 2 \int_{-\infty}^{x} u u' \mathrm{d}y = -2 \int_{x}^{\infty} u u' \mathrm{d}y \\
+        &= \int_{-\infty}^{x} u u' \mathrm{d}y - \int_{x}^{\infty} u u' \mathrm{d}y \\
+        & \leq \int_{-\infty}^{x} |u| |u'| \mathrm{d}y + \int_{x}^{\infty} |u| |u'| \mathrm{d}y \\
+        &= \int_{\mathbb{R}} |u| |u'| \mathrm{d}y \\
+        \text{(Hölder's inequality)} \quad & \leq \|u\|_{L^{2}} \|u'\|_{L^{2}}
+    \end{align*}
+\end{proof}
+
+\qs{}
+{
+    Check that \ref{eq:1} is sharp. Namely, that \ref{eq:1} becomes equality for $u(x) = e^{-|x|}$ ($u(x)$ is an extremal function for \ref{eq:1}). Also \ref{eq:1} is shift and scaling invariant, i.e. $u_{\alpha}(x+h) = e^{-\alpha|x+h|}, h \in \mathbb{R}, \alpha>0$ -extremals.
+}
+
+\ex{Interpolation inequality}
+{
+    $\Omega$-domain in $\mathbb{R}^{n}, u \in L_{p_1}(\Omega) \cap L_{p_2}(\Omega), 1 \leq p_1, p_2, \leq \infty, p_1 < p_2, \theta \in [0, 1], \frac{1}{p} = \frac{\theta}{p_1} + \frac{1-\theta}{p_2}$. Then
+    \begin{equation}\label{eq:2}
+        \|u\|_{L^{p}} \leq \|u\|_{L^{p_1}}^{\theta} \|u\|_{L^{p_2}}^{1 - \theta}
+    \end{equation} 
+}
+
+\begin{proof}
+    $$\int_{\mathbb{R}} |u|^p \mathrm{d}x = \int_{\mathbb{R}} |u|^{\theta p} |u|^{(1-\theta) p} \mathrm{d}x$$
+    We apply Hölder's inequality with exponents $P = \frac{p_1}{\theta p}$ and $Q = \frac{p_2}{(1-\theta)p}$ (Note $\frac{1}{P} + \frac{1}{Q} = \frac{\theta p}{p_1} + \frac{(1-\theta)p}{p_2} = 1$). Then    
+    \begin{align*}
+        \int_{\mathbb{R}} |u|^{\theta p} |u|^{(1-\theta) p} \mathrm{d}x &\leq \left(\int_{\mathbb{R}} |u|^{p_1} \mathrm{d}x \right)^{\frac{1}{P}} \left(\int_{\mathbb{R}} |u|^{p_2} \mathrm{d}x \right)^{\frac{1}{Q}} \\
+        &= \|u\|_{L^{p_1}}^{\theta} \|u\|_{L^{p_2}}^{1 - \theta}
+    \end{align*}
+\end{proof}
+
+\section{Sobolev inequalities}
+\ex{Sobolev inequality 1D}
+{
+    $u \in \mathcal{C}^{\infty}([0,1])$, want to prove the embedding $W^{1, 1}([0,1]) \subset \mathcal{C}([0,1])$, i.e.
+    \begin{equation}\label{eq:3}
+        \|u\|_{C([0,1])} \leq \|u\|_{L^{1}([0,1])} + \|u'\|_{L^{1}([0,1])}
+    \end{equation}
+}
+
+\begin{proof}
+    By the Newton-Leibniz formula, $u(x) - u(y) = \int_{y}^{x} u'(s) \mathrm{d}s$. Also,
+    $$|u(x)| \leq |u(y)| + \int_{0}^{1} |u'(s)| \mathrm{d}s \quad \forall x, y \in [0,1]$$
+    By integration over $y \in [0,1]$, 
+    $$|u(x)| \leq \int_{0}^{1} |u(s)| \mathrm{d}s + \int_{0}^{1} |u'(s)| \mathrm{d}s = \|u\|_{W^{1, 1}([0, 1])}$$
+\end{proof}
+
+Taking supremum with respect to $x \in [0,1]$, we obtain $\|u\|_{C([0,1])} \leq \|u\|_{W^{1, 1}([0, 1])}$
+
+\ex{Sobolev inequality 2D}
+{
+    $u \in \mathcal{C}^{\infty}([0,1]^2)$,  i.e. $\Omega = [0,1]^2$, then $W^{1, 1}(\Omega) \subset L^{2}(\Omega) : \|u\|_{L^{2}} \leq \|u\|_{W^{1, 1}(\Omega)}$
+}
+
+\begin{proof}
+    $\int_{\Omega} u^{2}(x_1, x_2) \mathrm{d}x_1 \mathrm{d}x_2$ should be estimated. From \ref{eq:3}, we know that 
+    $$|u(x_1, x_2)| \leq \int_{0}^{1} |u(s, x_2)| + |\partial_{x_1} u(s, x_2)| \mathrm{d}s := f(x_2)$$
+    $$|u(x_1, x_2)| \leq \int_{0}^{1} |u(x_1, s)| + |\partial_{x_2} u(x_1, s)| \mathrm{d}s := g(x_1)$$  
+    Then 
+    \begin{align*}
+        \int_{\Omega} u^2 \mathrm{d}x &\leq \int_{0}^{1} g(x_1)f(x_2) \mathrm{d}x_1 \mathrm{d}x_2 \\
+        &= \int_{0}^{1} f(x_2) \mathrm{d}x_2 \int_{0}^{1} g(x_1) \mathrm{d}x_1 \\
+        &= \left(\int_{\Omega} |u(x_1, x_2)| + |\partial_{x_1} u(x_1, x_2)| \mathrm{d}x_1 \right) \left(\int_{\Omega} |u(x_1, x_2)| + |\partial_{x_2} u(x_1, x_2)| \mathrm{d}x_2 \right) \\
+        &\leq \|u\|_{W^{1, 1}(\Omega)}
+    \end{align*}
+\end{proof}
+
+\qs{Sobolev inequality 3D}
+{
+    $u \in \mathcal{C}^{\infty}(\bar{\Omega}), \Omega = (0,1)^3$. Prove that $W^{1, 1}(\Omega) \subset L^{\frac{3}{2}}(\Omega)$, i.e.
+    \begin{equation}\label{eq:4}
+        \|u\|_{L^{\frac{3}{2}}(\Omega)} \leq \|u\|_{W^{1, 1}(\Omega)}
+    \end{equation}
+    Hint: first, prove that
+    $$\int_{\Omega} f(x_1, x_2)g(x_1, x_2)h(x_1, x_2) \mathrm{d}x \leq \|f\|_{L^{2}} \|g\|_{L^{2}} \|h\|_{L^{2}}$$
+    and use \ref{eq:3}.
+}
+
+\ex{}
+{
+    $u \in \mathcal{C}^{\infty}(\bar{\Omega}), \Omega = (0,1)^3$. Then 
+    \begin{equation}
+        \|u\|_{L^{6}(\Omega)} \leq C \|u\|_{W^{1, 2}(\Omega)}
+    \end{equation}
+}
+
+\begin{proof}
+    \begin{align*}
+        \int_{\Omega} |u|^{6} \mathrm{d}x &= \int_{\Omega} (|u|^{4})^{\frac{3}{2}} \mathrm{d}x \\
+        &\leq C \left(\int_{\Omega} |u|^{4} \mathrm{d}x + \int_{\Omega} u^{3}|\nabla u| \mathrm{d}x \right)^{\frac{3}{2}} \\
+        &\leq C \left(\int_{\Omega} |u|^{4} \mathrm{d}x\right)^{\frac{3}{2}} + C \left(u^{3}|\nabla u| \mathrm{d}x \right)^{\frac{3}{2}} \\
+        &\leq C \|u\|^{\frac{3}{2}\cdot \theta \cdot 4}_{L^{2}} \|u\|^{\frac{3}{2}\cdot (1-\theta) \cdot 4}_{L^{6}} + C \|u\|^{\frac{3}{2}\cdot 3}_{L^{6}} \|\nabla u\|^{\frac{3}{2}}_{L^{2}} \\
+        \left(\theta = \frac{1}{4}\right) &= C \|u\|^{\frac{3}{2}}_{L^{2}} \|u\|^{\frac{9}{2}}_{L^{6}} + C\|u\|^{\frac{9}{2}}_{L^{6}} \|\nabla u\|^{\frac{3}{2}}_{L^{2}} \\
+        \left(\text{Young's inequality with } p=\frac{4}{5} \text{ and }q=-4\right) &\leq \varepsilon \|u\|^{6}_{L^{6}} + C_{\varepsilon}(\|u\|_{L^{2}} + \|\nabla u\|_{L^{2}})^{6}
+    \end{align*}
+    Setting for example, $\varepsilon = \frac{1}{2}$, we obtain
+    $$\|u\|_{L^{6}(\Omega)} \leq C \|u\|_{W^{1, 2}(\Omega)}$$
+\end{proof}
+
+\thm{Sobolev embeddings}
+{
+    \begin{enumerate}[label=\bfseries\tiny\protect\circled{\small\arabic*}]
+		\item $W^{k_1, p_1}(\Omega) \subset W^{k_2, p_2}(\Omega) \Longleftrightarrow k_1 \geq k_2$ and $1 \leq p_1, p_2 < \infty, k_1 - \frac{n}{p_1} \geq k_2 - \frac{n}{p_2}, \Omega \subset \mathbb{R}^{n}$.
+		\item $W^{k,p}(\Omega) \subset C^{\alpha}(\Omega)$ if $\alpha < k - \frac{n}{p}$.
+	\end{enumerate}
+}
+
+\end{document}
