@@ -192,7 +192,7 @@
 %================================
 
 \tcbuselibrary{theorems,skins,hooks}
-\newtcbtheorem[number within=section]{lemma}{lemma}
+\newtcbtheorem[number within=section]{Lemma}{Lemma}
 {%
 	enhanced,
 	breakable,
@@ -208,6 +208,26 @@
 	description font = \mdseries,
 	separator sign none,
 	segmentation style={solid, mylemmafr},
+}
+{th}
+
+\tcbuselibrary{theorems,skins,hooks}
+\newtcbtheorem[number within=chapter]{lemma}{Lemma}
+{%
+	enhanced,
+	breakable,
+	colback = mylenmabg,
+	frame hidden,
+	boxrule = 0sp,
+	borderline west = {2pt}{0pt}{mylenmafr},
+	sharp corners,
+	detach title,
+	before upper = \tcbtitle\par\smallskip,
+	coltitle = mylenmafr,
+	fonttitle = \bfseries\sffamily,
+	description font = \mdseries,
+	separator sign none,
+	segmentation style={solid, mylenmafr},
 }
 {th}
 
@@ -568,7 +588,7 @@
 
 \newcommand{\thm}[2]{\begin{Theorem}{#1}{}#2\end{Theorem}}
 \newcommand{\cor}[2]{\begin{Corollary}{#1}{}#2\end{Corollary}}
-\newcommand{\mlemma}[2]{\begin{lemma}{#1}{}#2\end{lemma}}
+\newcommand{\mlemma}[2]{\begin{Lemma}{#1}{}#2\end{Lemma}}
 \newcommand{\mprop}[2]{\begin{Prop}{#1}{}#2\end{Prop}}
 \newcommand{\clm}[3]{\begin{claim}{#1}{#2}#3\end{claim}}
 \newcommand{\wc}[2]{\begin{wconc}{#1}{}\setlength{\parindent}{1cm}#2\end{wconc}}

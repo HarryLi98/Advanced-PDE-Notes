@@ -126,4 +126,99 @@
 	\end{enumerate}
 }
 
+\ex{}
+{
+    \(H^{s}(\mathbb{R}^{n}) \subset \mathcal{C}(\mathbb{R}^{n}) \iff s > \frac{n}{2} \) 
+}
+
+\begin{proof}
+    \(u(x) = \int_{\mathbb{R}^{n}} e^{i\xi x} \hat{u}(\xi) \,\mathrm{d}\xi \)
+    \begin{align*}
+        \vert u(x) \vert &\leq \int_{\mathbb{R}^{n}} \vert \hat{u}(\xi) \vert \,\mathrm{d}\xi \\
+        &= \int_{\mathbb{R}^{n}} \left(1+\vert \xi \vert ^{2} \right)^{-\frac{s}{2}} \left(1+\vert \xi \vert ^{2} \right)^{\frac{s}{2}} \vert \hat{u}(\xi) \vert \,\mathrm{d}\xi \\
+        \text{(Hölder's inequality)} \quad &\leq \left(\int_{\mathbb{R}^{n}} \frac{1}{\left(1+\vert \xi \vert ^{2}  \right)^{s}} \,\mathrm{d}\xi \right)^{\frac{1}{2}} \left(\int_{\mathbb{R}^{n}} \left(1+\vert \xi \vert ^{2} \right)^{s} \vert \hat{u}(\xi) \vert^{2} \,\mathrm{d}\xi \right)^{\frac{1}{2}}
+    \end{align*} 
+
+    \(\int_{\mathbb{R}^{n}} \frac{1}{\left(1+\vert \xi \vert ^{2}  \right)^{s}} \,\mathrm{d}\xi < \infty \iff s>\frac{n}{2}\).
+    Taking the supremum with respect to \(x \in \mathbb{R}^{n}\), we get
+    \[\|u\|_{\mathcal{C}(\mathbb{R}^{n})} \leq C_{s}\|u\|_{H^{s}(\mathbb{R}^{n})}\]   
+\end{proof}
+
+\thm{Interpolation inequalities}
+{
+    Let \(u \in W^{k_1, p_1}(\Omega) \bigcap W^{k_2, p_2}(\Omega), \theta \in [0,1], 1\leq p_1, p_2 \leq \infty\) with \(k = \theta k_1 + (1-\theta) k_2, \frac{1}{p} = \frac{\theta}{p_1} + \frac{1-\theta}{p_2} \). Then 
+    \[
+        \|u\|_{W^{k, p}} \leq C\|u\|_{W^{k_1, p_1}}^{\theta} \|u\|_{W^{k_2, p_2}}^{1-\theta}
+    \]
+}
+
+\cor{Particular cases}
+{
+    \begin{enumerate}
+        \item \(\|u\|_{H^{1}} \leq \|u\|_{L^{2}}^{\frac{1}{2}} \|u\|_{H^{2}}^{\frac{1}{2}}\)
+        \item \(\|u\|_{L^{p}} \leq \|u\|_{L^{p}}^{\theta} \|u\|_{H^{2}}^{1-\theta}\) 
+    \end{enumerate}
+}
+
+\section{Spaces with zero boundary traces}
+\dfn{}
+{
+    \(W^{1, p}_{0}(\Omega) \coloneqq \left\{u \in W^{1, p}(\Omega), \left. u \right|_{\partial \Omega} = 0\right\} \)
+
+    Equivalent definition: \(W^{1, p}_{0}(\Omega)\) = ``closure of \(\mathcal{C}_{0}^{\infty}(\Omega)\) in \(W^{1, p}\) norm."
+}
+
+\mlemma{}
+{
+    These two definitions are equivalent. \(u \in \text{``closure"} \colon u = \lim\limits_{n \rightarrow \infty} \varphi_{n}, \varphi_{n} \in \mathcal{C}^{\infty}_{0}(\Omega) \implies \left. \varphi_{n} \right|_{\partial \Omega} = 0\). By continuity, \(\left. u \right|_{\partial \Omega} = 0\). The proof of the converse statement is more technical and is omitted.
+}
+
+\mprop{Friedrich's inequality}
+{
+    Let \(\Omega\) be a bounded domain and \(u \in W^{1, p}_{0}(\Omega)\). Then
+    \begin{equation}\label{eq:5}
+        \|u\|_{L^{p}} \leq C \|\nabla u\|_{L^{p}} 
+    \end{equation}
+}
+
+\begin{proof}
+    It is enough to prove \ref{eq:5} for \(\varphi \in \mathcal{C}^{\infty}_{0}(\Omega)\). By the Newton-Leibniz formula,      
+    \[    
+        u(x_1, x') - u(-L, x') = u(x_1, x') = \int_{-L}^{x_1} \partial_{x_1}u(s, x') \,\mathrm{d}s 
+    \] 
+
+    \begin{align*}
+        \vert u(x_1, x') \vert ^{p} &\leq \left(\int_{-L}^{L} \vert \partial_{x_1}u(s, x') \,\mathrm{d}s \vert \,\mathrm{d}s \right)^{p} \\
+        \text{(Hölder's inequality)} \quad & \leq C_{L} \int_{-L}^{L} \vert \partial_{x_1}u(s, x') \vert^{p} \,\mathrm{d}s
+    \end{align*}
+    Integration with respect to $x'$ gives us
+    \[
+        \int_{\mathbb{R}^{n-1}} \vert u(x_1, x') \vert ^{p} \,\mathrm{d}x' \leq C_{L}\|\partial_{x_1}u\|_{L^{p}}^{p}
+    \]
+    Finally, integrating over \(x_1 \in [-L, L]\), we obtain
+    \[
+        \|u\|_{L^{p}}^{p} \leq 2LC_{L} \|\partial_{x_1}u\|_{L^{p}}^{p}
+    \]
+\end{proof}
+
+\cor{Equivalent norm in \(W^{1, p}_{0}(\Omega)\)}
+{
+    Homogeneous norm:
+    \[
+        \|u\|_{W^{1, p}_{0}(\Omega)} \coloneqq \|\nabla u\|_{L^{p}}
+    \]
+}
+
+\begin{note}
+    \(\left. u \right|_{\partial \Omega} = 0\) is important! Otherwise \ref{eq:5} will fail for \(u \equiv c\). Since \(\nabla u\) defines \(u\) up to a constant; \(\left. u \right|_{\partial \Omega} = 0\) removes this constant.  
+\end{note}
+
+\mprop{Poincare inequality}
+{
+    Let \(\Omega\) be a bounded domain with a smooth boundary and \(\left\langle u \right\rangle \coloneqq \frac{1}{\vert \Omega \vert } \int_{\Omega} u(x) \,\mathrm{d}x = 0\). Then 
+    \[
+        \|u\|_{L^{p}} \leq C \|\nabla u\|_{L^{p}}  
+    \]   
+}
+
 \end{document}
