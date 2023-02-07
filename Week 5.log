@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.14.0 (MiKTeX 21.12.10) (format=lualatex 2022.1.17)  6 FEB 2023 23:39
+This is LuaHBTeX, Version 1.14.0 (MiKTeX 21.12.10) (format=lualatex 2022.1.17)  7 FEB 2023 00:30
  restricted system commands enabled.
  file:line:error style messages enabled.
 **"c:/Users/Harry/OneDrive - Imperial College London/Imperial/Advanced Topics f
@@ -1609,7 +1609,7 @@ Here is how much of LuaTeX's memory you used:
  1882 words of node memory still in use:
    35 hlist, 2 vlist, 14 rule, 12 glue, 4 kern, 1 glyph, 143 attribute, 78 glue_
 spec, 143 attribute_list, 2 write, 58 pdf_literal, 26 pdf_colorstack nodes
-   avail lists: 1:1,2:1599,3:1172,4:145,5:498,6:48,7:3684,8:65,9:1155,10:3,11:12
+   avail lists: 1:1,2:1609,3:1172,4:145,5:498,6:48,7:3684,8:65,9:1155,10:3,11:12
 3
  56901 multiletter control sequences out of 65536+600000
  106 fonts using 7722919 bytes
@@ -1633,9 +1633,9 @@ blic/newpx/pxmiaX.pfb><C:/Users/Harry/AppData/Local/Programs/MiKTeX/fonts/type1/
 public/newpx/pxsys.pfb><C:/Users/Harry/AppData/Local/Programs/MiKTeX/fonts/type1
 /public/newtx/txexs.pfb><C:/Users/Harry/AppData/Local/Programs/MiKTeX/fonts/type
 1/public/txfonts/txsya.pfb>
-Output written on Week 5.pdf (3 pages, 164013 bytes).
+Output written on Week 5.pdf (3 pages, 164432 bytes).
 
-PDF statistics: 181 PDF objects out of 1000 (max. 8388607)
+PDF statistics: 189 PDF objects out of 1000 (max. 8388607)
  22 named destinations out of 1000 (max. 131072)
  280 words of extra memory for PDF output out of 10000 (max. 100000000)
 

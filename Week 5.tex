@@ -93,7 +93,7 @@ Taking supremum with respect to $x \in [0,1]$, we obtain $\|u\|_{C([0,1])} \leq 
         \|u\|_{L^{\frac{3}{2}}(\Omega)} \leq \|u\|_{W^{1, 1}(\Omega)}
     \end{equation}
     Hint: first, prove that
-    $$\int_{\Omega} f(x_1, x_2)g(x_1, x_2)h(x_1, x_2) \mathrm{d}x \leq \|f\|_{L^{2}} \|g\|_{L^{2}} \|h\|_{L^{2}}$$
+    $$\int_{\Omega} f(x_1, x_2)g(x_2, x_3)h(x_1, x_3) \mathrm{d}x \leq \|f\|_{L^{2}} \|g\|_{L^{2}} \|h\|_{L^{2}}$$
     and use \ref{eq:3}.
 }
 
@@ -109,10 +109,10 @@ Taking supremum with respect to $x \in [0,1]$, we obtain $\|u\|_{C([0,1])} \leq 
     \begin{align*}
         \int_{\Omega} |u|^{6} \mathrm{d}x &= \int_{\Omega} (|u|^{4})^{\frac{3}{2}} \mathrm{d}x \\
         &\leq C \left(\int_{\Omega} |u|^{4} \mathrm{d}x + \int_{\Omega} u^{3}|\nabla u| \mathrm{d}x \right)^{\frac{3}{2}} \\
-        &\leq C \left(\int_{\Omega} |u|^{4} \mathrm{d}x\right)^{\frac{3}{2}} + C \left(u^{3}|\nabla u| \mathrm{d}x \right)^{\frac{3}{2}} \\
+        (\text{by \eqref{eq:3}}) \quad &\leq C \left(\int_{\Omega} |u|^{4} \mathrm{d}x\right)^{\frac{3}{2}} + C \left(u^{3}|\nabla u| \mathrm{d}x \right)^{\frac{3}{2}} \\
         &\leq C \|u\|^{\frac{3}{2}\cdot \theta \cdot 4}_{L^{2}} \|u\|^{\frac{3}{2}\cdot (1-\theta) \cdot 4}_{L^{6}} + C \|u\|^{\frac{3}{2}\cdot 3}_{L^{6}} \|\nabla u\|^{\frac{3}{2}}_{L^{2}} \\
-        \left(\theta = \frac{1}{4}\right) &= C \|u\|^{\frac{3}{2}}_{L^{2}} \|u\|^{\frac{9}{2}}_{L^{6}} + C\|u\|^{\frac{9}{2}}_{L^{6}} \|\nabla u\|^{\frac{3}{2}}_{L^{2}} \\
-        \left(\text{Young's inequality with } p=\frac{4}{5} \text{ and }q=-4\right) &\leq \varepsilon \|u\|^{6}_{L^{6}} + C_{\varepsilon}(\|u\|_{L^{2}} + \|\nabla u\|_{L^{2}})^{6}
+        \left(\theta = \frac{1}{4}\right) \quad &= C \|u\|^{\frac{3}{2}}_{L^{2}} \|u\|^{\frac{9}{2}}_{L^{6}} + C\|u\|^{\frac{9}{2}}_{L^{6}} \|\nabla u\|^{\frac{3}{2}}_{L^{2}} \\
+        \left(\text{Young's inequality with } p=\frac{4}{5} \text{ and }q=-4\right) \quad &\leq \varepsilon \|u\|^{6}_{L^{6}} + C_{\varepsilon}(\|u\|_{L^{2}} + \|\nabla u\|_{L^{2}})^{6}
     \end{align*}
     Setting for example, $\varepsilon = \frac{1}{2}$, we obtain
     $$\|u\|_{L^{6}(\Omega)} \leq C \|u\|_{W^{1, 2}(\Omega)}$$
