@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.14.0 (MiKTeX 21.12.10) (format=lualatex 2022.1.17)  7 FEB 2023 21:37
+This is LuaHBTeX, Version 1.14.0 (MiKTeX 21.12.10) (format=lualatex 2022.1.17)  8 FEB 2023 21:02
  restricted system commands enabled.
  file:line:error style messages enabled.
 **"c:/Users/Harry/OneDrive - Imperial College London/Imperial/Advanced Topics f
@@ -1562,36 +1562,36 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
 Chapter 5.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-8.
+9.
 (C:/Users/Harry/AppData/Local/Programs/MiKTeX/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 18.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 19.
 
 
 (C:/Users/Harry/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 18.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 19.
 
 
 (C:/Users/Harry/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+npxmia on input line 
-18.
+19.
 
 (C:/Users/Harry/AppData/Local/Programs/MiKTeX/tex/latex/newpx/unpxmia.fd
 File: unpxmia.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxmia.
 )
 LaTeX Font Info:    Trying to load font information for U+npxsym on input line 
-18.
+19.
 
 (C:/Users/Harry/AppData/Local/Programs/MiKTeX/tex/latex/newpx/unpxsym.fd
 File: unpxsym.fd 2015/03/21 Fontinst v1.933 font definitions for U/npxsym.
 )
 LaTeX Font Info:    Trying to load font information for U+npxsyc on input line 
-18.
+19.
 
 (C:/Users/Harry/AppData/Local/Programs/MiKTeX/tex/latex/newpx/unpxsyc.fd
 File: unpxsyc.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxsyc.
@@ -1600,18 +1600,18 @@ File: unpxsyc.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxsyc.
 
 
 {C:/Users/Harry/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
-[3] [4] [5] ("./Week 5.aux"))
+[3] [4] [5] [6] [7] ("./Week 5.aux"))
 
 Here is how much of LuaTeX's memory you used:
- 38089 strings out of 477867
+ 38140 strings out of 477867
  100000,1373583 words of node,token memory allocated
- 1538 words of node memory still in use:
-   31 hlist, 2 vlist, 14 rule, 2 glue, 4 kern, 1 glyph, 111 attribute, 78 glue_s
-pec, 111 attribute_list, 2 write, 24 pdf_literal, 24 pdf_colorstack nodes
-   avail lists: 2:2147,3:1127,4:139,5:499,6:48,7:3687,8:65,9:1301,10:3,11:123
- 57075 multiletter control sequences out of 65536+600000
+ 1562 words of node memory still in use:
+   31 hlist, 2 vlist, 14 rule, 2 glue, 4 kern, 1 glyph, 117 attribute, 78 glue_s
+pec, 117 attribute_list, 2 write, 24 pdf_literal, 24 pdf_colorstack nodes
+   avail lists: 2:4420,3:2852,4:198,5:502,6:62,7:4672,8:65,9:1301,10:4,11:181
+ 57103 multiletter control sequences out of 65536+600000
  106 fonts using 7722919 bytes
- 96i,12n,98p,971b,1762s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 96i,12n,98p,971b,1764s stack positions out of 5000i,500n,10000p,200000b,80000s
 <//?/c:/users/harry/appdata/local/programs/miktex/fonts/opentype/public/lm/lmrom
 an9-bold.otf><//?/c:/users/harry/appdata/local/programs/miktex/fonts/opentype/pu
 blic/lm/lmsans10-regular.otf><//?/c:/users/harry/appdata/local/programs/miktex/f
@@ -1632,9 +1632,9 @@ public/newpx/pxsys.pfb><C:/Users/Harry/AppData/Local/Programs/MiKTeX/fonts/type1
 /public/newtx/txexs.pfb><C:/Users/Harry/AppData/Local/Programs/MiKTeX/fonts/type
 1/public/txfonts/txsya.pfb><C:/Users/Harry/AppData/Local/Programs/MiKTeX/fonts/t
 ype1/public/txfonts/txsyc.pfb>
-Output written on Week 5.pdf (5 pages, 189889 bytes).
+Output written on Week 5.pdf (7 pages, 215519 bytes).
 
-PDF statistics: 228 PDF objects out of 1000 (max. 8388607)
- 36 named destinations out of 1000 (max. 131072)
- 318 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 270 PDF objects out of 1000 (max. 8388607)
+ 59 named destinations out of 1000 (max. 131072)
+ 366 words of extra memory for PDF output out of 10000 (max. 100000000)
 

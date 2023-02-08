@@ -7,13 +7,14 @@
 \begin{document}
 
 \setcounter{chapter}{4}
+
 \chapter{Sobolev and interpolation inequalities}
 \section{Interpolation inequalities}
 
 \ex{}
 {
     \begin{equation} \label{eq:1}
-        \|u\|_{L^{2}}^{2} \leq \|u\|_{L^{2}} \|u'\|_{L^{2}} \text{ for } u \in \mathcal{C}^{\infty}(\mathbb{R}) 
+        \|u\|_{L^{2}}^{2} \leq \|u\|_{L^{2}} \|u'\|_{L^{2}} \text{ for } u \in C^{\infty}(\mathbb{R}) 
     \end{equation}
 }
 
@@ -30,7 +31,7 @@
 
 \qs{}
 {
-    Check that \ref{eq:1} is sharp. Namely, that \ref{eq:1} becomes equality for \(u(x) = e^{-\vert x \vert}\) (\(u(x)\) is an extremal function for \ref{eq:1}). Also \ref{eq:1} is shift and scaling invariant, i.e. \(u_{\alpha}(x+h) = e^{-\alpha|x+h|}, h \in \mathbb{R}, \alpha>0\) -extremals.
+    Check that \ref{eq:1} is sharp. Namely, that \ref{eq:1} becomes equality for \(u(x) = e^{-\vert x \vert}\) (\(u(x)\) is an extremal function for \ref{eq:1}). Also, \ref{eq:1} is shift and scaling invariant, i.e. \(u_{\alpha}(x+h) = e^{-\alpha|x+h|}, h \in \mathbb{R}, \alpha>0\) -extremals.
 }
 
 \ex{Interpolation inequality}
@@ -53,7 +54,7 @@
 \section{Sobolev inequalities}
 \ex{Sobolev inequality 1D}
 {
-    \(u \in \mathcal{C}^{\infty}([0,1])\), want to prove the embedding \(W^{1, 1}([0,1]) \subset \mathcal{C}([0,1])\), i.e.
+    \(u \in C^{\infty}([0,1])\), want to prove the embedding \(W^{1, 1}([0,1]) \subset C([0,1])\), i.e.
     \begin{equation}\label{eq:3}
         \|u\|_{C([0,1])} \leq \|u\|_{L^{1}([0,1])} + \|u'\|_{L^{1}([0,1])}
     \end{equation}
@@ -70,7 +71,7 @@
 
 \ex{Sobolev inequality 2D}
 {
-    \(u \in \mathcal{C}^{\infty}([0,1]^2)\),  i.e. \(\Omega = [0,1]^2\), then \(W^{1, 1}(\Omega) \subset L^{2}(\Omega) : \|u\|_{L^{2}} \leq \|u\|_{W^{1, 1}(\Omega)}\)
+    \(u \in C^{\infty}([0,1]^2)\),  i.e. \(\Omega = [0,1]^2\), then \(W^{1, 1}(\Omega) \subset L^{2}(\Omega) : \|u\|_{L^{2}} \leq \|u\|_{W^{1, 1}(\Omega)}\)
 }
 
 \begin{proof}
@@ -88,7 +89,7 @@
 
 \qs{Sobolev inequality 3D}
 {
-    \(u \in \mathcal{C}^{\infty}(\bar{\Omega}), \Omega = (0,1)^3\). Prove that \(W^{1, 1}(\Omega) \subset L^{\frac{3}{2}}(\Omega)\), i.e.
+    \(u \in C^{\infty}(\bar{\Omega}), \Omega = (0,1)^3\). Prove that \(W^{1, 1}(\Omega) \subset L^{\frac{3}{2}}(\Omega)\), i.e.
     \begin{equation}\label{eq:4}
         \|u\|_{L^{\frac{3}{2}}(\Omega)} \leq \|u\|_{W^{1, 1}(\Omega)}
     \end{equation}
@@ -99,7 +100,7 @@
 
 \ex{}
 {
-    \(u \in \mathcal{C}^{\infty}(\bar{\Omega}), \Omega = (0,1)^3\). Then 
+    \(u \in C^{\infty}(\bar{\Omega}), \Omega = (0,1)^3\). Then 
     \begin{equation}
         \|u\|_{L^{6}(\Omega)} \leq C \|u\|_{W^{1, 2}(\Omega)}
     \end{equation}
@@ -128,7 +129,7 @@
 
 \ex{}
 {
-    \(H^{s}(\mathbb{R}^{n}) \subset \mathcal{C}(\mathbb{R}^{n}) \iff s > \frac{n}{2} \) 
+    \(H^{s}(\mathbb{R}^{n}) \subset C(\mathbb{R}^{n}) \iff s > \frac{n}{2} \) 
 }
 
 \begin{proof}
@@ -141,7 +142,7 @@
 
     \(\int_{\mathbb{R}^{n}} \frac{1}{\left(1+\vert \xi \vert ^{2}  \right)^{s}} \,\mathrm{d}\xi < \infty \iff s>\frac{n}{2}\).
     Taking the supremum with respect to \(x \in \mathbb{R}^{n}\), we get
-    \[\|u\|_{\mathcal{C}(\mathbb{R}^{n})} \leq C_{s}\|u\|_{H^{s}(\mathbb{R}^{n})}\]   
+    \[\|u\|_{C(\mathbb{R}^{n})} \leq C_{s}\|u\|_{H^{s}(\mathbb{R}^{n})}\]   
 \end{proof}
 
 \thm{Interpolation inequalities}
@@ -165,12 +166,12 @@
 {
     \(W^{1, p}_{0}(\Omega) \coloneqq \left\{u \in W^{1, p}(\Omega), \left. u \right|_{\partial \Omega} = 0\right\} \)
 
-    Equivalent definition: \(W^{1, p}_{0}(\Omega)\) = ``closure of \(\mathcal{C}_{0}^{\infty}(\Omega)\) in \(W^{1, p}\) norm."
+    Equivalent definition: \(W^{1, p}_{0}(\Omega)\) = ``closure of \(C_{0}^{\infty}(\Omega)\) in \(W^{1, p}\) norm.''
 }
 
 \mlemma{}
 {
-    These two definitions are equivalent. \(u \in \text{``closure"} \colon u = \lim\limits_{n \rightarrow \infty} \varphi_{n}, \varphi_{n} \in \mathcal{C}^{\infty}_{0}(\Omega) \implies \left. \varphi_{n} \right|_{\partial \Omega} = 0\). By continuity, \(\left. u \right|_{\partial \Omega} = 0\). The proof of the converse statement is more technical and is omitted.
+    These two definitions are equivalent. \(u \in \text{``closure"} \colon u = \lim\limits_{n \to \infty} \varphi_{n}, \varphi_{n} \in C^{\infty}_{0}(\Omega) \implies \left. \varphi_{n} \right|_{\partial \Omega} = 0\). By continuity, \(\left. u \right|_{\partial \Omega} = 0\). The proof of the converse statement is more technical and is omitted.
 }
 
 \mprop{Friedrich's inequality}
@@ -182,7 +183,7 @@
 }
 
 \begin{proof}
-    It is enough to prove \ref{eq:5} for \(\varphi \in \mathcal{C}^{\infty}_{0}(\Omega)\). By the Newton-Leibniz formula,      
+    It is enough to prove \ref{eq:5} for \(\varphi \in C^{\infty}_{0}(\Omega)\). By the Newton-Leibniz formula,      
     \[    
         u(x_1, x') - u(-L, x') = u(x_1, x') = \int_{-L}^{x_1} \partial_{x_1}u(s, x') \,\mathrm{d}s 
     \] 
@@ -210,15 +211,137 @@
 }
 
 \begin{note}
-    \(\left. u \right|_{\partial \Omega} = 0\) is important! Otherwise \ref{eq:5} will fail for \(u \equiv c\). Since \(\nabla u\) defines \(u\) up to a constant; \(\left. u \right|_{\partial \Omega} = 0\) removes this constant.  
+    \(\left. u \right|_{\partial \Omega} = 0\) is important! Otherwise, \ref{eq:5} will fail for \(u \equiv c\). Since \(\nabla u\) defines \(u\) up to a constant; \(\left. u \right|_{\partial \Omega} = 0\) removes this constant.  
 \end{note}
 
-\mprop{Poincare inequality}
+\mprop{Poincaré inequality}
 {
     Let \(\Omega\) be a bounded domain with a smooth boundary and \(\left\langle u \right\rangle \coloneqq \frac{1}{\vert \Omega \vert } \int_{\Omega} u(x) \,\mathrm{d}x = 0\). Then 
     \[
         \|u\|_{L^{p}} \leq C \|\nabla u\|_{L^{p}}  
     \]   
 }
+
+\dfn{Sequential compactness}
+{
+    A metric space \((X, d)\) is compact if any sequence \(\{x_{n}\}_{n=1}^{\infty} \subset X\) has a convergent sub-sequence, i.e. there exists \(\{x_{n_{k}}\}_{n=1}^{\infty} \colon \lim\limits_{k \to \infty} x_{n_{k}} = x_0 \in X\)
+}
+
+\dfn{}
+{
+    A topological space \(X\) is compact if any covering of \(X\) by open sets has a finite sub-covering
+}
+
+\begin{note}
+    In metric spaces, compactness is equivalent to sequential compactness.
+
+    In general topological spaces, they are not related.
+\end{note}
+
+\thm{Hausdorff}
+{
+    Let \((X, d)\) be a metric space. Then \(X\) is compact \(\iff\) \(X\) is complete and totally bounded.
+}
+
+\dfn{}
+{
+    \(X\) is totally bounded if \(\forall \epsilon > 0, \exists\) covering of \(X\) by finitely many \(\epsilon\)-balls, i.e. \(X = \bigcup_{k=1}^{N} B_{\epsilon}(x_k), N = N(\epsilon)\) and \(\{x_k\}\) is an \(\epsilon\)-net in \(X\).  
+}
+
+\section{Why do we need compactness?}
+Let \(X\) be compact and \(f \colon X \to Y \) be continuous, then \(f(X)\) is compact in Y. How do we solve PDEs of the form (or more general equations)?
+
+\begin{equation}\label{eq:6}
+    F(x) = 0
+\end{equation}
+
+\begin{enumerate}
+    \item Construct approximate solutions
+    
+    \(F(x_n) = g_n\), where \(\lim\limits_{n \to \infty} g_n = 0\)
+    \item Obtain a priori estimates, i.e. that \(\{x_n\}\)  is bounded in a proper space
+    \item If \(\{x_n\}\) is pre-compact and \(F\) is continuous \(\implies x = \lim\limits_{x \to \infty} x_{n_{k}}\) is a solution of \ref{eq:6}.
+\end{enumerate}
+
+\thm{Arzelà-Ascoli}
+{
+    Let \(\Omega \subset \mathbb{R}^{n}\) be a bounded domain. Then \(V \subset C(\bar{\Omega})\) is compact iff:
+    \begin{enumerate}
+        \item V is closed
+        \item V is bounded
+        \item V is equicontinuous \(= V\) has a common modulus of continuity
+    \end{enumerate} 
+}
+
+\thm{Arzelà-Ascoli for \(L^p\)}
+{
+    Let \(\Omega \subset \mathbb{R}^{n}\) be a bounded domain, (and \(\partial \Omega\) smooth, although not needed), \(K \subset L^{p}(\Omega), 1 \leq p \leq \infty\). Then \(K\) is compact iff:
+    \begin{enumerate}
+        \item K is closed
+        \item K is bounded
+        \item K is equicontinuous in mean (possesses a joint modulus of continuity in \(L^p\)).
+    \end{enumerate} 
+}
+
+\dfn{}
+{
+    Let \(f \in L^p(\Omega), 1 \leq p \leq \infty, \Omega \subset \mathbb{R}^{n}\) bounded (\(\partial \Omega\) smooth not needed). \(\omega \colon \mathbb{R}^{+} \to \mathbb{R}^{+}\) such that \(\lim\limits_{z \to 0} w(z) = 0\) is a modulus of continuity of \(f\) in \(L_{p}(\Omega)\) if 
+    \[
+        \int_{\Omega} \vert f(x+h) - f(x) \vert ^p \,\mathrm{d}x \leq \omega(\vert h \vert ), \quad \forall h \in \mathbb{R}^n,
+    \]
+    where we used to \(0\)-extension of \(f\) outside of \(\Omega\). 
+}
+
+\cor{}
+{
+    Let \(K = B_{1}(0) \in W^{1, p}(\Omega); \Omega \subset \mathbb{R}^{n}\) is bounded, \(\partial \Omega\) is smooth, \(1 \leq p < \infty\). Then \(K\) is pre-compact in \(L^{p}(\Omega)\).
+}
+
+\begin{proof}
+    We need to check equicontinuity, i.e. estimate \(\int_{\Omega} \vert f(x+h) - f(x) \vert ^p \,\mathrm{d}x \).
+    \[
+        f(x+h) - f(x) = h \int_{0}^{1} \nabla f(x + sh) \,\mathrm{d}s  
+    \]
+    Taking modulus and \(p\)-th power of both sides, we get
+    \[
+        \vert f(x+h) - f(x) \vert ^p \leq \vert h \vert \int_{0}^{1} \vert \nabla f(x + sh) \vert ^p \,\mathrm{d}s 
+    \]
+    Finally, we take an integral over \(x \in \Omega\).
+    \begin{align*}
+        \int_{\Omega} \vert f(x+h) - f(x) \vert ^p \,\mathrm{d}x &\leq \vert h \vert \int_{0}^{1} \int_{\Omega}  \vert \nabla f(x + sh) \vert ^p \,\mathrm{d}x \,\mathrm{d}s \\
+        &\leq C \vert h \vert
+    \end{align*}
+    \(\omega(z) = cz\) is a joint modulus of continuity.
+\end{proof}
+
+\dfn{}
+{
+    Let \(V \subset  W\) be Banach spaces. Then the embedding is compact if the unit ball of \(V\) is pre-compact in \(W\).
+}
+
+\begin{note}
+    We proved that \(W^{1, p}(\Omega) \subset L^{p}(\Omega)\) is a compact embedding.
+\end{note}
+
+\cor{}
+{
+    \(W^{1, p}(\Omega) \subset L^{q}(\Omega)\) is a compact embedding if \(q < q*\), where \(q*\) is defined such that \(\frac{1}{q*} = \frac{1}{p} - \frac{1}{n}\) and \(\Omega \subset  \mathbb{R}^{n}\), \(\Omega\) is bounded, \(\partial \Omega\) is smooth.
+}
+
+\begin{proof}
+    Let us check equicontinuity. 
+    \[
+        \|f(\cdot + h) - f(\cdot)\|_{L^{q}} \leq \|f(\cdot + h) - f(\cdot)\|_{L^{p}}^{\theta} \|f(\cdot + h) - f(\cdot)\|_{L^{q*}}^{1-\theta} 
+    \]
+    since \(p < q < q*\) and \(0 < \theta < 1\). \(q*\) is a critical exponent in Sobolev embeddings, indeed, \(W^{1, p}(\Omega) \subset L^{q}(\Omega) \implies 1-\frac{n}{p} \geq -\frac{1}{q}\). Then
+    \begin{align*}
+        \|f(\cdot + h) - f(\cdot)\|_{L^{p}}^{\theta} \|f(\cdot + h) - f(\cdot)\|_{L^{q*}}^{1-\theta} &\leq C \vert h \vert ^{\theta}(2\|f\|_{L^{q*}})^{1-\theta} \\
+        &\leq C_1 \vert h \vert ^{\theta} \|f\|_{W^{1, p}}^{1-\theta} \\
+        &\leq C_1 \vert h \vert ^{\theta}
+    \end{align*}
+\end{proof}
+
+\noindent
+General fact: \(W^{s_1, p_1}(\Omega) \subset W^{s_2, p_2}(\Omega)\), where \(\Omega\) is bounded, \(\partial \Omega\) is smooth. Embedding is compact \(\iff\) embedding is not critical.
 
 \end{document}

@@ -691,43 +691,8 @@
 \renewcommand{\leq}{\leqslant}
 \renewcommand{\geq}{\geqslant}
 
-% % redefine matrix env to allow for alignment, use r as default
-% \renewcommand*\env@matrix[1][r]{\hskip -\arraycolsep
-%     \let\@ifnextchar\new@ifnextchar
-%     \array{*\c@MaxMatrixCols #1}}
-
-
-%\usepackage{framed}
-%\usepackage{titletoc}
-%\usepackage{etoolbox}
-%\usepackage{lmodern}
-
-
-%\patchcmd{\tableofcontents}{\contentsname}{\sffamily\contentsname}{}{}
-
-%\renewenvironment{leftbar}
-%{\def\FrameCommand{\hspace{6em}%
-%		{\color{myyellow}\vrule width 2pt depth 6pt}\hspace{1em}}%
-%	\MakeFramed{\parshape 1 0cm \dimexpr\textwidth-6em\relax\FrameRestore}\vskip2pt%
-%}
-%{\endMakeFramed}
-
-%\titlecontents{chapter}
-%[0em]{\vspace*{2\baselineskip}}
-%{\parbox{4.5em}{%
-%		\hfill\Huge\sffamily\bfseries\color{myred}\thecontentspage}%
-%	\vspace*{-2.3\baselineskip}\leftbar\textsc{\small\chaptername~\thecontentslabel}\\\sffamily}
-%{}{\endleftbar}
-%\titlecontents{section}
-%[8.4em]
-%{\sffamily\contentslabel{3em}}{}{}
-%{\hspace{0.5em}\nobreak\itshape\color{myred}\contentspage}
-%\titlecontents{subsection}
-%[8.4em]
-%{\sffamily\contentslabel{3em}}{}{}  
-%{\hspace{0.5em}\nobreak\itshape\color{myred}\contentspage}
-
-
+% Other adjustments
+\renewcommand{\epsilon}{\varepsilon}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % TABLE OF CONTENTS
