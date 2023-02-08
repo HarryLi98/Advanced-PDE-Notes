@@ -123,7 +123,7 @@
 {
     \begin{enumerate}[label=\bfseries\tiny\protect\circled{\small\arabic*}]
 		\item \(W^{k_1, p_1}(\Omega) \subset W^{k_2, p_2}(\Omega) \Longleftrightarrow k_1 \geq k_2\) and \(1 \leq p_1, p_2 < \infty, k_1 - \frac{n}{p_1} \geq k_2 - \frac{n}{p_2}, \Omega \subset \mathbb{R}^{n}\).
-		\item \(W^{k,p}(\Omega) \subset C^{\alpha}(\Omega)\) if \(\alpha < k - \frac{n}{p}\).
+		\item \(W^{k,p}(\Omega) \subset C^{\alpha}(\Omega)\) if \(\alpha < k - \frac{n}{p}\). If \(\alpha\) is not an integer, then the inequality is weak.
 	\end{enumerate}
 }
 
@@ -293,7 +293,7 @@ Let \(X\) be compact and \(f \colon X \to Y \) be continuous, then \(f(X)\) is c
 }
 
 \cor{}
-{
+{\label{cor:1}
     Let \(K = B_{1}(0) \in W^{1, p}(\Omega); \Omega \subset \mathbb{R}^{n}\) is bounded, \(\partial \Omega\) is smooth, \(1 \leq p < \infty\). Then \(K\) is pre-compact in \(L^{p}(\Omega)\).
 }
 
@@ -325,17 +325,17 @@ Let \(X\) be compact and \(f \colon X \to Y \) be continuous, then \(f(X)\) is c
 
 \cor{}
 {
-    \(W^{1, p}(\Omega) \subset L^{q}(\Omega)\) is a compact embedding if \(q < q*\), where \(q*\) is defined such that \(\frac{1}{q*} = \frac{1}{p} - \frac{1}{n}\) and \(\Omega \subset  \mathbb{R}^{n}\), \(\Omega\) is bounded, \(\partial \Omega\) is smooth.
+    \(W^{1, p}(\Omega) \subset L^{q}(\Omega)\) is a compact embedding if \(q < q^{*}\), where \(q^{*}\) is defined such that \(\frac{1}{q^{*}} = \frac{1}{p} - \frac{1}{n}\) and \(\Omega \subset  \mathbb{R}^{n}\), \(\Omega\) is bounded, \(\partial \Omega\) is smooth.
 }
 
 \begin{proof}
     Let us check equicontinuity. 
     \[
-        \|f(\cdot + h) - f(\cdot)\|_{L^{q}} \leq \|f(\cdot + h) - f(\cdot)\|_{L^{p}}^{\theta} \|f(\cdot + h) - f(\cdot)\|_{L^{q*}}^{1-\theta} 
+        \|f(\cdot + h) - f(\cdot)\|_{L^{q}} \leq \|f(\cdot + h) - f(\cdot)\|_{L^{p}}^{\theta} \|f(\cdot + h) - f(\cdot)\|_{L^{q^{*}}}^{1-\theta} 
     \]
-    since \(p < q < q*\) and \(0 < \theta < 1\). \(q*\) is a critical exponent in Sobolev embeddings, indeed, \(W^{1, p}(\Omega) \subset L^{q}(\Omega) \implies 1-\frac{n}{p} \geq -\frac{1}{q}\). Then
+    since \(p < q < q^{*}\) and \(0 < \theta < 1\). \(q^{*}\) is a critical exponent in Sobolev embeddings, indeed, \(W^{1, p}(\Omega) \subset L^{q}(\Omega) \implies 1-\frac{n}{p} \geq -\frac{1}{q}\). Then by corollary \ref{cor:1}, we have
     \begin{align*}
-        \|f(\cdot + h) - f(\cdot)\|_{L^{p}}^{\theta} \|f(\cdot + h) - f(\cdot)\|_{L^{q*}}^{1-\theta} &\leq C \vert h \vert ^{\theta}(2\|f\|_{L^{q*}})^{1-\theta} \\
+        \|f(\cdot + h) - f(\cdot)\|_{L^{p}}^{\theta} \|f(\cdot + h) - f(\cdot)\|_{L^{q^{*}}}^{1-\theta} &\leq C \vert h \vert ^{\theta}(2\|f\|_{L^{q^{*}}})^{1-\theta} \\
         &\leq C_1 \vert h \vert ^{\theta} \|f\|_{W^{1, p}}^{1-\theta} \\
         &\leq C_1 \vert h \vert ^{\theta}
     \end{align*}
