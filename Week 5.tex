@@ -36,7 +36,7 @@
 
 \ex{Interpolation inequality}
 {
-    \(\Omega\)-domain in \(\mathbb{R}^{n}, u \in L_{p_1}(\Omega) \cap L_{p_2}(\Omega), 1 \leq p_1, p_2, \leq \infty, p_1 < p_2, \theta \in [0, 1], \frac{1}{p} = \frac{\theta}{p_1} + \frac{1-\theta}{p_2}\). Then
+    \(\Omega\)-domain in \(\mathbb{R}^{n}, u \in L_{p_1}(\Omega) \cap L_{p_2}(\Omega), 1 \leq p_1, p_2, < \infty, p_1 < p_2, \theta \in [0, 1], \frac{1}{p} = \frac{\theta}{p_1} + \frac{1-\theta}{p_2}\). Then
     \begin{equation}\label{eq:2}
         \|u\|_{L^{p}} \leq \|u\|_{L^{p_1}}^{\theta} \|u\|_{L^{p_2}}^{1 - \theta}
     \end{equation} 
@@ -224,7 +224,7 @@
 
 \dfn{Sequential compactness}
 {
-    A metric space \((X, d)\) is compact if any sequence \(\{x_{n}\}_{n=1}^{\infty} \subset X\) has a convergent sub-sequence, i.e. there exists \(\{x_{n_{k}}\}_{n=1}^{\infty} \colon \lim\limits_{k \to \infty} x_{n_{k}} = x_0 \in X\)
+    A metric space \((X, d)\) is compact if any sequence \(\{x_{n}\}_{n=1}^{\infty} \subset X\) has a convergent sub-sequence, i.e. there exists \(\{x_{n_{k}}\}_{k=1}^{\infty} \colon \lim\limits_{k \to \infty} x_{n_{k}} = x_0 \in X\)
 }
 
 \dfn{}
@@ -267,9 +267,9 @@ Let \(X\) be compact and \(f \colon X \to Y \) be continuous, then \(f(X)\) is c
 {
     Let \(\Omega \subset \mathbb{R}^{n}\) be a bounded domain. Then \(V \subset C(\bar{\Omega})\) is compact iff:
     \begin{enumerate}
-        \item V is closed
-        \item V is bounded
-        \item V is equicontinuous \(= V\) has a common modulus of continuity
+        \item \(V\)  is closed
+        \item \(V\) is bounded
+        \item \(V\) is equicontinuous \(= V\) has a common modulus of continuity
     \end{enumerate} 
 }
 
@@ -277,9 +277,9 @@ Let \(X\) be compact and \(f \colon X \to Y \) be continuous, then \(f(X)\) is c
 {
     Let \(\Omega \subset \mathbb{R}^{n}\) be a bounded domain, (and \(\partial \Omega\) smooth, although not needed), \(K \subset L^{p}(\Omega), 1 \leq p \leq \infty\). Then \(K\) is compact iff:
     \begin{enumerate}
-        \item K is closed
-        \item K is bounded
-        \item K is equicontinuous in mean (possesses a joint modulus of continuity in \(L^p\)).
+        \item \(K\) is closed
+        \item \(K\) is bounded
+        \item \(K\) is equicontinuous in mean (possesses a joint modulus of continuity in \(L^p\)).
     \end{enumerate} 
 }
 
