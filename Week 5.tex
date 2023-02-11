@@ -275,7 +275,7 @@ Let \(X\) be compact and \(f \colon X \to Y \) be continuous, then \(f(X)\) is c
 
 \thm{Arzelà-Ascoli for \(L^p\)}
 {
-    Let \(\Omega \subset \mathbb{R}^{n}\) be a bounded domain, (and \(\partial \Omega\) smooth, although not needed), \(K \subset L^{p}(\Omega), 1 \leq p \leq \infty\). Then \(K\) is compact iff:
+    Let \(\Omega \subset \mathbb{R}^{n}\) be a bounded domain, (and \(\partial \Omega\) smooth, although not needed), \(K \subset L^{p}(\Omega), 1 \leq p < \infty\). Then \(K\) is compact iff:
     \begin{enumerate}
         \item \(K\) is closed
         \item \(K\) is bounded
@@ -285,11 +285,11 @@ Let \(X\) be compact and \(f \colon X \to Y \) be continuous, then \(f(X)\) is c
 
 \dfn{}
 {
-    Let \(f \in L^p(\Omega), 1 \leq p \leq \infty, \Omega \subset \mathbb{R}^{n}\) bounded (\(\partial \Omega\) smooth not needed). \(\omega \colon \mathbb{R}^{+} \to \mathbb{R}^{+}\) such that \(\lim\limits_{z \to 0} w(z) = 0\) is a modulus of continuity of \(f\) in \(L_{p}(\Omega)\) if 
+    Let \(f \in L^p(\Omega), 1 \leq p < \infty, \Omega \subset \mathbb{R}^{n}\) bounded (\(\partial \Omega\) smooth not needed). \(\omega \colon \mathbb{R}^{+} \to \mathbb{R}^{+}\) such that \(\lim\limits_{z \to 0} w(z) = 0\) is a modulus of continuity of \(f\) in \(L_{p}(\Omega)\) if 
     \[
         \int_{\Omega} \vert f(x+h) - f(x) \vert ^p \,\mathrm{d}x \leq \omega(\vert h \vert ), \quad \forall h \in \mathbb{R}^n,
     \]
-    where we used to \(0\)-extension of \(f\) outside of \(\Omega\). 
+    where we used the \(0\)-extension of \(f\) outside of \(\Omega\). 
 }
 
 \cor{}
