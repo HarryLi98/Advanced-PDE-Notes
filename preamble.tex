@@ -11,7 +11,7 @@
 \usepackage{mathtools}
 \usepackage{bookmark}
 \usepackage{enumitem}
-\usepackage{hyperref,theoremref}
+\usepackage{hyperref, theoremref}
 \hypersetup{
 	pdftitle={Assignment},
 	colorlinks=true, linkcolor=doc!90,
@@ -44,18 +44,9 @@
 \usepackage{tikzsymbols}
 \renewcommand\qedsymbol{$\square$}
 
-
-%\usepackage{import}
-%\usepackage{xifthen}
-%\usepackage{pdfpages}
-%\usepackage{transparent}
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SELF MADE COLORS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 
 \definecolor{myg}{RGB}{56, 140, 70}
 \definecolor{myb}{RGB}{45, 111, 177}
@@ -84,12 +75,12 @@
 % TCOLORBOX SETUPS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\setlength{\parindent}{1cm}
+\setlength{\parindent}{0cm}
 %================================
 % THEOREM BOX
 %================================
 
-\tcbuselibrary{theorems,skins,hooks}
+\tcbuselibrary{theorems, skins, hooks}
 \newtcbtheorem[number within=section]{Theorem}{Theorem}
 {%
 	enhanced,
@@ -145,28 +136,10 @@
 }
 
 %================================
-% Corollery
+% Corollary
 %================================
-\tcbuselibrary{theorems,skins,hooks}
-\newtcbtheorem[number within=section]{Corollary}{Corollary}
-{%
-	enhanced
-	,breakable
-	,colback = myp!10
-	,frame hidden
-	,boxrule = 0sp
-	,borderline west = {2pt}{0pt}{myp!85!black}
-	,sharp corners
-	,detach title
-	,before upper = \tcbtitle\par\smallskip
-	,coltitle = myp!85!black
-	,fonttitle = \bfseries\sffamily
-	,description font = \mdseries
-	,separator sign none
-	,segmentation style={solid, myp!85!black}
-}
-{th}
-\tcbuselibrary{theorems,skins,hooks}
+
+\tcbuselibrary{theorems, skins, hooks}
 \newtcbtheorem[number within=chapter]{corollary}{Corollary}
 {%
 	enhanced
@@ -184,14 +157,14 @@
 	,separator sign none
 	,segmentation style={solid, myp!85!black}
 }
-{th}
+{cor}
 
 
 %================================
-% lemma
+% Lemma
 %================================
 
-\tcbuselibrary{theorems,skins,hooks}
+\tcbuselibrary{theorems, skins, hooks}
 \newtcbtheorem[number within=section]{Lemma}{Lemma}
 {%
 	enhanced,
@@ -211,23 +184,23 @@
 }
 {th}
 
-\tcbuselibrary{theorems,skins,hooks}
+\tcbuselibrary{theorems, skins, hooks}
 \newtcbtheorem[number within=chapter]{lemma}{Lemma}
 {%
 	enhanced,
 	breakable,
-	colback = mylenmabg,
+	colback = mylemmabg,
 	frame hidden,
 	boxrule = 0sp,
-	borderline west = {2pt}{0pt}{mylenmafr},
+	borderline west = {2pt}{0pt}{mylemmafr},
 	sharp corners,
 	detach title,
 	before upper = \tcbtitle\par\smallskip,
-	coltitle = mylenmafr,
+	coltitle = mylemmafr,
 	fonttitle = \bfseries\sffamily,
 	description font = \mdseries,
 	separator sign none,
-	segmentation style={solid, mylenmafr},
+	segmentation style={solid, mylemmafr},
 }
 {th}
 
@@ -235,7 +208,7 @@
 % PROPOSITION
 %================================
 
-\tcbuselibrary{theorems,skins,hooks}
+\tcbuselibrary{theorems, skins, hooks}
 \newtcbtheorem[number within=section]{Prop}{Proposition}
 {%
 	enhanced,
@@ -281,7 +254,7 @@
 %================================
 
 \tcbuselibrary{theorems,skins,hooks}
-\newtcbtheorem[number within=section]{claim}{Claim}
+\newtcbtheorem[]{claim}{Claim}
 {%
 	enhanced
 	,breakable
@@ -299,8 +272,6 @@
 	,segmentation style={solid, myg!85!black}
 }
 {th}
-
-
 
 %================================
 % Exercise
@@ -388,28 +359,15 @@
 % DEFINITION BOX
 %================================
 
-\newtcbtheorem[number within=section]{Definition}{Definition}{enhanced,
-	before skip=2mm,after skip=2mm, colback=red!5,colframe=red!80!black,boxrule=0.5mm,
-	attach boxed title to top left={xshift=1cm,yshift*=1mm-\tcboxedtitleheight}, varwidth boxed title*=-3cm,
-	boxed title style={frame code={
-					\path[fill=tcbcolback]
-					([yshift=-1mm,xshift=-1mm]frame.north west)
-					arc[start angle=0,end angle=180,radius=1mm]
-					([yshift=-1mm,xshift=1mm]frame.north east)
-					arc[start angle=180,end angle=0,radius=1mm];
-					\path[left color=tcbcolback!60!black,right color=tcbcolback!60!black,
-						middle color=tcbcolback!80!black]
-					([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
-					[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
-					-- (frame.south east) -- (frame.south west)
-					-- ([xshift=-1mm,yshift=-1mm]frame.north west)
-					[sharp corners]-- cycle;
-				},interior engine=empty,
-		},
-	fonttitle=\bfseries,
-	title={#2},#1}{def}
-\newtcbtheorem[number within=chapter]{definition}{Definition}{enhanced,
-	before skip=2mm,after skip=2mm, colback=red!5,colframe=red!80!black,boxrule=0.5mm,
+\newtcbtheorem[number within=chapter]{definition}{Definition}
+{
+    enhanced,
+	before skip=2mm,
+    after skip=2mm, 
+    colback=red!5,
+    colframe=red!80!black,
+    colbacktitle=red!75!black,
+    boxrule=0.5mm,
 	attach boxed title to top left={xshift=1cm,yshift*=1mm-\tcboxedtitleheight}, varwidth boxed title*=-3cm,
 	boxed title style={frame code={
 					\path[fill=tcbcolback]
@@ -586,22 +544,21 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\newcommand{\thm}[2]{\begin{Theorem}{#1}{}#2\end{Theorem}}
-\newcommand{\cor}[2]{\begin{Corollary}{#1}{}#2\end{Corollary}}
-\newcommand{\mlemma}[2]{\begin{Lemma}{#1}{}#2\end{Lemma}}
-\newcommand{\mprop}[2]{\begin{Prop}{#1}{}#2\end{Prop}}
+\newcommand{\thm}[2]{\begin{theorem}{#1}{}#2\end{theorem}}
+\newcommand{\cor}[2]{\begin{corollary}{#1}{}#2\end{corollary}}
+\newcommand{\mlemma}[2]{\begin{lemma}{#1}{}#2\end{lemma}}
+\newcommand{\mprop}[2]{\begin{prop}{#1}{}#2\end{prop}}
 \newcommand{\clm}[3]{\begin{claim}{#1}{#2}#3\end{claim}}
 \newcommand{\wc}[2]{\begin{wconc}{#1}{}\setlength{\parindent}{1cm}#2\end{wconc}}
 \newcommand{\thmcon}[1]{\begin{Theoremcon}{#1}\end{Theoremcon}}
-\newcommand{\ex}[2]{\begin{Example}{#1}{}#2\end{Example}}
-\newcommand{\dfn}[2]{\begin{Definition}[colbacktitle=red!75!black]{#1}{}#2\end{Definition}}
-\newcommand{\dfnc}[2]{\begin{definition}[colbacktitle=red!75!black]{#1}{}#2\end{definition}}
+\newcommand{\ex}[2]{\begin{example}{#1}{}#2\end{example}}
+\newcommand{\dfn}[2]{\begin{definition}{#1}{}#2\end{definition}}
 \newcommand{\qs}[2]{\begin{question}{#1}{}#2\end{question}}
 \newcommand{\pf}[2]{\begin{myproof}[#1]#2\end{myproof}}
 \newcommand{\nt}[1]{\begin{note}#1\end{note}}
 
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{
-		\node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+		\node[shape=circle, draw, inner sep=1pt] (char) {#1};}}
 \newcommand\getcurrentref[1]{%
 	\ifnumequal{\value{#1}}{0}
 	{??}
@@ -615,18 +572,6 @@
 \newcommand{\mclm}[2]{\begin{myclaim}[#1]#2\end{myclaim}}
 \newenvironment{myclaim}[1][\claimname]{\proof[\bfseries #1: ]}{}
 
-\newcounter{mylabelcounter}
-
-\makeatletter
-\newcommand{\setword}[2]{%
-	\phantomsection
-	#1\def\@currentlabel{\unexpanded{#1}}\label{#2}%
-}
-\makeatother
-
-
-
-
 \tikzset{
 	symbol/.style={
 			draw=none,
@@ -635,15 +580,7 @@
 		}
 }
 
-
 % deliminators
-\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
-\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
-
-\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
-\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
-\DeclarePairedDelimiter{\round}{\lfloor}{\rceil}
-
 \newsavebox\diffdbox
 \newcommand{\slantedromand}{{\mathpalette\makesl{d}}}
 \newcommand{\makesl}[2]{%
@@ -656,34 +593,10 @@
 \hskip\wd\diffdbox
 \endgroup
 }
-\newcommand{\dd}[1][]{\ensuremath{\mathop{}\!\ifstrempty{#1}{%
-\slantedromand\@ifnextchar^{\hspace{0.2ex}}{\hspace{0.1ex}}}%
-{\slantedromand\hspace{0.2ex}^{#1}}}}
-\ProvideDocumentCommand\dv{o m g}{%
-  \ensuremath{%
-    \IfValueTF{#3}{%
-      \IfNoValueTF{#1}{%
-        \frac{\dd #2}{\dd #3}%
-      }{%
-        \frac{\dd^{#1} #2}{\dd #3^{#1}}%
-      }%
-    }{%
-      \IfNoValueTF{#1}{%
-        \frac{\dd}{\dd #2}%
-      }{%
-        \frac{\dd^{#1}}{\dd #2^{#1}}%
-      }%
-    }%
-  }%
-}
-\providecommand*{\pdv}[3][]{\frac{\partial^{#1}#2}{\partial#3^{#1}}}
+
 %  - others
 \DeclareMathOperator{\Lap}{\mathcal{L}}
-\DeclareMathOperator{\Var}{Var} % varience
-\DeclareMathOperator{\Cov}{Cov} % covarience
 \DeclareMathOperator{\E}{E} % expected
-
-% Since the amsthm package isn't loaded
 
 % I prefer the slanted \leq
 \let\oldleq\leq % save them in case they're every wanted
@@ -732,10 +645,10 @@
 	\chapter*{%
 	  \vspace*{-20\p@}%
 	  \begin{tikzpicture}[remember picture, overlay]%
-		  \pgftext[right,x=15cm,y=0.2cm]{\color{doc!60}\Huge\sc\bfseries \contentsname};%
+		  \pgftext[right, x=15cm, y=0.2cm]{\color{doc!60}\Huge\sc\bfseries \contentsname};%
 		  \draw[fill=doc!60,draw=doc!60] (13,-.75) rectangle (20,1);%
 		  \clip (13,-.75) rectangle (20,1);
-		  \pgftext[right,x=15cm,y=0.2cm]{\color{white}\Huge\sc\bfseries \contentsname};%
+		  \pgftext[right, x=15cm, y=0.2cm]{\color{white}\Huge\sc\bfseries \contentsname};%
 	  \end{tikzpicture}}%
 	\@starttoc{toc}}
 \makeatother

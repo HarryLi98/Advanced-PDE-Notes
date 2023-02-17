@@ -4,9 +4,12 @@
 
 \begin{document}
 
-\setcounter{chapter}{4}
+\pdfbookmark[section]{\contentsname}{toc}
+\tableofcontents
 
-\chapter{Sobolev and interpolation inequalities}
+\setcounter{chapter}{1}
+
+\chapter{Sobolev spaces}
 \section{Interpolation inequalities}
 
 \ex{}
@@ -21,8 +24,8 @@
     \begin{align*}
         u^2(x) &= 2 \int_{-\infty}^{x} u u' \,\mathrm{d}y = -2 \int_{x}^{\infty} u u' \,\mathrm{d}y \\
         &= \int_{-\infty}^{x} u u' \,\mathrm{d}y - \int_{x}^{\infty} u u' \,\mathrm{d}y \\
-        & \leq \int_{-\infty}^{x} \vert u \vert  \vert u' \vert  \,\mathrm{d}y + \int_{x}^{\infty} \vert u \vert  \vert u' \vert \,\mathrm{d}y \\
-        &= \int_{\mathbb{R}} \vert u \vert  \vert u' \vert \,\mathrm{d}y \\
+        & \leq \int_{-\infty}^{x} \vert u \vert \vert u' \vert \,\mathrm{d}y + \int_{x}^{\infty} \vert u \vert \vert u' \vert \,\mathrm{d}y \\
+        &= \int_{\mathbb{R}} \vert u \vert \vert u' \vert \,\mathrm{d}y \\
         \text{(Hölder's inequality)} \quad & \leq \|u\|_{L^{2}} \|u'\|_{L^{2}}
     \end{align*}
 \end{proof}
@@ -42,7 +45,7 @@
 
 \begin{proof}
     \[\int_{\mathbb{R}} \vert u \vert^p \,\mathrm{d}x = \int_{\mathbb{R}} \vert u \vert^{\theta p} \vert u \vert^{(1-\theta) p} \,\mathrm{d}x\]
-    We apply Hölder's inequality with exponents \(P = \frac{p_1}{\theta p} \) and \(Q = \frac{p_2}{(1-\theta)p}\) (Note \(\frac{1}{P} + \frac{1}{Q} = \frac{\theta p}{p_1} + \frac{(1-\theta)p}{p_2} = 1\)). Then    
+    We apply Hölder's inequality with exponents \(P = \frac{p_1}{\theta p} \) and \(Q = \frac{p_2}{(1-\theta)p}\) (Note \(\frac{1}{P} + \frac{1}{Q} = \frac{\theta p}{p_1} + \frac{(1-\theta)p}{p_2} = 1\)). Then
     \begin{align*}
         \int_{\mathbb{R}} \vert u \vert^{\theta p} \vert u \vert^{(1-\theta) p} \,\mathrm{d}x &\leq \left(\int_{\mathbb{R}} \vert u \vert^{p_1} \,\mathrm{d}x \right)^{\frac{1}{P}} \left(\int_{\mathbb{R}} \vert u \vert^{p_2} \,\mathrm{d}x \right)^{\frac{1}{Q}} \\
         &= \|u\|_{L^{p_1}}^{\theta} \|u\|_{L^{p_2}}^{1 - \theta}
@@ -69,7 +72,7 @@
 
 \ex{Sobolev inequality 2D}
 {
-    \(u \in C^{\infty}([0,1]^2)\),  i.e. \(\Omega = [0,1]^2\), then \(W^{1, 1}(\Omega) \subset L^{2}(\Omega) : \|u\|_{L^{2}} \leq \|u\|_{W^{1, 1}(\Omega)}\)
+    \(u \in C^{\infty}([0,1]^2)\), i.e. \(\Omega = [0,1]^2\), then \(W^{1, 1}(\Omega) \subset L^{2}(\Omega) : \|u\|_{L^{2}} \leq \|u\|_{W^{1, 1}(\Omega)}\)
 }
 
 \begin{proof}
@@ -117,13 +120,12 @@
     \[\|u\|_{L^{6}(\Omega)} \leq C \|u\|_{W^{1, 2}(\Omega)}\]
 \end{proof}
 
-\thm{Sobolev embeddings}
-{
+\begin{theorem}{Sobolev embeddings}{sobolev_embedding}
     \begin{enumerate}[label=\bfseries\tiny\protect\circled{\small\arabic*}]
 		\item \(W^{k_1, p_1}(\Omega) \subset W^{k_2, p_2}(\Omega) \Longleftrightarrow k_1 \geq k_2\) and \(1 \leq p_1, p_2 < \infty, k_1 - \frac{n}{p_1} \geq k_2 - \frac{n}{p_2}, \Omega \subset \mathbb{R}^{n}\).
 		\item \(W^{k,p}(\Omega) \subset C^{\alpha}(\Omega)\) if \(\alpha < k - \frac{n}{p}\). If \(\alpha\) is not an integer, then the inequality is weak.
 	\end{enumerate}
-}
+\end{theorem}
 
 \ex{}
 {
@@ -138,9 +140,9 @@
         \text{(Hölder's inequality)} \quad &\leq \left(\int_{\mathbb{R}^{n}} \frac{1}{\left(1+\vert \xi \vert ^{2}  \right)^{s}} \,\mathrm{d}\xi \right)^{\frac{1}{2}} \left(\int_{\mathbb{R}^{n}} \left(1+\vert \xi \vert ^{2} \right)^{s} \vert \hat{u}(\xi) \vert^{2} \,\mathrm{d}\xi \right)^{\frac{1}{2}}
     \end{align*} 
 
-    \(\int_{\mathbb{R}^{n}} \frac{1}{\left(1+\vert \xi \vert ^{2}  \right)^{s}} \,\mathrm{d}\xi < \infty \iff s>\frac{n}{2}\).
+    \(\int_{\mathbb{R}^{n}} \frac{1}{\left(1+\vert \xi \vert ^{2} \right)^{s}} \,\mathrm{d}\xi < \infty \iff s>\frac{n}{2}\).
     Taking the supremum with respect to \(x \in \mathbb{R}^{n}\), we get
-    \[\|u\|_{C(\mathbb{R}^{n})} \leq C_{s}\|u\|_{H^{s}(\mathbb{R}^{n})}\]   
+    \[\|u\|_{C(\mathbb{R}^{n})} \leq C_{s}\|u\|_{H^{s}(\mathbb{R}^{n})}\]
 \end{proof}
 
 \thm{Interpolation inequalities}
@@ -172,6 +174,7 @@
     These two definitions are equivalent. \(u \in \text{``closure"} \colon u = \lim\limits_{n \to \infty} \varphi_{n}, \varphi_{n} \in C^{\infty}_{0}(\Omega) \implies \left. \varphi_{n} \right|_{\partial \Omega} = 0\). By continuity, \(\left. u \right|_{\partial \Omega} = 0\). The proof of the converse statement is more technical and is omitted.
 }
 
+\section{Poincaré's and Friedrich's inequalities}
 \mprop{Friedrich's inequality}
 {
     Let \(\Omega\) be a bounded domain and \(u \in W^{1, p}_{0}(\Omega)\). Then
@@ -181,7 +184,7 @@
 }
 
 \begin{proof}
-    It is enough to prove \ref{eq:5} for \(\varphi \in C^{\infty}_{0}(\Omega)\). By the Newton-Leibniz formula,      
+    It is enough to prove \ref{eq:5} for \(\varphi \in C^{\infty}_{0}(\Omega)\). By the Newton-Leibniz formula,
     \[    
         u(x_1, x') - u(-L, x') = u(x_1, x') = \int_{-L}^{x_1} \partial_{x_1}u(s, x') \,\mathrm{d}s 
     \] 
@@ -209,17 +212,18 @@
 }
 
 \begin{note}
-    \(\left. u \right|_{\partial \Omega} = 0\) is important! Otherwise, \ref{eq:5} will fail for \(u \equiv c\). Since \(\nabla u\) defines \(u\) up to a constant; \(\left. u \right|_{\partial \Omega} = 0\) removes this constant.  
+    \(\left. u \right|_{\partial \Omega} = 0\) is important! Otherwise, \ref{eq:5} will fail for \(u \equiv c\). Since \(\nabla u\) defines \(u\) up to a constant; \(\left. u \right|_{\partial \Omega} = 0\) removes this constant.
 \end{note}
 
 \mprop{Poincaré inequality}
 {
     Let \(\Omega\) be a bounded domain with a smooth boundary and \(\left\langle u \right\rangle \coloneqq \frac{1}{\vert \Omega \vert } \int_{\Omega} u(x) \,\mathrm{d}x = 0\). Then 
     \[
-        \|u\|_{L^{p}} \leq C \|\nabla u\|_{L^{p}}  
+        \|u\|_{L^{p}} \leq C \|\nabla u\|_{L^{p}}
     \]   
 }
 
+\section{Compactness}
 \dfn{Sequential compactness}
 {
     A metric space \((X, d)\) is compact if any sequence \(\{x_{n}\}_{n=1}^{\infty} \subset X\) has a convergent sub-sequence, i.e. there exists \(\{x_{n_{k}}\}_{k=1}^{\infty} \colon \lim\limits_{k \to \infty} x_{n_{k}} = x_0 \in X\)
@@ -243,21 +247,19 @@
 
 \dfn{}
 {
-    \(X\) is totally bounded if \(\forall \epsilon > 0, \exists\) covering of \(X\) by finitely many \(\epsilon\)-balls, i.e. \(X = \bigcup_{k=1}^{N} B_{\epsilon}(x_k), N = N(\epsilon)\) and \(\{x_k\}\) is an \(\epsilon\)-net in \(X\).  
+    \(X\) is totally bounded if \(\forall \epsilon > 0, \exists\) covering of \(X\) by finitely many \(\epsilon\)-balls, i.e. \(X = \bigcup_{k=1}^{N} B_{\epsilon}(x_k), N = N(\epsilon)\) and \(\{x_k\}\) is an \(\epsilon\)-net in \(X\).
 }
 
-\section{Why do we need compactness?}
+\subsection{Why do we need compactness?}
 Let \(X\) be compact and \(f \colon X \to Y \) be continuous, then \(f(X)\) is compact in Y. How do we solve PDEs of the form (or more general equations)?
-
 \begin{equation}\label{eq:6}
     F(x) = 0
 \end{equation}
-
 \begin{enumerate}
     \item Construct approximate solutions
     
     \(F(x_n) = g_n\), where \(\lim\limits_{n \to \infty} g_n = 0\)
-    \item Obtain a priori estimates, i.e. that \(\{x_n\}\)  is bounded in a proper space
+    \item Obtain a priori estimates, i.e. that \(\{x_n\}\) is bounded in a proper space
     \item If \(\{x_n\}\) is pre-compact and \(F\) is continuous \(\implies x = \lim\limits_{x \to \infty} x_{n_{k}}\) is a solution of \ref{eq:6}.
 \end{enumerate}
 
@@ -290,15 +292,14 @@ Let \(X\) be compact and \(f \colon X \to Y \) be continuous, then \(f(X)\) is c
     where we used the \(0\)-extension of \(f\) outside of \(\Omega\). 
 }
 
-\cor{}
-{\label{cor:1}
+\begin{corollary}{}{1}
     Let \(K = B_{1}(0) \in W^{1, p}(\Omega); \Omega \subset \mathbb{R}^{n}\) is bounded, \(\partial \Omega\) is smooth, \(1 \leq p < \infty\). Then \(K\) is pre-compact in \(L^{p}(\Omega)\).
-}
+\end{corollary}
 
 \begin{proof}
     We need to check equicontinuity, i.e. estimate \(\int_{\Omega} \vert f(x+h) - f(x) \vert ^p \,\mathrm{d}x \).
     \[
-        f(x+h) - f(x) = h \int_{0}^{1} \nabla f(x + sh) \,\mathrm{d}s  
+        f(x+h) - f(x) = h \int_{0}^{1} \nabla f(x + sh) \,\mathrm{d}s
     \]
     Taking modulus and \(p\)-th power of both sides, we get
     \[
@@ -306,7 +307,7 @@ Let \(X\) be compact and \(f \colon X \to Y \) be continuous, then \(f(X)\) is c
     \]
     Finally, we take an integral over \(x \in \Omega\).
     \begin{align*}
-        \int_{\Omega} \vert f(x+h) - f(x) \vert ^p \,\mathrm{d}x &\leq \vert h \vert \int_{0}^{1} \int_{\Omega}  \vert \nabla f(x + sh) \vert ^p \,\mathrm{d}x \,\mathrm{d}s \\
+        \int_{\Omega} \vert f(x+h) - f(x) \vert ^p \,\mathrm{d}x &\leq \vert h \vert \int_{0}^{1} \int_{\Omega} \vert \nabla f(x + sh) \vert ^p \,\mathrm{d}x \,\mathrm{d}s \\
         &\leq C \vert h \vert
     \end{align*}
     \(\omega(z) = cz\) is a joint modulus of continuity.
@@ -314,7 +315,7 @@ Let \(X\) be compact and \(f \colon X \to Y \) be continuous, then \(f(X)\) is c
 
 \dfn{}
 {
-    Let \(V \subset  W\) be Banach spaces. Then the embedding is compact if the unit ball of \(V\) is pre-compact in \(W\).
+    Let \(V \subset W\) be Banach spaces. Then the embedding is compact if the unit ball of \(V\) is pre-compact in \(W\).
 }
 
 \begin{note}
@@ -339,7 +340,134 @@ Let \(X\) be compact and \(f \colon X \to Y \) be continuous, then \(f(X)\) is c
     \end{align*}
 \end{proof}
 
-\noindent
 General fact: \(W^{s_1, p_1}(\Omega) \subset W^{s_2, p_2}(\Omega)\), where \(\Omega\) is bounded, \(\partial \Omega\) is smooth. Embedding is compact \(\iff\) embedding is not critical.
+
+\section{Dual spaces}
+\begin{definition}{}{1}
+    \(W^{-s, p}(\Omega) \coloneqq \left(W^{s, q}_{0}(\Omega)\right)^{*}\) is defined as the dual space to \(W^{s, q}_{0}(\Omega) =\), i.e. the space of linear continuous functionals on \(W^{s, q}_{0}(\Omega)\), where \(\frac{1}{p} + \frac{1}{q} = 1\).
+\end{definition}
+
+\begin{definition}{}{2}
+    \(W^{-s, p}(\Omega) = \left\{\text{completion of } L^{p}(\Omega) \text{ w.r.t } \|\ell\|_{W^{-s, p}} \coloneqq \sup\limits_{\varphi \in \mathcal{D}} \frac{\vert (\ell, \varphi) \vert }{\|\varphi\|_{W^{s, q}_{0}}} \right\} \) 
+\end{definition}
+
+\begin{definition}{}{3}
+    \(W^{-s, p}(\Omega) = \left\{\ell \in \mathcal{D}'(\Omega) : \|\ell\|_{W^{-s, p}} \coloneqq \sup\limits_{\varphi \in \mathcal{D}} \frac{\vert\left\langle \ell, \varphi \right\rangle\vert}{\|\varphi\|_{W^{s, q}_{0}}} \right\} \)
+\end{definition}
+
+\mprop{}
+{
+    Definitions \ref{def:1}, \ref{def:2} and \ref{def:3} are equivalent.
+}
+
+\begin{example}{}{}
+    \(\delta(x) \in W^{-s, p}(\Omega), \Omega \in \mathbb{R}^{n}\). Find \(s, p, n\). \(\delta(x)\) is well-defined on continuous functions, so we need \(W^{s, q}_{0}(\Omega) \subset C(\bar{\Omega})\). For example, \(n=1, p=2\), then \(\delta(x) \in H^{-s}(\Omega)\) for \(s>\frac{1}{2}\).
+\end{example}
+
+\chapter{Linear elliptic problems}
+\section{Dirichlet and Neumann problems for the Laplacian}
+
+\begin{example}{Laplace equation with Dirichlet boundary conditions}{}
+    Let \(\Omega \in \mathbb{R}^{n}\) be a bounded domain with \(\partial \Omega\) smooth.
+    \begin{equation}\label{eq:3.1}
+        \begin{cases}
+            \Delta u = f \\
+            \left. u \right|_{\partial \Omega} = 0
+        \end{cases}
+    \end{equation}
+    Typical questions: 
+    \begin{enumerate}
+        \item In what space does the solution live?
+        \item In what sense is the understood (classical / weak)?
+        \item In what sense are the boundary / initial data understood?
+    \end{enumerate}
+    In ODEs, we have local existence and uniqueness theorem (for Lipschitz non-linearities), but there is not an equivalent theorem for PDEs. Therefore, we must study particular examples.
+\end{example}
+
+\begin{definition}{}{}
+    \(u \in W^{1, 2}_{0}(\Omega)\) is a weak solution of \ref{eq:3.1} if \(\forall \varphi \in C^{\infty}_{0}(\Omega)\)
+    \begin{equation}\label{eq:3.2}
+        - \int_{\Omega} \nabla u(x) \nabla \varphi(x) \,\mathrm{d}x = - \ \int_{\Omega} f(x) \varphi(x) \,\mathrm{d}x
+    \end{equation}
+    Here, the boundary condition is incorporated into the choice of space \(W^{1, 2}_{0}(\Omega) = [C^{\infty}_{0}(\Omega)]_{W^{1, 2}(\Omega)}\) (the closure of \(C^{\infty}_{0}(\Omega)\) in the norm of \(W^{1, 2}(\Omega)\)). 
+
+    \ref{eq:3.2} came from the integration by parts formula. Indeed, if \(u \in C^{2}(\Omega) \bigcap C(\bar{\Omega})\), then \(\Delta u = f\) is understood in a classical sense and
+    \[
+        \int_{\Omega} \Delta u \varphi \,\mathrm{d}x = - \int_{\Omega} \nabla u \nabla \varphi \,\mathrm{d}x + \int_{\partial\Omega} \partial_{n} u \varphi \,\mathrm{d}s,
+    \]
+    where the term \(\int_{\partial\Omega} \partial_{n} u \varphi \,\mathrm{d}s = 0\) because \(\left. \varphi \right|_{\partial \Omega} = 0\).
+\end{definition}
+
+\begin{theorem}{}{}
+    Let \(f \in H^{-1}(\Omega) \coloneqq W^{-1, 2}(\Omega)\). Then \ref{eq:3.1} has a unique weak solution.
+\end{theorem}
+
+\begin{proof}{Application of Riesz representation theorem}
+
+    \([u,u] \coloneqq \int_{\Omega} \nabla u \nabla u \,\mathrm{d}x\) is an equivalent norm on \(W^{1, 2}_{0}(\Omega)\) (due to Friedrich's inequality). Then \ref{eq:3.2} can be rewritten as
+    \[
+        [u, \varphi] = \int_{\Omega} f(x)\varphi(x) \,\mathrm{d}x \coloneqq \ell(\varphi)
+    \]
+
+    Claim: \(\ell\) is a linear continuous functional on \(W^{1, 2}_{0}(\Omega)\) (the integral should be understood as duality if we take \(f \in H^{-1}(\Omega)\) and if \(f \in L^{2}(\Omega)\), this is a standard Lebesgue integral).
+
+    Linearity of \(\ell\) is obvious. \(\ell\) is continuous as it is bounded:
+    \[
+        \vert \ell(\varphi) \vert \leq \|f\|_{H^{-1}} \| \varphi \|_{H^{1}}
+    \]
+    But we obtained that \ref{eq:3.2} holds only for \(\varphi \in C^{\infty}_{0}\), not for \(\varphi \in W^{1, 2}_{0}(\Omega)\). However, \(W^{1, 2}_{0}(\Omega) = [C^{\infty}_{0}(\Omega)]_{W^{1, 2}}\). Then approximation arguments give that \(\forall \varphi \in H\), 
+    \begin{equation}\label{eq:3.3}
+        [u, \varphi] = \ell(\varphi)
+    \end{equation}
+    Then by Riesz representation theorem, there exists a unique \(u \in W^{1, 2}_{0}(\Omega)\) which satisfies \ref{eq:3.3}.
+\end{proof}
+
+\begin{example}{Laplace equation with Neumann boundary conditions}{}
+    Let \(\Omega \in \mathbb{R}^{n}\) be a bounded domain with \(\partial \Omega\) smooth.
+    \begin{equation}\label{eq:3.4}
+        \begin{cases}
+            \Delta u = f \\
+            \left. \partial_{n} u \right|_{\partial \Omega} = 0
+        \end{cases}
+    \end{equation}
+    We cannot consider \(\varphi \in C^{\infty}_{0}(\Omega)\) as test functions, because the information about boundary conditions will be lost. Similarly,
+    \[
+        \varphi \in W^{1, 2}_{n}(\Omega) \coloneqq \{u \in W^{1, 2}(\Omega) \colon \left. \partial_{n} u \right|_{\partial \Omega} = 0\}
+    \]
+    will not work as well, since \(\left. \partial_{n} u \right|_{\partial \Omega}\) is not defined for \(u \in W^{1, 2}(\Omega)\) (since by theorem \ref{th:sobolev_embedding}, \(C^{\infty}(\Omega) \not\subset W^{1, 2}(\Omega)\)). Instead, let us take \(\varphi \in C^{\infty}(\bar{\Omega})\) as a test function and assume that \(u\) is a classical solution. Then
+    \begin{align*}
+        \int_{\Omega} f \varphi \,\mathrm{d}x &= \int_{\Omega} \Delta  u \varphi \,\mathrm{d}x \\
+        &= - \int_{\Omega} \nabla u \nabla \varphi \,\mathrm{d}x + \int_{\partial \Omega} \partial_{n} u \varphi \,\mathrm{d}s \\
+        &= - \int_{\Omega} \nabla u \nabla \varphi \,\mathrm{d}x ,
+    \end{align*}
+    as \(\int_{\partial \Omega} \partial_{n} u \varphi \,\mathrm{d}x = 0\) due to the boundary conditions. If we take \(\varphi(x) = 1\) as a test function, then we get
+    \begin{align*}
+        \int_{\Omega} f \cdot 1 \,\mathrm{d}x &= - \int_{\Omega} \nabla u \nabla 1 \,\mathrm{d}x \\
+        &= 0
+    \end{align*}
+    Hence \(\left\langle f \right\rangle = \frac{1}{\vert \Omega \vert }\int_{\Omega} f(x) \,\mathrm{d}x = 0\) is a necessary condition for solvability.
+
+    Let us notice that all solutions of this problem differs from each other by a constant. Thus, a natural assumption to single out the solution is \(\left\langle u \right\rangle = 0\). 
+\end{example}
+
+\begin{definition}{}{}
+    \(u \in W^{1, 2}(\Omega) \bigcap \{\left\langle u \right\rangle = 0\}\) is a weak solution of \ref{eq:3.4} if \(\forall \varphi \in C^{\infty}(\bar{\Omega})\), we have:
+    \begin{equation}\label{eq:3.5}
+        \int_{\Omega} \nabla u \nabla \varphi \,\mathrm{d}x = - \int_{\Omega} f \varphi \,\mathrm{d}x
+    \end{equation}
+
+\end{definition}
+
+\begin{note}
+    The boundary conditions are now not in the definition of the space, but in \ref{eq:3.5}.
+\end{note}
+
+\begin{theorem}{}{}
+    Let \(f \in L^{2}(\Omega) \bigcap \{\left\langle f \right\rangle = 0\}\). Then \ref{eq:3.4} has a unique weak solution. 
+\end{theorem}
+
+\begin{proof}
+    The proof is analogous to the problem with Dirichlet boundary conditions, but instead of apply Friedrich's inequality, we should apply Poincaré's inequality and use density of \(C^{\infty}(\Omega) \in W^{1, 2}(\Omega)\). 
+\end{proof}
 
 \end{document}
