@@ -1,11 +1,13 @@
-This is LuaHBTeX, Version 1.14.0 (MiKTeX 21.12.10) (format=lualatex 2022.1.17)  17 FEB 2023 16:46
+This is LuaHBTeX, Version 1.14.0 (MiKTeX 21.12.10) (format=lualatex 2022.1.17)  17 FEB 2023 16:49
  restricted system commands enabled.
  file:line:error style messages enabled.
 **"c:/Users/Harry/OneDrive - Imperial College London/Imperial/Advanced Topics f
-or Partial Differential Equations/Advanced-PDE-Notes/Week 5"
+or Partial Differential Equations/Advanced-PDE-Notes/Advanced PDE Lecture Notes
+"
 
 ("c:/Users/Harry/OneDrive - Imperial College London/Imperial/Advanced Topics fo
-r Partial Differential Equations/Advanced-PDE-Notes/Week 5.tex"
+r Partial Differential Equations/Advanced-PDE-Notes/Advanced PDE Lecture Notes.
+tex"
 LaTeX2e <2021-11-15> patch level 1
 Lua module: luaotfload 2021-05-21 3.18 Lua based OpenType font support
 Lua module: lualibs 2021-05-20 2.74 ConTeXt Lua standard libraries.
@@ -1426,8 +1428,8 @@ File: tikzlibraryshadows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 (C:/Users/Harry/AppData/Local/Programs/MiKTeX/tex/latex/titlesec/titletoc.sty
 Package: titletoc 2021/07/05 v2.14 TOC entries
 \ttl@leftsep=\dimen328
-)) ("./Week 5.aux")
-\openout1 = Week 5.aux
+)) ("./Advanced PDE Lecture Notes.aux")
+\openout1 = Advanced PDE Lecture Notes.aux
 
 LaTeX Font Info:    Checking defaults for OML/npxmi/m/it on input line 5.
 LaTeX Font Info:    Trying to load font information for OML+npxmi on input line
@@ -1561,10 +1563,10 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 LaTeX Font Warning: Font shape `TU/lmr/bx/sc' undefined
 (Font)              using `TU/lmr/bx/n' instead on input line 8.
 
-("./Week 5.toc")
+("./Advanced PDE Lecture Notes.toc")
 \tf@toc=\write5
 
-\openout5 = Week 5.toc
+\openout5 = Advanced PDE Lecture Notes.toc
  [1
 
 
@@ -1616,9 +1618,12 @@ File: unpxsyc.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxsyc.
 Chapter 3.
 [10
 
-] [11] [12] ("./Week 5.aux")
+] [11] [12] ("./Advanced PDE Lecture Notes.aux")
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 )
 
@@ -1631,7 +1636,7 @@ pec, 135 attribute_list, 2 write, 24 pdf_literal, 24 pdf_colorstack nodes
    avail lists: 2:3624,3:2353,4:172,5:576,6:65,7:4638,8:64,9:1301,10:4,11:209
  56740 multiletter control sequences out of 65536+600000
  113 fonts using 8642399 bytes
- 96i,12n,98p,1115b,1766s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 96i,12n,98p,1175b,1766s stack positions out of 5000i,500n,10000p,200000b,80000s
 <//?/c:/users/harry/appdata/local/programs/miktex/fonts/opentype/public/lm/lmrom
 an9-bold.otf><//?/c:/users/harry/appdata/local/programs/miktex/fonts/opentype/pu
 blic/lm/lmsans10-regular.otf><//?/c:/users/harry/appdata/local/programs/miktex/f
@@ -1653,7 +1658,7 @@ TeX/fonts/type1/public/newpx/pxsys.pfb><C:/Users/Harry/AppData/Local/Programs/Mi
 KTeX/fonts/type1/public/newtx/txexs.pfb><C:/Users/Harry/AppData/Local/Programs/M
 iKTeX/fonts/type1/public/txfonts/txsya.pfb><C:/Users/Harry/AppData/Local/Program
 s/MiKTeX/fonts/type1/public/txfonts/txsyc.pfb>
-Output written on Week 5.pdf (12 pages, 257655 bytes).
+Output written on Advanced PDE Lecture Notes.pdf (12 pages, 257656 bytes).
 
 PDF statistics: 387 PDF objects out of 1000 (max. 8388607)
  90 named destinations out of 1000 (max. 131072)
