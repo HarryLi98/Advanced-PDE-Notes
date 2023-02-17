@@ -368,7 +368,7 @@ General fact: \(W^{s_1, p_1}(\Omega) \subset W^{s_2, p_2}(\Omega)\), where \(\Om
 \section{Dirichlet and Neumann problems for the Laplacian}
 
 \begin{example}{Laplace equation with Dirichlet boundary conditions}{}
-    Let \(\Omega \in \mathbb{R}^{n}\) be a bounded domain with \(\partial \Omega\) smooth.
+    Let \(\Omega \in \mathbb{R}^{n}\) be a bounded domain with \(\partial \Omega\) smooth. Consider the Laplace equation with Dirichlet boundary conditions:
     \begin{equation}\label{eq:3.1}
         \begin{cases}
             \Delta u = f \\
@@ -378,14 +378,14 @@ General fact: \(W^{s_1, p_1}(\Omega) \subset W^{s_2, p_2}(\Omega)\), where \(\Om
     Typical questions: 
     \begin{enumerate}
         \item In what space does the solution live?
-        \item In what sense is the understood (classical / weak)?
+        \item In what sense is the equation understood (classical / weak)?
         \item In what sense are the boundary / initial data understood?
     \end{enumerate}
     In ODEs, we have local existence and uniqueness theorem (for Lipschitz non-linearities), but there is not an equivalent theorem for PDEs. Therefore, we must study particular examples.
 \end{example}
 
 \begin{definition}{}{}
-    \(u \in W^{1, 2}_{0}(\Omega)\) is a weak solution of \ref{eq:3.1} if \(\forall \varphi \in C^{\infty}_{0}(\Omega)\)
+    \(u \in W^{1, 2}_{0}(\Omega)\) is a weak solution of \ref{eq:3.1} if \(\forall \varphi \in C^{\infty}_{0}(\Omega)\),
     \begin{equation}\label{eq:3.2}
         - \int_{\Omega} \nabla u(x) \nabla \varphi(x) \,\mathrm{d}x = - \ \int_{\Omega} f(x) \varphi(x) \,\mathrm{d}x
     \end{equation}
@@ -415,7 +415,7 @@ General fact: \(W^{s_1, p_1}(\Omega) \subset W^{s_2, p_2}(\Omega)\), where \(\Om
     \[
         \vert \ell(\varphi) \vert \leq \|f\|_{H^{-1}} \| \varphi \|_{H^{1}}
     \]
-    But we obtained that \ref{eq:3.2} holds only for \(\varphi \in C^{\infty}_{0}\), not for \(\varphi \in W^{1, 2}_{0}(\Omega)\). However, \(W^{1, 2}_{0}(\Omega) = [C^{\infty}_{0}(\Omega)]_{W^{1, 2}}\). Then approximation arguments give that \(\forall \varphi \in H\), 
+    But we obtained that \ref{eq:3.2} holds only for \(\varphi \in C^{\infty}_{0}(\Omega)\), not for \(\varphi \in W^{1, 2}_{0}(\Omega)\). However, \(W^{1, 2}_{0}(\Omega) = [C^{\infty}_{0}(\Omega)]_{W^{1, 2}}\). Then approximation arguments give that \(\forall \varphi \in H\), 
     \begin{equation}\label{eq:3.3}
         [u, \varphi] = \ell(\varphi)
     \end{equation}
@@ -423,14 +423,14 @@ General fact: \(W^{s_1, p_1}(\Omega) \subset W^{s_2, p_2}(\Omega)\), where \(\Om
 \end{proof}
 
 \begin{example}{Laplace equation with Neumann boundary conditions}{}
-    Let \(\Omega \in \mathbb{R}^{n}\) be a bounded domain with \(\partial \Omega\) smooth.
+    Let \(\Omega \in \mathbb{R}^{n}\) be a bounded domain with \(\partial \Omega\) smooth. Consider the Laplace equation with Neumann boundary conditions:
     \begin{equation}\label{eq:3.4}
         \begin{cases}
             \Delta u = f \\
             \left. \partial_{n} u \right|_{\partial \Omega} = 0
         \end{cases}
     \end{equation}
-    We cannot consider \(\varphi \in C^{\infty}_{0}(\Omega)\) as test functions, because the information about boundary conditions will be lost. Similarly,
+    We cannot consider \(\varphi \in C^{\infty}_{0}(\Omega)\) as test functions, because the information about boundary conditions will be lost. Similarly, considering
     \[
         \varphi \in W^{1, 2}_{n}(\Omega) \coloneqq \{u \in W^{1, 2}(\Omega) \colon \left. \partial_{n} u \right|_{\partial \Omega} = 0\}
     \]
