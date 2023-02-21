@@ -147,7 +147,7 @@
 
 \thm{Interpolation inequalities}
 {
-    Let \(u \in W^{k_1, p_1}(\Omega) \bigcap W^{k_2, p_2}(\Omega), \theta \in [0,1], 1\leq p_1, p_2 \leq \infty\) with \(k = \theta k_1 + (1-\theta) k_2, \frac{1}{p} = \frac{\theta}{p_1} + \frac{1-\theta}{p_2} \). Then 
+    Let \(u \in W^{k_1, p_1}(\Omega) \cap W^{k_2, p_2}(\Omega), \theta \in [0,1], 1\leq p_1, p_2 \leq \infty\) with \(k = \theta k_1 + (1-\theta) k_2, \frac{1}{p} = \frac{\theta}{p_1} + \frac{1-\theta}{p_2} \). Then 
     \[
         \|u\|_{W^{k, p}} \leq C\|u\|_{W^{k_1, p_1}}^{\theta} \|u\|_{W^{k_2, p_2}}^{1-\theta}
     \]
@@ -391,7 +391,7 @@ General fact: \(W^{s_1, p_1}(\Omega) \subset W^{s_2, p_2}(\Omega)\), where \(\Om
     \end{equation}
     Here, the boundary condition is incorporated into the choice of space \(W^{1, 2}_{0}(\Omega) = [C^{\infty}_{0}(\Omega)]_{W^{1, 2}(\Omega)}\) (the closure of \(C^{\infty}_{0}(\Omega)\) in the norm of \(W^{1, 2}(\Omega)\)). 
 
-    \ref{eq:3.2} came from the integration by parts formula. Indeed, if \(u \in C^{2}(\Omega) \bigcap C(\bar{\Omega})\), then \(\Delta u = f\) is understood in a classical sense and
+    \ref{eq:3.2} came from the integration by parts formula. Indeed, if \(u \in C^{2}(\Omega) \cap C(\bar{\Omega})\), then \(\Delta u = f\) is understood in a classical sense and
     \[
         \int_{\Omega} \Delta u \varphi \,\mathrm{d}x = - \int_{\Omega} \nabla u \nabla \varphi \,\mathrm{d}x + \int_{\partial\Omega} \partial_{n} u \varphi \,\mathrm{d}s,
     \]
@@ -451,7 +451,7 @@ General fact: \(W^{s_1, p_1}(\Omega) \subset W^{s_2, p_2}(\Omega)\), where \(\Om
 \end{example}
 
 \begin{definition}{}{}
-    \(u \in W^{1, 2}(\Omega) \bigcap \{\left\langle u \right\rangle = 0\}\) is a weak solution of \ref{eq:3.4} if \(\forall \varphi \in C^{\infty}(\bar{\Omega})\), we have:
+    \(u \in W^{1, 2}(\Omega) \cap \{\left\langle u \right\rangle = 0\}\) is a weak solution of \ref{eq:3.4} if \(\forall \varphi \in C^{\infty}(\bar{\Omega})\), we have:
     \begin{equation}\label{eq:3.5}
         \int_{\Omega} \nabla u \nabla \varphi \,\mathrm{d}x = - \int_{\Omega} f \varphi \,\mathrm{d}x
     \end{equation}
@@ -463,11 +463,135 @@ General fact: \(W^{s_1, p_1}(\Omega) \subset W^{s_2, p_2}(\Omega)\), where \(\Om
 \end{note}
 
 \begin{theorem}{}{}
-    Let \(f \in L^{2}(\Omega) \bigcap \{\left\langle f \right\rangle = 0\}\). Then \ref{eq:3.4} has a unique weak solution. 
+    Let \(f \in L^{2}(\Omega) \cap \{\left\langle f \right\rangle = 0\}\). Then \ref{eq:3.4} has a unique weak solution. 
 \end{theorem}
 
 \begin{proof}
     The proof is analogous to the problem with Dirichlet boundary conditions, but instead of apply Friedrich's inequality, we should apply Poincaré's inequality and use density of \(C^{\infty}(\Omega) \in W^{1, 2}(\Omega)\). 
+\end{proof}
+
+\begin{example}{Non-homogeneous Neumann boundary conditions}{}
+    Let \(\Omega \in \mathbb{R}^{n}\) be a bounded domain with \(\partial \Omega\) smooth. Consider the Laplace equation with non-homogeneous Neumann boundary conditions:
+    \begin{equation}\label{eq:3.6}
+        \begin{cases}
+            \Delta u = f \\
+            \left. \partial_{n} u \right|_{\partial \Omega} = g
+        \end{cases}
+    \end{equation}
+\end{example}
+
+\begin{definition}{}{}
+    \(u \in W^{1, 2}(\Omega) \cap \{\left\langle u \right\rangle = 0\}\) is a weak solution of \ref{eq:3.6} if \(\forall \varphi \in C^{\infty}(\bar{\Omega})\), we have:
+    \begin{equation}\label{eq:3.7}
+        \int_{\Omega} \nabla u \nabla \varphi \,\mathrm{d}x = - \int_{\Omega} f \varphi \,\mathrm{d}x + \int_{\partial\Omega} g\varphi \,\mathrm{d}s
+    \end{equation}
+    Note that if \(\varphi \equiv 1\), then a necessary condition for solvability is
+    \[
+        - \int_{\Omega} f \,\mathrm{d}x + \int_{\partial\Omega} g \,\mathrm{d}s = 0
+    \]
+\end{definition}
+
+\begin{theorem}{}{}
+    Let \(f \in L^{2}(\Omega), g \in W^{-\frac{1}{2}, 2}(\partial \Omega)\) be such that \(\int_{\Omega} f \,\mathrm{d}x = \int_{\partial\Omega} g \,\mathrm{d}s\). Then \ref{eq:3.6} has a unique weak solution.  
+\end{theorem}
+
+\begin{proof}
+    \([u, u] \coloneqq \int_{\Omega} \nabla u \nabla u ds\) is an equivalent norm on \(u \in W^{1, 2}(\Omega) \cap \{\left\langle u \right\rangle = 0\}\) due to the Poincaré inequality. Then \ref{eq:3.7} can be rewritten as
+    \[
+        [u, \varphi] = \ell(\varphi) \coloneqq  - \int_{\Omega} f\varphi\,\mathrm{d}x + \int_{\partial\Omega} g\varphi\,\mathrm{d}s
+    \]
+    We claim that \(\ell\) is a linear continuous functional on \(W^{1, 2}(\Omega) \cap \{\left\langle u \right\rangle = 0\}\). Indeed, linearity is obvious. To show \(\ell\) is  continuous, we have
+    \begin{align*}
+        \left\vert - \int_{\Omega} f\varphi\,\mathrm{d}x + \int_{\partial\Omega} g\varphi\,\mathrm{d}s \right\vert &\leq \|f\|_{L^{2}} \|\varphi\|_{L^{2}} + \|g\|_{H^{-\frac{1}{2}}(\partial \Omega)}\|\varphi\|_{H^{\frac{1}{2}}(\partial \Omega)} \\
+        \text{(By the trace theorem and Poincaré's inequality)} &\leq \|f\|_{L^{2}} \|\varphi\|_{W^{1, 2}(\Omega)} + \|g\|_{H^{-\frac{1}{2}}(\partial \Omega)}\|\varphi\|_{W^{1, 2}(\Omega)}  
+    \end{align*}
+
+Then by Riesz representation theorem, there exists a unique \(u \in W^{1, 2}(\Omega) \cap \{\left\langle u \right\rangle = 0\}\) that is a weak solution of \ref{eq:3.6}.
+\end{proof}
+
+\begin{example}{Non-homogeneous Dirichlet boundary conditions}{}
+    Let \(\Omega \in \mathbb{R}^{n}\) be a bounded domain with \(\partial \Omega\) smooth. Consider the Laplace equation with non-homogeneous Dirichlet boundary conditions:
+    \begin{equation}\label{eq:3.8}
+        \begin{cases}
+            \Delta u = 0 \\
+            \left. u \right|_{\partial \Omega} = g
+        \end{cases}
+    \end{equation}
+    Let us take \(g \in W^{\frac{1}{2}, 2}(\partial \Omega)\). Then there exists \(v \in W^{1, 2}(\Omega)\) such that \(\left. v \right|_{\partial \Omega} = g\) (by the trace theorem). We look for the solution of \ref{eq:3.8} in the form \(u = v + w\), where \(w \in W^{1, 2}_{0}(\Omega)\).
+\end{example}
+
+\begin{definition}{}{}
+    \(u = v + w\) is a weak solution of \ref{eq:3.8} if \(\left. v \right|_{\partial \Omega} = g\), where \(g \in W^{\frac{1}{2}, 2}(\partial \Omega), w \in W^{1, 2}_{0}(\Omega)\) and \(\forall \varphi \in C^{\infty}(\bar{\Omega})\), we have 
+    \begin{equation}\label{eq:3.9}
+        \int_{\Omega} \nabla (v+w) \nabla \varphi \,\mathrm{d}x = 0
+    \end{equation}    
+\end{definition}
+
+\begin{theorem}{}{}
+    Let \(g \in W^{\frac{1}{2}, 2}(\partial \Omega)\). Then \ref{eq:3.8} has a unique weak solution.
+\end{theorem}
+
+\begin{proof}
+    From \ref{eq:3.9}, we can define the functional \(\ell\) as
+    \[
+        \ell(\varphi) \coloneqq [v, \varphi] =  - \int_{\Omega} \nabla w \nabla \varphi \,\mathrm{d}x,
+    \]
+    which can be shown to be linear and continuous. By the Riesz representation theorem, there exists a unique \(w \in W^{1, 2}(\Omega)\) such that \ref{eq:3.9} is satisfied. Note that this \(w\) depends on the choice of \(v\). But \(u = v + w\) does not depend on the choice of \(v\). Indeed, let \(u_1\) and \(u_2\) be two solutions of \ref{eq:3.8}. Then \(u = u_1 - u_2\) solves
+    \[
+        \begin{cases}
+            \Delta u = 0 \\
+            \left. u \right|_{\partial \Omega} = 0
+        \end{cases}
+    \]
+    We have previously shown that the weak solution of this problem is unique. Therefore, \(u_1 = u_2\). 
+\end{proof}
+
+\begin{note}
+    There is no universal choice of the space of test functions. Even for Dirichlet and Neumann boundary conditions, we need to consider different spaces. \(\varphi \in C^{\infty}_{0}(\Omega)\) corresponds to the standard theory of distributions, while \(\varphi \in C^{\infty}(\bar{\Omega})\) corresponds to ``non-standard'' distributions.
+\end{note}
+
+\begin{example}{}{}
+    Let \(\Omega \in \mathbb{R}^{n}\) be a bounded domain with \(\partial \Omega\) smooth. Consider
+    \begin{equation}\label{eq:3.10}
+        \begin{cases}
+            \sum_{i, j} \partial_{x_{i}}(a_{ij}(x)\partial_{x_{j}}u) = g \\
+            \left. u \right|_{\partial \Omega} = 0
+        \end{cases}
+    \end{equation}
+    Where we make the following assumptions on the matrix \(a(x) \coloneqq \{a_{ij}(x)\}_{i,j}\):
+    \begin{enumerate}
+        \item \(a(x)\) is a symmetric matrix for every \(x\): 
+        \[a_{ij}(x) = a_{ji}(x)\]
+        \item \(a(x)\) is uniformly elliptic. That is, for all \(\xi \in \mathbb{R}^{n}\), there exists \(\mu, M > 0\) which are independent of \(x\) such that
+        \[
+            \mu \vert \xi^{2} \vert \leq \sum_{i,j} a_{ij} \xi_{i} \xi_{j} \leq M \vert \xi^{2} \vert 
+        \]
+    \end{enumerate} 
+\end{example}
+
+\begin{definition}{}{}
+    \(u \in W^{1, 2}(\Omega)\) is a weak solution to \ref{eq:3.10} \(\iff \forall \varphi \in C^{\infty}_{0}(\Omega)\), we have 
+    \[
+        \sum_{i,j} \int_{\Omega} a_{ij} \partial_{x_{j}} u \partial_{x_{i}} \varphi \,\mathrm{d}x = -\int_{\Omega} g\varphi \,\mathrm{d}x
+    \]
+\end{definition}
+
+\begin{theorem}{}{}
+    Let \(a(x)\) be symmetric and uniformly elliptic. Then \ref{eq:3.10} has a unique weak solution.
+\end{theorem}
+
+\begin{proof}
+    Let us denote
+    \[
+        [u, \varphi]_{a} = \int_{\Omega} \sum_{i,j} a_{ij}(x) \partial_{x_{j}} u(x) \partial_{x_{i}} \varphi(x) \,\mathrm{d}x.
+    \]
+    Then since \(a(x)\) is symmetric, the bilinear form \([u, v]_{a}\) is also symmetric, i.e. \([u, v]_{a} = [v, u]_{a}\). Since \(a(x)\) is uniformly elliptic, there exist \(\mu, M > 0\) such that
+    \[
+        \mu[u, u] \leq [u, u]_{a} \leq M[u, u].
+    \]
+    Therefore, \(\left(W^{1, 2}_{0}(\Omega), [\cdot, \cdot]_{a}\right)\) is a Hilbert space with the norm equivalent to the standard \(W^{1, 2}_{0}(\Omega)\) norm.
+
+    By the Riesz representation theorem, there exists a unique weak solution to \ref{eq:3.10}.
 \end{proof}
 
 \end{document}

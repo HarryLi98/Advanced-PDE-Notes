@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.14.0 (MiKTeX 21.12.10) (format=lualatex 2022.1.17)  17 FEB 2023 17:10
+This is LuaHBTeX, Version 1.14.0 (MiKTeX 21.12.10) (format=lualatex 2022.1.17)  21 FEB 2023 23:20
  restricted system commands enabled.
  file:line:error style messages enabled.
 **"c:/Users/Harry/OneDrive - Imperial College London/Imperial/Advanced Topics f
@@ -1618,20 +1618,20 @@ File: unpxsyc.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxsyc.
 Chapter 3.
 [10
 
-] [11] [12] ("./Advanced PDE Lecture Notes.aux")
+] [11] [12] [13] [14] ("./Advanced PDE Lecture Notes.aux")
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 )
 
 Here is how much of LuaTeX's memory you used:
- 37807 strings out of 477867
+ 37848 strings out of 477867
  100000,1373583 words of node,token memory allocated
- 1634 words of node memory still in use:
-   31 hlist, 2 vlist, 14 rule, 2 glue, 4 kern, 1 glyph, 135 attribute, 78 glue_s
-pec, 135 attribute_list, 2 write, 24 pdf_literal, 24 pdf_colorstack nodes
-   avail lists: 2:3624,3:2353,4:172,5:576,6:65,7:4799,8:64,9:1301,10:4,11:227
- 56740 multiletter control sequences out of 65536+600000
+ 1734 words of node memory still in use:
+   31 hlist, 2 vlist, 14 rule, 2 glue, 4 kern, 1 glyph, 160 attribute, 78 glue_s
+pec, 160 attribute_list, 2 write, 24 pdf_literal, 24 pdf_colorstack nodes
+   avail lists: 2:3574,3:2353,4:172,5:577,6:65,7:4900,8:64,9:1301,10:15,11:227
+ 56763 multiletter control sequences out of 65536+600000
  113 fonts using 8642399 bytes
  96i,12n,98p,1175b,1766s stack positions out of 5000i,500n,10000p,200000b,80000s
 <//?/c:/users/harry/appdata/local/programs/miktex/fonts/opentype/public/lm/lmrom
@@ -1655,9 +1655,9 @@ TeX/fonts/type1/public/newpx/pxsys.pfb><C:/Users/Harry/AppData/Local/Programs/Mi
 KTeX/fonts/type1/public/newtx/txexs.pfb><C:/Users/Harry/AppData/Local/Programs/M
 iKTeX/fonts/type1/public/txfonts/txsya.pfb><C:/Users/Harry/AppData/Local/Program
 s/MiKTeX/fonts/type1/public/txfonts/txsyc.pfb>
-Output written on Advanced PDE Lecture Notes.pdf (12 pages, 257789 bytes).
+Output written on Advanced PDE Lecture Notes.pdf (14 pages, 281138 bytes).
 
-PDF statistics: 387 PDF objects out of 1000 (max. 8388607)
- 90 named destinations out of 1000 (max. 131072)
- 434 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 431 PDF objects out of 1000 (max. 8388607)
+ 108 named destinations out of 1000 (max. 131072)
+ 454 words of extra memory for PDF output out of 10000 (max. 100000000)
 
