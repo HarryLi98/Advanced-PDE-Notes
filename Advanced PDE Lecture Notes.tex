@@ -387,7 +387,7 @@ General fact: \(W^{s_1, p_1}(\Omega) \subset W^{s_2, p_2}(\Omega)\), where \(\Om
 \begin{definition}{}{}
     \(u \in W^{1, 2}_{0}(\Omega)\) is a weak solution of \ref{eq:3.1} if \(\forall \varphi \in C^{\infty}_{0}(\Omega)\),
     \begin{equation}\label{eq:3.2}
-        - \int_{\Omega} \nabla u(x) \nabla \varphi(x) \,\mathrm{d}x = - \ \int_{\Omega} f(x) \varphi(x) \,\mathrm{d}x
+        - \int_{\Omega} \nabla u(x) \nabla \varphi(x) \,\mathrm{d}x = \ \int_{\Omega} f(x) \varphi(x) \,\mathrm{d}x
     \end{equation}
     Here, the boundary condition is incorporated into the choice of space \(W^{1, 2}_{0}(\Omega) = [C^{\infty}_{0}(\Omega)]_{W^{1, 2}(\Omega)}\) (the closure of \(C^{\infty}_{0}(\Omega)\) in the norm of \(W^{1, 2}(\Omega)\)). 
 
@@ -467,7 +467,7 @@ General fact: \(W^{s_1, p_1}(\Omega) \subset W^{s_2, p_2}(\Omega)\), where \(\Om
 \end{theorem}
 
 \begin{proof}
-    The proof is analogous to the problem with Dirichlet boundary conditions, but instead of apply Friedrich's inequality, we should apply Poincaré's inequality and use density of \(C^{\infty}(\Omega) \in W^{1, 2}(\Omega)\). 
+    The proof is analogous to the problem with Dirichlet boundary conditions, but instead of applying Friedrich's inequality, we should apply Poincaré's inequality and use density of \(C^{\infty}(\Omega) \in W^{1, 2}(\Omega)\). 
 \end{proof}
 
 \begin{example}{Non-homogeneous Neumann boundary conditions}{}
@@ -498,7 +498,7 @@ General fact: \(W^{s_1, p_1}(\Omega) \subset W^{s_2, p_2}(\Omega)\), where \(\Om
 \begin{proof}
     \([u, u] \coloneqq \int_{\Omega} \nabla u \nabla u ds\) is an equivalent norm on \(u \in W^{1, 2}(\Omega) \cap \{\left\langle u \right\rangle = 0\}\) due to the Poincaré inequality. Then \ref{eq:3.7} can be rewritten as
     \[
-        [u, \varphi] = \ell(\varphi) \coloneqq  - \int_{\Omega} f\varphi\,\mathrm{d}x + \int_{\partial\Omega} g\varphi\,\mathrm{d}s
+        [u, \varphi] = \ell(\varphi) \coloneqq - \int_{\Omega} f\varphi\,\mathrm{d}x + \int_{\partial\Omega} g\varphi\,\mathrm{d}s
     \]
     We claim that \(\ell\) is a linear continuous functional on \(W^{1, 2}(\Omega) \cap \{\left\langle u \right\rangle = 0\}\). Indeed, linearity is obvious. To show \(\ell\) is  continuous, we have
     \begin{align*}
@@ -532,11 +532,11 @@ Then by Riesz representation theorem, there exists a unique \(u \in W^{1, 2}(\Om
 \end{theorem}
 
 \begin{proof}
-    From \ref{eq:3.9}, we can define the functional \(\ell\) as
+    We can rearrange \ref{eq:3.9} to get
     \[
-        \ell(\varphi) \coloneqq [v, \varphi] =  - \int_{\Omega} \nabla w \nabla \varphi \,\mathrm{d}x,
+        \ell(\varphi) \coloneqq -[v, \varphi] = \int_{\Omega} \nabla w \nabla \varphi \,\mathrm{d}x = [w, \varphi],
     \]
-    which can be shown to be linear and continuous. By the Riesz representation theorem, there exists a unique \(w \in W^{1, 2}(\Omega)\) such that \ref{eq:3.9} is satisfied. Note that this \(w\) depends on the choice of \(v\). But \(u = v + w\) does not depend on the choice of \(v\). Indeed, let \(u_1\) and \(u_2\) be two solutions of \ref{eq:3.8}. Then \(u = u_1 - u_2\) solves
+    and the functional \(\ell\) can be shown to be linear and continuous. By the Riesz representation theorem, there exists a unique \(w \in W^{1, 2}(\Omega)\) such that \ref{eq:3.9} is satisfied. Note that this \(w\) depends on the choice of \(v\). But \(u = v + w\) does not depend on the choice of \(v\). Indeed, let \(u_1\) and \(u_2\) be two solutions of \ref{eq:3.8}. Then \(u = u_1 - u_2\) solves
     \[
         \begin{cases}
             \Delta u = 0 \\
