@@ -166,7 +166,7 @@
 {
     \(W^{1, p}_{0}(\Omega) \coloneqq \left\{u \in W^{1, p}(\Omega), \left. u \right|_{\partial \Omega} = 0\right\} \)
 
-    Equivalent definition: \(W^{1, p}_{0}(\Omega)\) = ``closure of \(C_{0}^{\infty}(\Omega)\) in \(W^{1, p}\) norm.''
+    An equivalent definition is that the Sobolev spaces \(W^{1, p}_{0}(\Omega)\) for \(1 \leq p < \infty\) are defined as the closure of the set of compactly supported test functions \(C_{0}^{\infty}(\Omega)\) with respect to the \(W^{1, p}(\Omega)\)-norm.
 }
 
 \mlemma{}
@@ -250,7 +250,7 @@
     \(X\) is totally bounded if \(\forall \epsilon > 0, \exists\) covering of \(X\) by finitely many \(\epsilon\)-balls, i.e. \(X = \bigcup_{k=1}^{N} B_{\epsilon}(x_k), N = N(\epsilon)\) and \(\{x_k\}\) is an \(\epsilon\)-net in \(X\).
 }
 
-\subsection{Why do we need compactness?}
+\subsection*{Why do we need compactness?}
 Let \(X\) be compact and \(f \colon X \to Y \) be continuous, then \(f(X)\) is compact in Y. How do we solve PDEs of the form (or more general equations)?
 \begin{equation}\label{eq:6}
     F(x) = 0
@@ -285,7 +285,7 @@ Let \(X\) be compact and \(f \colon X \to Y \) be continuous, then \(f(X)\) is c
 
 \dfn{}
 {
-    Let \(f \in L^p(\Omega), 1 \leq p <1 \infty, \Omega \subset \mathbb{R}^{n}\) bounded (\(\partial \Omega\) smooth not needed). \(\omega \colon \mathbb{R}^{+} \to \mathbb{R}^{+}\) such that \(\lim\limits_{z \to 0} w(z) = 0\) is a modulus of continuity of \(f\) in \(L_{p}(\Omega)\) if 
+    Let \(f \in L^p(\Omega), 1 \leq p < \infty, \Omega \subset \mathbb{R}^{n}\) bounded (\(\partial \Omega\) smooth not needed). \(\omega \colon \mathbb{R}^{+} \to \mathbb{R}^{+}\) such that \(\lim\limits_{z \to 0} w(z) = 0\) is a modulus of continuity of \(f\) in \(L_{p}(\Omega)\) if 
     \[
         \int_{\Omega} \vert f(x+h) - f(x) \vert ^p \,\mathrm{d}x \leq \omega(\vert h \vert ), \quad \forall h \in \mathbb{R}^n,
     \]
@@ -360,8 +360,13 @@ General fact: \(W^{s_1, p_1}(\Omega) \subset W^{s_2, p_2}(\Omega)\), where \(\Om
     Definitions \ref{def:1}, \ref{def:2} and \ref{def:3} are equivalent.
 }
 
+\begin{question}{}{}
+    Suppose \(\delta(x) \in W^{-s, p}(\Omega), \Omega \subset \mathbb{R}^{n}\). How are \(s, p\) and \(n\) related? We know that \(\delta(x)\) is well-defined on continuous functions, so we need \(W^{s, q}_{0}(\Omega) \subset C(\bar{\Omega})\).
+\end{question}
+
 \begin{example}{}{}
-    \(\delta(x) \in W^{-s, p}(\Omega), \Omega \in \mathbb{R}^{n}\). Find \(s, p, n\). \(\delta(x)\) is well-defined on continuous functions, so we need \(W^{s, q}_{0}(\Omega) \subset C(\bar{\Omega})\). For example, \(n=1, p=2\), then \(\delta(x) \in H^{-s}(\Omega)\) for \(s>\frac{1}{2}\).
+    Consider the case where \(n=1\) and \(p=2\). By the Sobolev embedding theorem, \(W^{s, 2} \subset C(\bar{\Omega})\) if \(0 < s - \frac{1}{2}\). 
+    Thus we have \(\delta(x) \in H^{-s}(\Omega)\) if \(s>\frac{1}{2}\).
 \end{example}
 
 \chapter{Linear elliptic problems}
@@ -592,6 +597,68 @@ Then by Riesz representation theorem, there exists a unique \(u \in W^{1, 2}(\Om
     Therefore, \(\left(W^{1, 2}_{0}(\Omega), [\cdot, \cdot]_{a}\right)\) is a Hilbert space with the norm equivalent to the standard \(W^{1, 2}_{0}(\Omega)\) norm.
 
     By the Riesz representation theorem, there exists a unique weak solution to \ref{eq:3.10}.
+\end{proof}
+
+\section{More general problems via Lax-Milgram}
+By the Riesz representation theorem, for any linear continuous functional, \(\ell\) on a Hilbert space \(H\), there exists a unique \(x \in H\) such that \(\forall \varphi \in  H\), we have \((x, \varphi) = \ell(\varphi)\).
+
+If we want \(a(x, y)\) to be an equivalent inner product on \(H\), then \(a(x, y)\) must be symmetric.
+
+We now consider the case where \(a(x, y)\) is not assumed to be symmetric.
+
+\begin{definition}{Bilinear form}{}
+    A bilinear form \(a(\cdot, \cdot) \colon H \times H \rightarrow \mathbb{R}\) is bounded if 
+    \[
+        \vert a(x, y) \vert \leq C \|x\|\|y\|
+    \]
+\end{definition}
+
+\begin{definition}{Coercive}{}
+    A bilinear form \(a(\cdot, \cdot)\) is coercive if \(\exists \alpha > 0\) such that \(a(x, x) \geq \alpha\|x\|^{2}\). 
+\end{definition}
+
+\begin{theorem}{}{}
+    Let \(a(x, y)\) be a bounded and coercive bilinear form on \(H\). Then any linear continuous functional \(\ell \colon H \to \mathbb{R}\) can be represented in the form
+    \begin{equation}\label{eq:3.11}
+        a(x, y) = \ell(\varphi), \quad \forall \varphi \in H.
+    \end{equation}
+    i.e. \(\forall \ell \in H^{*}\), there exists a unique \(x = x(\ell) \in H\) such that \ref{eq:3.11} is satisfied.
+\end{theorem}
+
+\begin{example}{}{}
+    Let \(\Omega \in \mathbb{R}^{n}\) be a bounded domain with \(\partial \Omega\) smooth. Consider the problem
+    \begin{equation}\label{eq:3.12}
+        \begin{cases}
+            \sum_{i, j} \partial_{x_{i}}(a_{ij}(x)\partial_{x_{j}}u) + \sum_{i}b_{i}(x) \partial_{x_{i}}u = g(x) \\
+            \left. u \right|_{\partial \Omega} = 0
+        \end{cases}
+    \end{equation}
+\end{example}
+
+\begin{definition}{}{}
+    \(u \in W^{1, 2}_{0}(\Omega)\) is a weak solution of \ref{eq:3.12} if \(\forall \varphi \in C^{\infty}_{0}(\Omega)\), we have 
+    \[
+        A(u, \varphi) \coloneqq \sum_{i, j} \int_{\Omega} a_{ij} \partial_{x_{j}}u \partial_{x_{i}}\varphi \,\mathrm{d}x - \sum_{i} \int_{\Omega} b_{i}(x) \partial_{x_{i}} u \varphi \,\mathrm{d}x = \ell(\varphi) \coloneqq - \int_{\Omega} g(x)\varphi(x) \,\mathrm{d}x
+    \]
+\end{definition}
+
+\begin{theorem}{}{}
+    Let \(\{a_{ij}\} \in L^{\infty}(\Omega)\) be a uniformly elliptic matrix, \(b_{i}(x)\) be a smooth divergent free vector field and \(g(x) \in H^{-1}(\Omega)\). Then \ref{eq:3.12} has a unique weak solution.
+\end{theorem}
+
+\begin{proof}
+    We use the Lax-Milgram theorem. We know that \(\ell(\varphi)\) is a linear continuous functional on \(W^{1, 2}_{0}(\Omega)\). Furthermore, \(A(u, \varphi)\) is bilinear and bounded. Indeed, by Friedrich's inequality, we have
+    \[
+        \vert A(u, \varphi) \vert \leq C_{1}\|\nabla u\|_{L^{2}} \|\nabla \varphi\|_{L^{2}} + C_2\|\nabla u\|_{L^{2}}\|\varphi\|_{L^{2}} \leq C\|u\|_{W^{1, 2}_{0}(\Omega)}\|\varphi\|_{W^{1, 2}_{0}(\Omega)}
+    \]
+    \(A(u, \varphi)\) is coercive since 
+    \begin{align*}
+        A(u, u) &= \sum_{i, j} \int_{\Omega} a_{ij} \partial_{x_{j}}u \partial_{x_{i}}u \,\mathrm{d}x - \sum_{i} \int_{\Omega} b_{i}(x) \partial_{x_{i}} (u) u \,\mathrm{d}x \\
+        &\geq \alpha \|\nabla u\|_{L^{2}}^{2} - \frac{1}{2}\int_{\Omega} \sum_{i} b_{i}(x) \partial_{x_{i}} (u^{2}) \,\mathrm{d}x \\
+        &= \alpha \|\nabla u\|_{L^{2}}^{2} + \frac{1}{2} \int_{\Omega} \text{div}b \cdot u^{2}(x) \,\mathrm{d}x \\
+        &= \alpha\|\nabla u\|_{L^{2}}^{2}
+    \end{align*}
+    By the Lax-Milgram theorem, there exists a unique weak solution of \ref{eq:3.12}.
 \end{proof}
 
 \end{document}
