@@ -830,12 +830,12 @@ Thus, the simplest case is the case of positive, compact and self-adjoint operat
 \subsection*{Applications}
 \begin{example}{Spectrum of the Laplacian with Dirichlet boundary conditions}{}
     Let \(\Omega \in \mathbb{R}^{n}\) be a bounded domain with \(\partial \Omega\) smooth. Consider the Laplace equation with Dirichlet boundary conditions:
-    \begin{equation}\label{eq:3.15}
+    \begin{equation*}
         \begin{cases}
             - \Delta u = f, \qquad f \in L^{2}(\Omega) \\
             \left. u \right|_{\partial \Omega} = 0
         \end{cases}
-    \end{equation}
+    \end{equation*}
 
     \(- \Delta\) is not a bounded operator in \(H \coloneqq L^{2}(\Omega)\), so we cannot apply directly apply the Hilbert-Schmidt theorem.
 
@@ -869,7 +869,13 @@ Thus, the simplest case is the case of positive, compact and self-adjoint operat
     \end{enumerate}
     By the Hilbert-Schmidt theorem, there exists a complete orthonormal system \(\{e_{n}\}\) of eigenvectors of \(A\) with \(Ae_{n} = \lambda e_{n}\). 
         
-    \(e_{n}\) by definition solves \(\lambda_{n}[e_{n}, \varphi_{n}] = (e_{n}, \varphi)\). Indeed, for \(u_{n} = Ae_{n}\), we have \([u_{n}, \varphi] = (e_{n}, \varphi)\). Since \(u_{n} = \lambda_{n}e_{n}\), this implies that \([e_{n}, \varphi] = \lambda_{n}^{-1}(e_{n}, \varphi)\). Hence \(e_{n}\) is a weak solution of \ref{eq:3.15}.
+    \(e_{n}\) by definition solves \(\lambda_{n}[e_{n}, \varphi_{n}] = (e_{n}, \varphi)\). Indeed, for \(u_{n} = Ae_{n}\), we have \([u_{n}, \varphi] = (e_{n}, \varphi)\). Since \(u_{n} = \lambda_{n}e_{n}\), this implies that \([e_{n}, \varphi] = \lambda_{n}^{-1}(e_{n}, \varphi)\). Hence \(e_{n}\) is a weak solution of
+    \begin{equation*}
+        \begin{cases}
+            - \Delta e_{n} = \lambda_{n}^{-1}e_{n} \\
+            \left. e_{n} \right|_{\partial \Omega} = 0
+        \end{cases}
+    \end{equation*}
 
 \end{example}
 
