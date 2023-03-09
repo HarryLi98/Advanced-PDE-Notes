@@ -224,15 +224,13 @@
 }
 
 \section{Compactness}
-\dfn{Sequential compactness}
-{
-    A metric space \((X, d)\) is compact if any sequence \(\{x_{n}\}_{n=1}^{\infty} \subset X\) has a convergent sub-sequence, i.e. there exists \(\{x_{n_{k}}\}_{k=1}^{\infty} \colon \lim\limits_{k \to \infty} x_{n_{k}} = x_0 \in X\)
-}
+\begin{definition}{Sequential compactness}{}
+    A metric space \((X, d)\) is compact if any sequence \(\{x_{n}\}_{n=1}^{\infty} \subset X\) has a convergent sub-sequence, i.e. there exists \(\{x_{n_{k}}\}_{k=1}^{\infty} \colon \lim\limits_{k \to \infty} x_{n_{k}} = x_0 \in X\).
+\end{definition}
 
-\dfn{}
-{
-    A topological space \(X\) is compact if any covering of \(X\) by open sets has a finite sub-covering
-}
+\begin{definition}{Compact}{}
+    A topological space \(X\) is compact if any covering of \(X\) by open sets has a finite sub-covering.
+\end{definition}
 
 \begin{note}
     In metric spaces, compactness is equivalent to sequential compactness.
@@ -245,10 +243,9 @@
     Let \((X, d)\) be a metric space. Then \(X\) is compact \(\iff\) \(X\) is complete and totally bounded.
 }
 
-\dfn{}
-{
+\begin{definition}{Totally bounded}{}
     \(X\) is totally bounded if \(\forall \epsilon > 0, \exists\) covering of \(X\) by finitely many \(\epsilon\)-balls, i.e. \(X = \bigcup_{k=1}^{N} B_{\epsilon}(x_k), N = N(\epsilon)\) and \(\{x_k\}\) is an \(\epsilon\)-net in \(X\).
-}
+\end{definition}
 
 \subsection*{Why do we need compactness?}
 Let \(X\) be compact and \(f \colon X \to Y \) be continuous, then \(f(X)\) is compact in Y. How do we solve PDEs of the form (or more general equations)?
@@ -283,14 +280,13 @@ Let \(X\) be compact and \(f \colon X \to Y \) be continuous, then \(f(X)\) is c
     \end{enumerate} 
 }
 
-\dfn{}
-{
+\begin{definition}{Modulus of continuity}{}
     Let \(f \in L^p(\Omega), 1 \leq p < \infty, \Omega \subset \mathbb{R}^{n}\) bounded (\(\partial \Omega\) smooth not needed). \(\omega \colon \mathbb{R}^{+} \to \mathbb{R}^{+}\) such that \(\lim\limits_{z \to 0} w(z) = 0\) is a modulus of continuity of \(f\) in \(L_{p}(\Omega)\) if 
     \[
         \int_{\Omega} \vert f(x+h) - f(x) \vert ^p \,\mathrm{d}x \leq \omega(\vert h \vert ), \quad \forall h \in \mathbb{R}^n,
     \]
     where we used the \(0\)-extension of \(f\) outside of \(\Omega\). 
-}
+\end{definition}
 
 \begin{corollary}{}{1}
     Let \(K = B_{1}(0) \in W^{1, p}(\Omega); \Omega \subset \mathbb{R}^{n}\) is bounded, \(\partial \Omega\) is smooth, \(1 \leq p < \infty\). Then \(K\) is pre-compact in \(L^{p}(\Omega)\).
@@ -313,10 +309,9 @@ Let \(X\) be compact and \(f \colon X \to Y \) be continuous, then \(f(X)\) is c
     \(\omega(z) = cz\) is a joint modulus of continuity.
 \end{proof}
 
-\dfn{}
-{
-    Let \(V \subset W\) be Banach spaces. Then the embedding is compact if the unit ball of \(V\) is pre-compact in \(W\).
-}
+\begin{definition}{Compact embedding}{}
+        Let \(V \subset W\) be Banach spaces. Then the embedding is compact if the unit ball of \(V\) is pre-compact in \(W\).
+\end{definition}
 
 \begin{note}
     We proved that \(W^{1, p}(\Omega) \subset L^{p}(\Omega)\) is a compact embedding.
@@ -343,7 +338,7 @@ Let \(X\) be compact and \(f \colon X \to Y \) be continuous, then \(f(X)\) is c
 General fact: \(W^{s_1, p_1}(\Omega) \subset W^{s_2, p_2}(\Omega)\), where \(\Omega\) is bounded, \(\partial \Omega\) is smooth. Embedding is compact \(\iff\) embedding is not critical.
 
 \section{Dual spaces}
-\begin{definition}{}{1}
+\begin{definition}{Dual space}{1}
     \(W^{-s, p}(\Omega) \coloneqq \left(W^{s, q}_{0}(\Omega)\right)^{*}\) is defined as the dual space to \(W^{s, q}_{0}(\Omega) =\), i.e. the space of linear continuous functionals on \(W^{s, q}_{0}(\Omega)\), where \(\frac{1}{p} + \frac{1}{q} = 1\).
 \end{definition}
 
@@ -660,5 +655,222 @@ We now consider the case where \(a(x, y)\) is not assumed to be symmetric.
     \end{align*}
     By the Lax-Milgram theorem, there exists a unique weak solution of \ref{eq:3.12}.
 \end{proof}
+
+\section{Introduction to spectral theory}
+\(H\) is a Hilbert space. \(\mathcal{L}(H)\) is a space of linear continuous operators.
+
+\begin{lemma}{}{}
+    \(A\) is continuous \(\iff\) A is bounded, i.e.
+    \[
+        \|A\| \coloneqq  \sup_{x \in H} \frac{\|Ax\|}{\|x\|} < \infty
+    \]
+\end{lemma}
+
+\begin{lemma}{}{}
+    \((\mathcal{L}(H), \|\cdot\|)\) is a Banach space. 
+\end{lemma}
+
+\begin{definition}{Invertible operator}{}
+    \(A\) is invertible \(\iff \exists A^{-1} \in \mathcal{L}(H)\) such that
+    \begin{equation}\label{eq:3.13}
+        AA^{-1} = A^{-1}A = I
+    \end{equation}
+\end{definition}
+
+\begin{definition}{Spectrum}{}
+    \(\lambda \in \sigma(A)\) (the spectrum of \(A\)) \(\iff\) \(\lambda I - A\) is not invertible.
+
+    In other words, \(\lambda \notin \sigma(A)\), (\(\lambda\) is in the resolvent set) iff the equation \(\lambda u - Au = f\) has a unique solution for all \(f \in H\).
+\end{definition}
+
+\begin{note}
+    If \(\dim H = n < \infty\), then \(\mathcal{L}(H) = M(n \times n)\) (\(n \times n\) matrices) and
+    \begin{enumerate}
+        \item All linear operators are continuous,
+        \item All \(\lambda\in \sigma(A)\) correspond to eigenvalues
+        \[
+            A \rho_{\lambda} = \lambda \rho_{\lambda} \implies \sigma(A) = \sigma_{p}(A)\text{ (point spectrum).}
+        \]
+        \item \(\lambda \in \sigma(A) \iff \det(\lambda I - A) = 0\)
+        \item Only one of two equalities from \ref{eq:3.13} holding is enough. 
+    \end{enumerate}
+    All of the statements may fail when \(\dim H = \infty\).
+\end{note}
+
+\begin{example}{}{}
+    Let \(H = \ell_{2}\), the space of square summable sequences. Let \(T_{r}, T_{l} \in \mathcal{L}(H)\) denote the right and left shift operators, respectively;
+    \begin{align*}
+        T_{r}(x_1, x_2, x_3, \dots) &= (0, x_1, x_2, x_3, \dots) \\
+        T_{l}(x_1, x_2, x_3, \dots) &= (x_2, x_3, \dots)
+    \end{align*}
+    Then \(T_{l} \circ T_{r} = I\), but \(T_{r} \circ T_{l} (x) = (0, x_2, x_3, \dots)\). Hence \(T_{r}\) has a left inverse, but not a right inverse. \(\ker(T_{r}) = \{0\}\), i.e. it is injective (no eigenvalues), but the range of \(T_{r} \neq H\), since \(T_{r}(x) \perp e_{1}\) for any \(x \in H\). So \(T_{r}\) is not invertible since \(T_{r}(H)\) is a proper closed subspace of \(H\). Therefore, a new type of spectrum appeared - the residual spectrum \(\sigma_{R}(A)\), which is impossible in finite-dimensional spaces. 
+
+    Also, the determinant does not exist in infinite-dimensional spaces. Indeed, if it existed, then
+    \[
+        1 = \det(T_{l} \circ T_{r}) = \det(T_{l})\det(T_{r}),
+    \]
+    which implies that both \(T_{l}\) and \(T_{r}\) are invertible, but this is not true.
+\end{example}
+
+\begin{definition}{Approximate point spectrum}{}
+    \(\lambda \in \sigma_{\text{app}}(A)\) (approximate point spectrum) \(\iff \exists x_{n} \in H, \|x_{n}\| = 1\) and \(\lim\limits_{n \rightarrow \infty} (Ax_{n}-\lambda x_{n}) = 0\).
+
+    It can be proved that \(\lambda \in \sigma_{\text{app}}(A) \iff \) the image of \((\lambda I - H)\) is not closed.
+\end{definition}
+
+\begin{example}{}{}
+    \(H = L^{2}(0, 1), Af(x) \coloneqq xf(x)\).
+    \[
+        \lambda u - Au = f \iff (\lambda - x)u(x) = f(x),
+    \]
+    then \(u(x) = \frac{f(x)}{\lambda - x}\) and \((A - \lambda I)\) is invertible \(\iff \lambda \in [0, 1] \implies \sigma(A) = [0, 1]\).
+
+    We can check that Range(\(\lambda I - A\)) is not closed if \(\lambda \in [0, 1]\).
+\end{example}
+The next theorem shows that these are all the possible obstacles to invert the operator.
+
+\begin{theorem}{Weyl's theorem}{}
+    \(A \in \mathcal{L}(H)\). Then \(\sigma(A) = \sigma_{p}(A) \cup \sigma_{\text{app}}(A) \cup \sigma_{R}(A)\).
+\end{theorem}
+
+\begin{definition}{Resolvent}{}
+    \(R_{A}(\lambda) := (\lambda I - A)^{-1}\) is called the resolvent of \(A \in \mathcal{L}(H)\).
+\end{definition}
+
+More standard facts:
+\begin{enumerate}
+    \item If \(\vert \lambda \vert > \|A\|\), then \(\lambda \in \sigma(A)\). Indeed, 
+    \[
+        \frac{1}{\lambda - A} = \frac{1}{\lambda} \frac{1}{1-\frac{A}{\lambda}} = \frac{1}{\lambda} \sum_{n=0}^{\infty} \left(\frac{A}{n}\right)^{n}
+    \]
+    is an absolutely convergent series if \(\vert \lambda \vert  > \|A\| \).
+    \item Resolvent identity:
+    \begin{equation}\label{eq:3.14}
+        R_{A}(\lambda) - R_{A}(\mu) = -(\lambda - \mu)R_{A}(\lambda)R_{A}(\mu),
+    \end{equation}
+    which follows from 
+    \[
+        \frac{1}{\lambda - x} - \frac{1}{\lambda - \mu} = (\mu - \lambda) \frac{1}{\lambda - x} \frac{1}{\mu - x},
+    \]
+    where we substitute in \(x = A\).
+    From \ref{eq:3.14}, by taking the limit as \(\mu \to \lambda\), we get
+    \[
+        \frac{d}{d \lambda} R_{A}(\lambda) = -R_{A}(\lambda)^{2}.
+    \]
+    Hence \(R_{A}(\lambda)\) is an analytic function of \(\lambda\).
+    \item By Liouville's theorem applied to \(R_{A}(\lambda), \sigma(A) \neq \emptyset\)
+\end{enumerate}
+
+\begin{definition}{Compact operator}{}
+    \(A \in \mathcal{L}(H)\) is compact \(\iff AB_{1}(0)\) is a precompact set in \(H\).
+\end{definition}
+
+\begin{definition}{Adjoint operator}{}
+    Let \(A \in  \mathcal{L}(H)\). The adjoint operator \(A^{*} \in \mathcal{L}(H)\) is defined via \((Ax, y) = (x, A^{*}y), \quad \forall x, y \in H\).
+    It exists due to Riesz representation theorem. In the finite dimensional case, the adjoint operator coincides with the transpose operator.
+\end{definition}
+
+\begin{definition}{Self-adjoint operator}{}
+    \(A \in \mathcal{L}(H)\) is self-adjoint if \(A = A^{*}\) 
+\end{definition}
+
+\begin{definition}{Fredholm}{}
+    \(A \in \mathcal{L}(H)\) is Fredholm if Range(\(A\)) and Range(\(A^{*}\)) are closed and \(\ker(A)\) and \(\ker(A^{*})\) are both finite dimensional.
+
+    Then the index of \(A\) is defined by 
+    \[
+        \text{ind}(A) \coloneqq \dim \ker(A) - \dim \ker(A^{*})
+    \]
+\end{definition}
+
+\begin{theorem}{Key theorem of Fredholm operators theorem}{}
+    \(\text{ind}(A)\) is a topological invariant. Namely, if \(A(t), t \in [0, 1]\) is a continuous curve of Fredholm operators, then 
+    \[
+        \text{ind}(A(0)) = \text{ind}(A(1)).
+    \]
+\end{theorem}
+
+\begin{definition}{Essential spectrum}{}
+    \(\lambda \in \sigma_{\text{ess}}(A)\) if \(\lambda I - A\) is not Fredholm.
+\end{definition}
+
+Properties:
+\begin{enumerate}
+    \item \(K\) is compact \(\iff K^{*}\) is compact.
+    \item \(A \in \mathcal{L}(H), K \) compact \(\implies AK\) and \(KA\) are compact.
+    \item \(A\) is Fredholm \(\iff A^{*}\) is Fredholm.
+    \item Fredholm alternative: Let \(A\) be Fredholm. Then:
+    \begin{align*}
+        H &= \text{Range}(A) \oplus \ker(A^{*}) \\
+        H &= \text{Range}(A^{*}) \oplus \ker(A)
+    \end{align*}
+    \item \(A\) is Fredholm \(\iff\) it is invertible by modulus of compact operators, i.e. \(\exists B : AB = I + K_{1}, BA = I + K_{2}\), with \(K_1, K_2\) compact.
+    \item Let \(K\) be a compact operator. Then \(\sigma_{\text{ess}}(K) = 0\) and for any \(\varepsilon > 0, \sigma(K) \setminus B_{|varepsilon}(0)\) consists of finitely many eigenvalues of finite multiplicity.
+    \item If \(A = A^{*}\), then \(\sigma(A)\) is real and \(\sigma_{R}(A) = \emptyset\).
+\end{enumerate}
+Thus, the simplest case is the case of positive, compact and self-adjoint operators.
+
+\begin{theorem}{Hilbert-Schmidt}{}
+    Let \(A \in \mathcal{L}(H)\) be a compact, self-adjoint and positive (\((Ax, x) > 0\) if \(x \neq 0\)) operator. Then there exists a sequence of non-zero real eigenvalues \(\lambda_{i} \in \sigma_{p}(A)\) such that \(\vert \lambda_{i} \vert \) is monotonically non-increasing
+    \[
+        \lambda_{1} \geq \lambda_{2} \geq \lambda_{3} \geq \dots,
+    \]
+    and the corresponding eigenvectors \(\{e_{n}\}_{n=1}^{\infty} (Ae_{n} = \lambda e_{n})\) form the orthonormal basis in \(H\).
+
+    Moreover, any \(x \in H\) can be written as
+    \[
+        x = \sum_{n=1}^{\infty} \left\langle x, e_{n} \right\rangle e_{n},
+    \]
+    and \(A\) can be written as
+    \[
+        Ax = \sum_{n=1}^{\infty} \lambda_{n} \left\langle x, e_{n} \right\rangle e_{n}.
+    \]
+\end{theorem}
+
+\subsection*{Applications}
+\begin{example}{Spectrum of the Laplacian with Dirichlet boundary conditions}{}
+    Let \(\Omega \in \mathbb{R}^{n}\) be a bounded domain with \(\partial \Omega\) smooth. Consider the Laplace equation with Dirichlet boundary conditions:
+    \begin{equation}\label{eq:3.15}
+        \begin{cases}
+            - \Delta u = f, \qquad f \in L^{2}(\Omega) \\
+            \left. u \right|_{\partial \Omega} = 0
+        \end{cases}
+    \end{equation}
+
+    \(- \Delta\) is not a bounded operator in \(H \coloneqq L^{2}(\Omega)\), so we cannot apply directly apply the Hilbert-Schmidt theorem.
+
+    Let us consider the inverse operator \(A = (- \Delta)^{-1}\) constructed via weak solutions, namely \(u = (- \Delta)^{-1}f = Af\) solves \([u, \varphi] = (f, \varphi)\). That is, \(\forall \varphi \in C^{\infty}_{0}(\Omega)\) (or \(H^{1}_{0}\)) and \(u \in H^{1}_{0}(\Omega)\), we have
+    \[
+        \int_{\Omega} \nabla u \nabla \varphi \,\mathrm{d}x = \int_{\Omega} f \varphi \,\mathrm{d}x
+    \]
+
+    \begin{enumerate}
+        \item \(A\) is a bounded operator from \(H\) to \(H^{1}_{0}(\Omega)\). Indeed, let \(\varphi = u\). Then
+        \begin{align*}
+            \|u\|_{H^{1}_{0}}^{2} &= (f, u) \\
+            &\leq \|f\|_{L^{2}}\|u\|_{L^{2}} \\
+            &\leq C\|f\|_{L^{2}}\|u\|_{H^{1}_{0}}
+        \end{align*}
+        Hence 
+        \[
+            \|u\|_{H^{1}_{0}} \leq C \|f\|_{L^{2}} \implies \frac{\|Af\|_{H^{1}_{0}}}{\|f\|_{L^{2}}} \leq C
+        \]
+        \item \(A\) is compact since the embedding \(H^{1}_{0} \subset H\) is compact.
+        \item \(A\) is self-adjoint. Let \(f, g \in L^{2}(\Omega), u = (- \Delta)^{-1}f, v = (- \Delta)^{-1}g\). Take \(\varphi = v\) in variational formulation for \(u\), and \(\varphi = u\) in variational formulation for \(v\):
+        \begin{align*}
+            [u, v] &= (f, v) \\
+            [u, v] &= (g, u) \\
+            \implies (f, v) &= (g, u) \implies (f, Ag) = (g, A^{*}f) \implies A = A^{*}
+        \end{align*}
+        \item \(A\) is positive.
+        \[
+            0 < [u, u] = (f, u) = (f, Af)
+        \]    
+    \end{enumerate}
+    By the Hilbert-Schmidt theorem, there exists a complete orthonormal system \(\{e_{n}\}\) of eigenvectors of \(A\) with \(Ae_{n} = \lambda e_{n}\). 
+        
+    \(e_{n}\) by definition solves \(\lambda_{n}[e_{n}, \varphi_{n}] = (e_{n}, \varphi)\). Indeed, for \(u_{n} = Ae_{n}\), we have \([u_{n}, \varphi] = (e_{n}, \varphi)\). Since \(u_{n} = \lambda_{n}e_{n}\), this implies that \([e_{n}, \varphi] = \lambda_{n}^{-1}(e_{n}, \varphi)\). Hence \(e_{n}\) is a weak solution of \ref{eq:3.15}.
+
+\end{example}
 
 \end{document}

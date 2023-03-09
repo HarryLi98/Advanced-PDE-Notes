@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.14.0 (MiKTeX 21.12.10) (format=lualatex 2022.1.17)  3 MAR 2023 00:27
+This is LuaHBTeX, Version 1.14.0 (MiKTeX 21.12.10) (format=lualatex 2022.1.17)  9 MAR 2023 21:18
  restricted system commands enabled.
  file:line:error style messages enabled.
 **"c:/Users/Harry/OneDrive - Imperial College London/Imperial/Advanced Topics f
@@ -1618,46 +1618,48 @@ File: unpxsyc.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxsyc.
 Chapter 3.
 [10
 
-] [11] [12] [13] [14] [15] ("./Advanced PDE Lecture Notes.aux")
+] [11] [12] [13] [14] [15] [16] [17] [18] [19]
+("./Advanced PDE Lecture Notes.aux")
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 )
 
 Here is how much of LuaTeX's memory you used:
- 37875 strings out of 477867
+ 37956 strings out of 477867
  100000,1373583 words of node,token memory allocated
- 1771 words of node memory still in use:
-   31 hlist, 2 vlist, 14 rule, 2 glue, 4 kern, 1 glyph, 168 attribute, 79 glue_s
-pec, 168 attribute_list, 2 write, 24 pdf_literal, 24 pdf_colorstack nodes
-   avail lists: 2:3558,3:2353,4:172,5:577,6:65,7:4966,8:70,9:1301,10:15,11:227
- 56779 multiletter control sequences out of 65536+600000
+ 1859 words of node memory still in use:
+   31 hlist, 2 vlist, 14 rule, 2 glue, 4 kern, 1 glyph, 190 attribute, 79 glue_s
+pec, 190 attribute_list, 2 write, 24 pdf_literal, 24 pdf_colorstack nodes
+   avail lists: 2:3587,3:2355,4:172,5:585,6:65,7:5621,8:70,9:1301,10:15,11:260
+ 56816 multiletter control sequences out of 65536+600000
  113 fonts using 8642399 bytes
  96i,12n,98p,1175b,1770s stack positions out of 5000i,500n,10000p,200000b,80000s
 <//?/c:/users/harry/appdata/local/programs/miktex/fonts/opentype/public/lm/lmrom
-an9-bold.otf><//?/c:/users/harry/appdata/local/programs/miktex/fonts/opentype/pu
-blic/lm/lmsans10-regular.otf><//?/c:/users/harry/appdata/local/programs/miktex/f
-onts/opentype/public/lm/lmsans10-bold.otf>{C:/Users/Harry/AppData/Local/Programs
-/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}<//?/c:/users/harry/appdata/local/programs/
-miktex/fonts/opentype/public/lm/lmroman10-italic.otf><//?/c:/users/harry/appdata
-/local/programs/miktex/fonts/opentype/public/lm/lmroman10-bold.otf><//?/c:/users
-/harry/appdata/local/programs/miktex/fonts/opentype/public/lm/lmroman9-regular.o
+an7-regular.otf><//?/c:/users/harry/appdata/local/programs/miktex/fonts/opentype
+/public/lm/lmroman9-bold.otf><//?/c:/users/harry/appdata/local/programs/miktex/f
+onts/opentype/public/lm/lmsans10-regular.otf><//?/c:/users/harry/appdata/local/p
+rograms/miktex/fonts/opentype/public/lm/lmsans10-bold.otf>{C:/Users/Harry/AppDat
+a/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}<//?/c:/users/harry/appdata
+/local/programs/miktex/fonts/opentype/public/lm/lmroman10-italic.otf><//?/c:/use
+rs/harry/appdata/local/programs/miktex/fonts/opentype/public/lm/lmroman10-bold.o
 tf><//?/c:/users/harry/appdata/local/programs/miktex/fonts/opentype/public/lm/lm
-roman10-regular.otf><//?/c:/users/harry/appdata/local/programs/miktex/fonts/open
-type/public/lm/lmroman12-bold.otf><C:/Users/Harry/AppData/Local/Programs/MiKTeX/
-fonts/type1/public/newpx/NewPXMI.pfb><C:/Users/Harry/AppData/Local/Programs/MiKT
-eX/fonts/type1/public/newpx/NewPXMI_gnu.pfb><C:/Users/Harry/AppData/Local/Progra
-ms/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Harry/AppData/Local/Programs
-/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/Harry/AppData/Local/Programs/Mi
-KTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/Harry/AppData/Local/Programs/MiKTe
-X/fonts/type1/public/newpx/pxmiaX.pfb><C:/Users/Harry/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/newpx/pxsys.pfb><C:/Users/Harry/AppData/Local/Programs/Mi
-KTeX/fonts/type1/public/newtx/txexs.pfb><C:/Users/Harry/AppData/Local/Programs/M
-iKTeX/fonts/type1/public/txfonts/txsya.pfb><C:/Users/Harry/AppData/Local/Program
-s/MiKTeX/fonts/type1/public/txfonts/txsyc.pfb>
-Output written on Advanced PDE Lecture Notes.pdf (15 pages, 291798 bytes).
+roman9-regular.otf><//?/c:/users/harry/appdata/local/programs/miktex/fonts/opent
+ype/public/lm/lmroman10-regular.otf><//?/c:/users/harry/appdata/local/programs/m
+iktex/fonts/opentype/public/lm/lmroman12-bold.otf><C:/Users/Harry/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/newpx/NewPXMI.pfb><C:/Users/Harry/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/newpx/NewPXMI_gnu.pfb><C:/Users/Harry/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Harry/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/Harry/AppData/L
+ocal/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/Harry/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/newpx/pxmiaX.pfb><C:/Users/Harry/AppData/Lo
+cal/Programs/MiKTeX/fonts/type1/public/newpx/pxsys.pfb><C:/Users/Harry/AppData/L
+ocal/Programs/MiKTeX/fonts/type1/public/newtx/txexs.pfb><C:/Users/Harry/AppData/
+Local/Programs/MiKTeX/fonts/type1/public/txfonts/txsya.pfb><C:/Users/Harry/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txsyc.pfb>
+Output written on Advanced PDE Lecture Notes.pdf (19 pages, 335685 bytes).
 
-PDF statistics: 450 PDF objects out of 1000 (max. 8388607)
- 119 named destinations out of 1000 (max. 131072)
- 454 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 530 PDF objects out of 1000 (max. 8388607)
+ 163 named destinations out of 1000 (max. 131072)
+ 482 words of extra memory for PDF output out of 10000 (max. 100000000)
 
