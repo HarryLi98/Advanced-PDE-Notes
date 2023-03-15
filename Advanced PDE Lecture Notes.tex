@@ -723,7 +723,7 @@ We now consider the case where \(a(x, y)\) is not assumed to be symmetric.
     \[
         \lambda u - Au = f \iff (\lambda - x)u(x) = f(x),
     \]
-    then \(u(x) = \frac{f(x)}{\lambda - x}\) and \((A - \lambda I)\) is invertible \(\iff \lambda \in [0, 1] \implies \sigma(A) = [0, 1]\).
+    then \(u(x) = \frac{f(x)}{\lambda - x}\) and \((A - \lambda I)\) is not invertible \(\iff \lambda \in [0, 1]\). Hence, \(\sigma(A) = [0, 1]\).
 
     We can check that Range(\(\lambda I - A\)) is not closed if \(\lambda \in [0, 1]\).
 \end{example}
@@ -869,7 +869,11 @@ Thus, the simplest case is the case of positive, compact and self-adjoint operat
     \end{enumerate}
     By the Hilbert-Schmidt theorem, there exists a complete orthonormal system \(\{e_{n}\}\) of eigenvectors of \(A\) with \(Ae_{n} = \lambda e_{n}\). 
         
-    \(e_{n}\) by definition solves \(\lambda_{n}[e_{n}, \varphi_{n}] = (e_{n}, \varphi)\). Indeed, for \(u_{n} = Ae_{n}\), we have \([u_{n}, \varphi] = (e_{n}, \varphi)\). Since \(u_{n} = \lambda_{n}e_{n}\), this implies that \([e_{n}, \varphi] = \lambda_{n}^{-1}(e_{n}, \varphi)\). Hence \(e_{n}\) is a weak solution of
+    \(e_{n}\) by definition solves \(\lambda_{n}[e_{n}, \varphi_{n}] = (e_{n}, \varphi)\). Indeed, for \(u_{n} = Ae_{n}\), we have \([u_{n}, \varphi] = (e_{n}, \varphi)\). Since \(u_{n} = \lambda_{n}e_{n}\), this implies that 
+    \begin{equation}\label{eq:3.15}
+        [e_{n}, \varphi] = \lambda_{n}^{-1}(e_{n}, \varphi).
+    \end{equation}
+    Hence \(e_{n}\) is a weak solution of
     \begin{equation*}
         \begin{cases}
             - \Delta e_{n} = \lambda_{n}^{-1}e_{n} \\
@@ -877,5 +881,62 @@ Thus, the simplest case is the case of positive, compact and self-adjoint operat
         \end{cases}
     \end{equation*}
 \end{example}
+
+Consider the minimisation problem:
+\[
+    \min\limits_{u \in H^{1}_{0}(\Omega)}\|\nabla u\|_{L^{2}}^{2}
+\]
+under the constraint \(\|u\|_{L^{2}}^{2} = 1\). Let \(u_{n}\) be a minimising sequence with \(\|u_{n}\|_{L^{2}}^{2} = 1\) and \(\|\nabla u_{n}\|_{L^{2}}^{2} \to \lambda_{0}\). We want to prove that \(\lambda_{0}\) is the minimum of \(u\). We need to prove the existence of the minimiser and to find \(\lambda_{0}\).
+
+\begin{enumerate}
+    \item \(u_{n}\) is bounded in \(H^{1}_{0}(\Omega)\). \(H^{1}_{0}(\Omega) \Subset L^{2}(\Omega)\) is compactly embedded, so it converges strongly to \(u_{0}\) in \(L^{2}(\Omega)\). Also, since \(\nabla u\) is bounded, by Banach-Alaoglu theorem and reflexivity, \(u_{n} \rightharpoonup u_{0}\) weakly in \(H^{1}_{0}\) (up to a subsequence) and \(\|\nabla u_{0}\|_{L^{2}} \leq \lim\limits_{n \to \infty} \inf \|\nabla u_{n}\|_{L^{2}} = \lambda_{0}\). Since \(\lambda_{0}\) is an infimum, then \(\|\nabla u_{0}\|_{L^{2}} = \lambda_{0}\). Thus \(u_{0}\) is a minimiser.
+    \item Let use the Euler-Lagrange method.
+    \[
+        L_{\lambda}(u) = \|\nabla u\|_{L^{2}}^{2} + \lambda\|u\|_{L^{2}}
+    \]
+    Let \(\varphi\) be an arbitrary (smooth) function and define \(R_{\varphi}(\varepsilon) \coloneqq L_{\lambda}(u + \varepsilon\varphi), \varepsilon \in \mathbb{R}\). Then the necessary condition for \(u\) to be a minimum of \(L\) is
+    \[
+        \frac{d}{d\varepsilon} \left. R_{\varphi}(\varepsilon) \right|_{\varepsilon = 0} = 0, \qquad \forall \varphi.
+    \]
+    \begin{align*}
+        L_{\lambda}(u + \varepsilon\varphi) &= \|\nabla (u + \varepsilon\varphi)\|_{L^{2}}^{2} + \lambda\|u + \varepsilon\varphi\|_{L^{2}}^{2} \\
+        &= \|\nabla u\|_{L^{2}}^{2} + 2\varepsilon(\nabla u, \nabla \varphi) + \varepsilon^{2}\|\nabla \varphi\|_{L^{2}}^2 + \lambda\|u\|_{L^{2}}^{2} + 2\varepsilon \lambda(u, \varphi) + \varepsilon^{2}\|\varphi\|_{L^{2}}^{2}
+    \end{align*}
+    Hence \(u\) is a minimiser of \(L\) if \(\forall \varphi \in H^{1}_{0}\), we have 
+    \[
+       (\nabla u, \nabla \varphi) + \lambda(u, \varphi) = 0.
+    \]
+    Comparing this equality with \ref{eq:3.15}, we see that \(u = u_{0}\) is the eigenvector of \((-\Delta)^{-1}\) and \(\lambda^{-1}\) is the corresponding eigenvalue (in this notation, \(-\lambda > 0\)). Equivalently, \(u_{0}\) is the eigenvector of \(-\Delta\) and \(-\lambda\) is the corresponding eigenvalue. From the Hilbert-Schmidt theorem, we know that
+    \begin{equation}\label{eq:3.16}
+        -\frac{1}{\lambda_{1}} \geq -\frac{1}{\lambda_{2}} \geq -\frac{1}{\lambda_{3}} \geq \dots -\frac{1}{\lambda_{i}},
+    \end{equation}
+
+    where \(\lambda_{i}\) are eigenvalues of \((-\Delta)^{-1}\). Taking \(\varphi = u\), we get \(\|\nabla u\|_{L^{2}}^{2} + \lambda\|u\|_{L^{2}}^{2} = 0\), and if \(u = e_{1}\), then 
+    \[
+        \|\nabla e_{1}\|_{L^{2}}^{2} - \lambda_{1}\|e_{1}\|_{L^{2}}^{2} = 0 
+    \]
+    and for any other \(u\),
+    \[
+        \|\nabla u\|_{L^{2}}^{2} - \lambda_{1}\|u\|_{L^{2}}^{2} > 0 
+    \] 
+    Hence for all \(u \in H^{1}_{0}(\Omega)\),
+    \[
+        \|u\|_{L^{2}}^{2} \leq \frac{1}{\lambda_{1}} \|\nabla u\|_{L^{2}}^{2}.
+    \] 
+\end{enumerate}
+
+\section{Maximum principle}
+\begin{theorem}{Classical maximum principle}{}
+    Let \(u \in C^{2}(\Omega) \cap C(\bar{\Omega})\), where \(\Omega \subset \mathbb{R}^{n}\) is a bounded domain, and \(\nabla u = 0\). Then
+    \[
+        \max\limits_{x \in \partial \Omega} u(x) \geq u(x) \geq \min\limits_{x \in \partial \Omega} u(x)
+    \]
+    In other words, the maximum and minimum of a harmonic function is attained on the boundary.
+\end{theorem}
+
+\begin{proof}
+    Let us prove the max-inequality. Let \(v = u + \varepsilon e^{x_{1}}\). Then \(\nabla v = \varepsilon e^{x_{1}}, \varepsilon > 0\). Assume that the maximum is attained in the interior point \(x_{0} \in \Omega\). Then \(\nabla u(x_{0}) = 0\), and the matrix of second derivatives must be non-positive. In particular, tr\((D^{2}u(x_{0})) = \Delta v(x_{0}) \leq 0\), which implies that \(\varepsilon e^{x_{1}} < 0\), a contradiction. Therefore, the maximum \(v\) is attained on the boundary. Taking the limit as \(\varepsilon \to 0\), the same is true for \(u\) (but due to the limit, the inequalities become non-strict). The proof is analogous for the min-inequality.
+\end{proof}
+This formulation does not exclude that the maximum \(u\) may be attained inside \(\Omega\). However, the strong-maximum principle claims that if the maximum or minimum of \(u\) is attained inside \(\Omega\), then \(u\) is constant.
 
 \end{document}
