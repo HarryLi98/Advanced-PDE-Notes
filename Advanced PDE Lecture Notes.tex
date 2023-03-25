@@ -2,7 +2,13 @@
 
 \input{preamble}
 
+\title{\Huge{Advanced Topics in Partial Differential Equations}}
+\author{Lecturer: Anna Kostianko \\ Transcribed by Harry Li}
+\date{2023}
+
 \begin{document}
+\input{title.tex}
+\newpage
 
 \pdfbookmark[section]{\contentsname}{toc}
 \tableofcontents
@@ -12,12 +18,11 @@
 \chapter{Sobolev spaces}
 \section{Interpolation inequalities}
 
-\ex{}
-{
+\begin{example}{}{}
     \begin{equation} \label{eq:1}
         \|u\|_{L^{2}}^{2} \leq \|u\|_{L^{2}} \|u'\|_{L^{2}} \text{ for } u \in C^{\infty}(\mathbb{R}) 
     \end{equation}
-}
+\end{example}
 
 \begin{proof}
     Idea: use that \((u^2)' = 2uu'\) and Newton-Leibniz
@@ -35,13 +40,12 @@
     Check that \ref{eq:1} is sharp. Namely, that \ref{eq:1} becomes equality for \(u(x) = e^{-\vert x \vert}\) (\(u(x)\) is an extremal function for \ref{eq:1}). Also, \ref{eq:1} is shift and scaling invariant, i.e. \(u_{\alpha}(x+h) = e^{-\alpha|x+h|}, h \in \mathbb{R}, \alpha>0\) -extremals.
 }
 
-\ex{Interpolation inequality}
-{
+\begin{example}{Interpolation inequality}{}
     \(\Omega\)-domain in \(\mathbb{R}^{n}, u \in L_{p_1}(\Omega) \cap L_{p_2}(\Omega), 1 \leq p_1, p_2, < \infty, p_1 < p_2, \theta \in [0, 1], \frac{1}{p} = \frac{\theta}{p_1} + \frac{1-\theta}{p_2}\). Then
     \begin{equation}\label{eq:2}
         \|u\|_{L^{p}} \leq \|u\|_{L^{p_1}}^{\theta} \|u\|_{L^{p_2}}^{1 - \theta}
     \end{equation} 
-}
+\end{example}
 
 \begin{proof}
     \[\int_{\mathbb{R}} \vert u \vert^p \,\mathrm{d}x = \int_{\mathbb{R}} \vert u \vert^{\theta p} \vert u \vert^{(1-\theta) p} \,\mathrm{d}x\]
@@ -53,13 +57,13 @@
 \end{proof}
 
 \section{Sobolev inequalities}
-\ex{Sobolev inequality 1D}
-{
+
+\begin{example}{Sobolev inequality 1D}{}
     \(u \in C^{\infty}([0,1])\), want to prove the embedding \(W^{1, 1}([0,1]) \subset C([0,1])\), i.e.
     \begin{equation}\label{eq:3}
         \|u\|_{C([0,1])} \leq \|u\|_{L^{1}([0,1])} + \|u'\|_{L^{1}([0,1])}
     \end{equation}
-}
+\end{example}
 
 \begin{proof}
     By the Newton-Leibniz formula, \(u(x) - u(y) = \int_{y}^{x} u'(s) \,\mathrm{d}s\). Also,
@@ -99,13 +103,12 @@
     and use \ref{eq:3}.
 }
 
-\ex{}
-{
+\begin{example}{}{}
     \(u \in C^{\infty}(\bar{\Omega}), \Omega = (0,1)^3\). Then 
     \begin{equation}
         \|u\|_{L^{6}(\Omega)} \leq C \|u\|_{W^{1, 2}(\Omega)}
     \end{equation}
-}
+\end{example} 
 
 \begin{proof}
     \begin{align*}
@@ -127,10 +130,9 @@
 	\end{enumerate}
 \end{theorem}
 
-\ex{}
-{
-    \(H^{s}(\mathbb{R}^{n}) \subset C(\mathbb{R}^{n}) \iff s > \frac{n}{2} \) 
-}
+\begin{example}{}{}
+    \(H^{s}(\mathbb{R}^{n}) \subset C(\mathbb{R}^{n}) \iff s > \frac{n}{2}\) 
+\end{example}
 
 \begin{proof}
     \(u(x) = \int_{\mathbb{R}^{n}} e^{i\xi x} \hat{u}(\xi) \,\mathrm{d}\xi \)
@@ -145,29 +147,26 @@
     \[\|u\|_{C(\mathbb{R}^{n})} \leq C_{s}\|u\|_{H^{s}(\mathbb{R}^{n})}\]
 \end{proof}
 
-\thm{Interpolation inequalities}
-{
+\begin{theorem}{Interpolation inequalities}{}
     Let \(u \in W^{k_1, p_1}(\Omega) \cap W^{k_2, p_2}(\Omega), \theta \in [0,1], 1\leq p_1, p_2 \leq \infty\) with \(k = \theta k_1 + (1-\theta) k_2, \frac{1}{p} = \frac{\theta}{p_1} + \frac{1-\theta}{p_2} \). Then 
     \[
         \|u\|_{W^{k, p}} \leq C\|u\|_{W^{k_1, p_1}}^{\theta} \|u\|_{W^{k_2, p_2}}^{1-\theta}
     \]
-}
+\end{theorem}
 
-\cor{Particular cases}
-{
+\begin{corollary}{Particular cases}{}
     \begin{enumerate}
         \item \(\|u\|_{H^{1}} \leq \|u\|_{L^{2}}^{\frac{1}{2}} \|u\|_{H^{2}}^{\frac{1}{2}}\)
         \item \(\|u\|_{L^{p}} \leq \|u\|_{L^{p}}^{\theta} \|u\|_{H^{2}}^{1-\theta}\) 
     \end{enumerate}
-}
+\end{corollary}
 
 \section{Spaces with zero boundary traces}
-\dfn{}
-{
+\begin{definition}{}{}
     \(W^{1, p}_{0}(\Omega) \coloneqq \left\{u \in W^{1, p}(\Omega), \left. u \right|_{\partial \Omega} = 0\right\} \)
 
     An equivalent definition is that the Sobolev spaces \(W^{1, p}_{0}(\Omega)\) for \(1 \leq p < \infty\) are defined as the closure of the set of compactly supported test functions \(C_{0}^{\infty}(\Omega)\) with respect to the \(W^{1, p}(\Omega)\)-norm.
-}
+\end{definition}
 
 \mlemma{}
 {
@@ -238,10 +237,9 @@
     In general topological spaces, they are not related.
 \end{note}
 
-\thm{Hausdorff}
-{
+\begin{theorem}{Hausdorff}{}
     Let \((X, d)\) be a metric space. Then \(X\) is compact \(\iff\) \(X\) is complete and totally bounded.
-}
+\end{theorem}
 
 \begin{definition}{Totally bounded}{}
     \(X\) is totally bounded if \(\forall \epsilon > 0, \exists\) covering of \(X\) by finitely many \(\epsilon\)-balls, i.e. \(X = \bigcup_{k=1}^{N} B_{\epsilon}(x_k), N = N(\epsilon)\) and \(\{x_k\}\) is an \(\epsilon\)-net in \(X\).
@@ -938,5 +936,151 @@ under the constraint \(\|u\|_{L^{2}}^{2} = 1\). Let \(u_{n}\) be a minimising se
     Let us prove the max-inequality. Let \(v = u + \varepsilon e^{x_{1}}\). Then \(\nabla v = \varepsilon e^{x_{1}}, \varepsilon > 0\). Assume that the maximum is attained in the interior point \(x_{0} \in \Omega\). Then \(\nabla u(x_{0}) = 0\), and the matrix of second derivatives must be non-positive. In particular, tr\((D^{2}u(x_{0})) = \Delta v(x_{0}) \leq 0\), which implies that \(\varepsilon e^{x_{1}} < 0\), a contradiction. Therefore, the maximum \(v\) is attained on the boundary. Taking the limit as \(\varepsilon \to 0\), the same is true for \(u\) (but due to the limit, the inequalities become non-strict). The proof is analogous for the min-inequality.
 \end{proof}
 This formulation does not exclude that the maximum \(u\) may be attained inside \(\Omega\). However, the strong-maximum principle claims that if the maximum or minimum of \(u\) is attained inside \(\Omega\), then \(u\) is constant.
+
+\subsection*{Maximum principle for weak solutions}
+
+\subsubsection*{Chain rule in Sobolev spaces}
+For smooth functions \(f\) and \(u\), we know that 
+\begin{equation}\label{eq:3.17}
+    \nabla f(u(x)) = f'(u(x))\nabla u
+\end{equation}
+Let \(f \in C^{1}(\Omega)\) and \(\nabla f\) be bounded, and \(u \in W^{1, p}(\Omega)\). Then the LHS and RHS of \ref{eq:3.17} are well-defined and by approximation (\(\Omega\) is regular enough to have density of \(C^{\infty}(\Omega) \in W^{1, p}(\Omega)\)), \ref{eq:3.17} holds for such functions. However, we want \ref{eq:3.17} to be satisfied for any globally Lipschitz continuous function \(f \in W^{1, \infty}(\Omega)\). We know that Lipschitz functions are differentiable almost everywhere, so \(f'(z)\) is well-defined. But what is \(f'(u(x))\)? The set \(K \coloneqq \{z \in \mathbb{R} : f'(z) \text{ does not exist}\}\) has zero measure, but \(u^{-1}(K) = V\) may have positive measure, implying \(f'(u(x))\) is not defined.
+
+\begin{lemma}{}{}
+    Let \(u \in W^{1, p}(\Omega), K \subset \mathbb{R}\)  with \(\text{meas}(K) = 0\) and \(v = u^{-1}(K)\). Then \(\nabla u(x) = 0\) a.e. on \(V\) (without proof).
+\end{lemma}
+
+Then \(f'(u(x))\nabla u\) is well-defined.
+
+\begin{theorem}{}{}
+    Let \(u \in W^{1, p}(\Omega)\) and \(f\) be globally Lipschitz. Then \(f(u) \in W^{1, p}(\Omega)\) and \ref{eq:3.17} holds.
+\end{theorem}
+
+\begin{proof}
+    We will present the proof only for the case where
+    \begin{equation*}
+        f(z) = 
+        \begin{cases*}
+            z, \quad z > 0 \\
+            0, \quad z \leq 0,
+        \end{cases*}
+    \end{equation*}
+    which is crucial for the maximum principle. We denote
+    \[
+        u_{+}(x) = \max\{u(x), 0\}.
+    \]
+    We expect that \(\nabla u_{+} = \left\{\begin{aligned}
+        \nabla u, & \quad u > 0 \\
+        0, & \quad u \leq 0
+    \end{aligned}\right.\). 
+    
+    Such \(\nabla u_{+} \in W^{1, p}(\Omega)\), so we only need to check the integration by parts formula.
+    \begin{equation}\label{eq:3.18}
+        \int_{\Omega} u_{+}(x) \text{div}\varphi(x) \,\mathrm{d}x = \int_{x: u > 0} \nabla u(x) \varphi(x) \,\mathrm{d}x \qquad \forall \varphi \in C^{\infty}_{0}. 
+    \end{equation}
+    To do this, we introduce the following \(C^{1}\)-approximations of \(f\) such that:
+    \begin{enumerate}
+        \item \(f'_{\varepsilon}\) are uniformly bounded
+        \item \(f_{\varepsilon} = f\) if \(x \notin (0, \varepsilon)\)
+    \end{enumerate} 
+    Then 
+    \[
+        \int_{\Omega} f_{\varepsilon}(u(x))\text{div}\varphi(x) \,\mathrm{d}x = - \int_{\Omega} f'_{\varepsilon}(u(x)) \nabla u(x) \varphi(x) \,\mathrm{d}x \qquad \forall \varphi \in C^{\infty}_{0}.
+    \]
+    Obviously the LHS of the above equality tends to the LHS of the classical formula \ref{eq:3.18}. We need to check the convergence of the RHS.
+    \begin{align*}
+        \left\vert \int_{\Omega} (f'_{\varepsilon} \nabla u - f \nabla u) \varphi \,\mathrm{d}x \right\vert & \leq \int_{0 < u(x) < \varepsilon} C(1+\vert f'_{\varepsilon}(u(x))\vert) \vert \nabla u \vert \,\mathrm{d}x \\
+        & \leq C_{1} \int_{0 < u(x) < \varepsilon} \vert \nabla u \vert \,\mathrm{d}x
+    \end{align*}
+    Let \(K_{\varepsilon} \coloneqq \{x \colon 0 < u(x) < \varepsilon\}\). Then \(K_{\varepsilon}\) are nested and \(\cap_{n=1}^{\infty}K_{\frac{1}{n}} = \emptyset\) by \(\sigma\)-additivity of the Lebesgue measure. Then \(\text{meas}(K_{\varepsilon}) \to 0\) as \(\varepsilon \to 0\). By absolute continuity of the Lebesgue integral, 
+    \[
+        \int_{0 < u(x) < \varepsilon} \vert \nabla u(x) \vert \,\mathrm{d}x \to 0 \text{ as } \varepsilon \to 0
+    \]
+    and the integration by parts formula \ref{eq:3.18} is proved. Thus, \(u_{+} \in W^{1, p}(\Omega)\) and indeed
+    \[
+        \nabla u_{+} = \left\{\begin{aligned}
+            \nabla u, & \quad u > 0 \\
+            0, & \quad u \leq 0
+        \end{aligned}\right.
+    \]
+\end{proof}
+
+\begin{corollary}{}{}
+    Let \(u_{-}(x) = -\min\{u(x), 0\}\). Then \(u \in W^{1, p}(\Omega)\) and \(\nabla u_{-}(x) = \left\{\begin{aligned}
+        -\nabla u, & \quad u < 0 \\
+        0, & \quad u \geq 0
+    \end{aligned}\right.\).
+    Then \(\vert u(x) \vert = u_{+}(x) + u_{-}(x)\) is also in \(W^{1, p}(\Omega)\).
+\end{corollary}
+
+\begin{corollary}{}{}
+    \(\nabla u(x) = 0\) a.e. on the set \(K\) where \(u(x) = 0\).
+\end{corollary}
+
+\begin{proof}
+    Indeed, \(u = u_{+} + u_{-}, \nabla u = \nabla u_{+} - \nabla u_{-}\), and 
+    \begin{align*}
+        \int_{\Omega} u \text{div} \varphi \,\mathrm{d}x &= - \int_{\Omega} \nabla u \varphi \,\mathrm{d}x \\
+        \int_{\Omega} u_{+} \text{div} \varphi - \int_{\Omega} u_{-} \text{div} \varphi &= - \int_{u > 0} \nabla u \varphi \,\mathrm{d}x - \int_{u = 0} \nabla u \varphi \,\mathrm{d}x - \int_{u < 0} \nabla u \varphi \,\mathrm{d}x
+    \end{align*}
+    Hence 
+    \[
+        \int_{u = 0} \nabla u \varphi \,\mathrm{d}x = 0 \qquad \forall \varphi \in C^{\infty}_{0} \implies \nabla u(x) = 0 \text{ a.e. on } u(x) = 0.
+    \]
+\end{proof}
+
+\begin{corollary}{}{}
+    \(\nabla u_{+} \cdot \nabla u_{-} = 0\) a.e. (because the supports of \(u_{+}\) and \(u_{-}\) are disjoint).
+    \[
+        \|\nabla u\|_{L^{p}}^{p} = \|\nabla u_{+}\|_{L^{p}}^{p} + \|\nabla u_{-}\|_{L^{p}}^{p} = \|\nabla \vert u \vert \|_{L^{p}}
+    \] 
+    \[
+        \|u\|_{L^{p}}^{p} = \|u_{+}\|_{L^{p}}^{p} + \|u_{-}\|_{L^{p}}^{p} = \|\vert u \vert \|_{L^{p}}
+    \]
+\end{corollary}
+We return to the maximum principle.
+
+\begin{proposition}{}{weak_domination}
+    Let \(u_{1}, u_{2} \in W^{1, 2}(\Omega)\) be weak solutions of 
+    \(\begin{cases}
+        -\Delta u_{1} = f_{1} \\
+        \left. u_{1} \right|_{\partial \Omega} = u_{1}^{0}
+    \end{cases}\) 
+    and 
+    \(\begin{cases}
+        -\Delta u_{2} = f_{2} \\
+        \left. u_{2} \right|_{\partial \Omega} = u_{2}^{0}
+    \end{cases}\)
+    , and let \(u_{1}^{0} \leq u_{2}^{0}\) a.e. and \(f_{1} \leq f_{2}\) in distributions. Then \(u_{1}(x) \leq u_{2}(x)\) a.e. in \(\Omega\).
+\end{proposition}
+
+\begin{proof}
+    Let \(v = u_{1} - u_{2}\). It satisfies
+
+    \(\begin{cases}
+        -\Delta v = 0 \\
+        \left. v \right|_{\partial \Omega} = v_{0}
+    \end{cases}\), where \(f = f_{1} - f_{2} \leq 0\) and \(v_0 = u_{1}^{0} - u_{2}^{0} \leq 0\).
+
+    It is sufficient to prove that \(v_{+}(x) = 0\) a.e. We multiply the equation with the test function \(\varphi = v_{+}(x) \in H^{1}_{0}(\Omega)\).
+    \begin{align*}
+        (\nabla v, \nabla v_{+}) &= (\nabla v_{+} - \nabla v_{-}, \nabla v_{+}) \\
+        &= \|\nabla v_{+}\|_{L^{2}}^{2} \\
+        &= (f, v_{+}) \leq 0
+    \end{align*}
+    Hence \(\|\nabla v_{+}\|_{L^{2}}^{2} = 0\), and by Friedrich's inequality, this implies that \(v_{+} = 0\) a.e.
+\end{proof}
+
+\begin{note}
+    \(\ell \in D'(\Omega)\) is non-negative if and only if \(\left\langle l, \varphi \right\rangle \geq 0 \quad \forall \varphi \in D(\Omega), \varphi \geq 0\).
+\end{note}
+
+\begin{corollary}{}{}
+    The classical maximum principle follows from proposition \ref{th:weak_domination} by taking \(f = f_{1} = 0\), \(u_{1} = u\) and \(u_{2} = \max\limits_{x \in \partial \Omega} u(x) = \text{const}\).
+\end{corollary}
+
+\begin{note}
+    From our exposition, it looks like \(u_{+}, u_{-}\) approach is more general than the classical one. This is not true! It does not cover general operators \(L = \sum_{i, j}a_{ij}(x)\partial_{x_{i}}\partial_{x_{j}} + \sum_{i}b_{i}(x)\partial_{x_{i}} + c(x)\), but the classical theory does. 
+\end{note}
 
 \end{document}
