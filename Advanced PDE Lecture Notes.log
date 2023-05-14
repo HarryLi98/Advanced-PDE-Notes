@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.14.0 (MiKTeX 21.12.10) (format=lualatex 2022.1.17)  14 MAY 2023 10:01
+This is LuaHBTeX, Version 1.14.0 (MiKTeX 21.12.10) (format=lualatex 2022.1.17)  14 MAY 2023 11:22
  restricted system commands enabled.
  file:line:error style messages enabled.
 **"c:/Users/Harry/OneDrive - Imperial College London/Imperial/Advanced Topics f
@@ -1660,7 +1660,7 @@ Here is how much of LuaTeX's memory you used:
  1991 words of node memory still in use:
    31 hlist, 2 vlist, 14 rule, 2 glue, 4 kern, 1 glyph, 223 attribute, 79 glue_s
 pec, 223 attribute_list, 2 write, 24 pdf_literal, 24 pdf_colorstack nodes
-   avail lists: 2:3521,3:2355,4:172,5:692,6:65,7:5962,8:70,9:1301,10:15,11:294
+   avail lists: 2:3521,3:2355,4:172,5:692,6:65,7:5962,8:70,9:1305,10:15,11:294
  56881 multiletter control sequences out of 65536+600000
  193 fonts using 14187655 bytes
  96i,12n,98p,1175b,1770s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1690,7 +1690,7 @@ public/newpx/pxmiaX.pfb><C:/Users/Harry/AppData/Local/Programs/MiKTeX/fonts/type
 e1/public/newtx/txexs.pfb><C:/Users/Harry/AppData/Local/Programs/MiKTeX/fonts/ty
 pe1/public/txfonts/txsya.pfb><C:/Users/Harry/AppData/Local/Programs/MiKTeX/fonts
 /type1/public/txfonts/txsyc.pfb>
-Output written on Advanced PDE Lecture Notes.pdf (24 pages, 400427 bytes).
+Output written on Advanced PDE Lecture Notes.pdf (24 pages, 400452 bytes).
 
 PDF statistics: 619 PDF objects out of 1000 (max. 8388607)
  185 named destinations out of 1000 (max. 131072)

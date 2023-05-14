@@ -88,7 +88,7 @@
         \int_{\Omega} u^2 \,\mathrm{d}x &\leq \int_{0}^{1} g(x_1)f(x_2) \,\mathrm{d}x_1 \,\mathrm{d}x_2 \\
         &= \int_{0}^{1} f(x_2) \,\mathrm{d}x_2 \int_{0}^{1} g(x_1) \,\mathrm{d}x_1 \\
         &= \left(\int_{\Omega} \vert u(x_1, x_2) \vert + \vert \partial_{x_1} u(x_1, x_2) \vert \,\mathrm{d}x_1 \right) \left(\int_{\Omega} \vert u(x_1, x_2) \vert + \vert \partial_{x_2} u(x_1, x_2) \vert \,\mathrm{d}x_2 \right) \\
-        &\leq \|u\|_{W^{1, 1}(\Omega)}
+        &\leq \|u\|_{W^{1, 1}(\Omega)}^{2}
     \end{align*}
 \end{proof}
 
@@ -114,7 +114,7 @@
     \begin{align*}
         \int_{\Omega} \vert u \vert^{6} \,\mathrm{d}x &= \int_{\Omega} (\vert u \vert^{4})^{\frac{3}{2}} \,\mathrm{d}x \\
         &\leq C \left(\int_{\Omega} \vert u \vert^{4} \,\mathrm{d}x + \int_{\Omega} u^{3}|\nabla u| \,\mathrm{d}x \right)^{\frac{3}{2}} \\
-        (\text{by \eqref{eq:3}}) \quad &\leq C \left(\int_{\Omega} \vert u \vert^{4} \,\mathrm{d}x\right)^{\frac{3}{2}} + C \left(u^{3}|\nabla u| \,\mathrm{d}x \right)^{\frac{3}{2}} \\
+        (\text{by \eqref{eq:4}}) \quad &\leq C \left(\int_{\Omega} \vert u \vert^{4} \,\mathrm{d}x\right)^{\frac{3}{2}} + C \left(\int_{\Omega} \vert u \vert^{3} \vert \nabla u \vert \,\mathrm{d}x \right)^{\frac{3}{2}} \\
         &\leq C \|u\|^{\frac{3}{2}\cdot \theta \cdot 4}_{L^{2}} \|u\|^{\frac{3}{2}\cdot (1-\theta) \cdot 4}_{L^{6}} + C \|u\|^{\frac{3}{2}\cdot 3}_{L^{6}} \|\nabla u\|^{\frac{3}{2}}_{L^{2}} \\
         \left(\theta = \frac{1}{4}\right) \quad &= C \|u\|^{\frac{3}{2}}_{L^{2}} \|u\|^{\frac{9}{2}}_{L^{6}} + C\|u\|^{\frac{9}{2}}_{L^{6}} \|\nabla u\|^{\frac{3}{2}}_{L^{2}} \\
         \left(\text{Young's inequality with } p=\frac{4}{5} \text{ and }q=-4\right) \quad &\leq \varepsilon \|u\|^{6}_{L^{6}} + C_{\varepsilon}(\|u\|_{L^{2}} + \|\nabla u\|_{L^{2}})^{6}
