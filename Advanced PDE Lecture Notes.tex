@@ -20,7 +20,7 @@
 
 \begin{example}{}{}
     \begin{equation} \label{eq:1}
-        \|u\|_{L^{2}}^{2} \leq \|u\|_{L^{2}} \|u'\|_{L^{2}} \text{ for } u \in C^{\infty}(\mathbb{R}) 
+        \|u\|_{L^{\infty}}^{2} \leq \|u\|_{L^{2}} \|u'\|_{L^{2}} \text{ for } u \in C^{\infty}(\mathbb{R}) 
     \end{equation}
 \end{example}
 
@@ -404,7 +404,7 @@ General fact: \(W^{s_1, p_1}(\Omega) \subset W^{s_2, p_2}(\Omega)\), where \(\Om
 
     \([u,u] \coloneqq \int_{\Omega} \nabla u \nabla u \,\mathrm{d}x\) is an equivalent norm on \(W^{1, 2}_{0}(\Omega)\) (due to Friedrich's inequality). Then \ref{eq:3.2} can be rewritten as
     \[
-        [u, \varphi] = \int_{\Omega} f(x)\varphi(x) \,\mathrm{d}x \coloneqq \ell(\varphi)
+        [u, \varphi] = - \int_{\Omega} f(x)\varphi(x) \,\mathrm{d}x \coloneqq \ell(\varphi)
     \]
 
     Claim: \(\ell\) is a linear continuous functional on \(W^{1, 2}_{0}(\Omega)\) (the integral should be understood as duality if we take \(f \in H^{-1}(\Omega)\) and if \(f \in L^{2}(\Omega)\), this is a standard Lebesgue integral).
