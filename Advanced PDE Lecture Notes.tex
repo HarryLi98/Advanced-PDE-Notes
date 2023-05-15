@@ -1082,7 +1082,7 @@ We return to the maximum principle.
     Let \(v = u_{1} - u_{2}\). It satisfies
 
     \(\begin{cases}
-        -\Delta v = 0 \\
+        -\Delta v = f \\
         \left. v \right|_{\partial \Omega} = v_{0}
     \end{cases}\), where \(f = f_{1} - f_{2} \leq 0\) and \(v_0 = u_{1}^{0} - u_{2}^{0} \leq 0\).
 
@@ -1105,6 +1105,59 @@ We return to the maximum principle.
 
 \begin{note}
     From our exposition, it looks like \(u_{+}, u_{-}\) approach is more general than the classical one. This is not true! It does not cover general operators \(L = \sum_{i, j}a_{ij}(x)\partial_{x_{i}}\partial_{x_{j}} + \sum_{i}b_{i}(x)\partial_{x_{i}} + c(x)\), but the classical theory does. 
+\end{note}
+
+Let us consider a more general operator
+\[
+    Lu = -\partial_{x_{i}}(a_{ij}(x)\partial_{x_{j}}) + c(x)u,
+\]
+where $a_{ij}$ is symmetric and uniformly elliptic, and \(c \in L^{\infty}(\Omega)\).
+
+\subsubsection*{Spectral theory}
+Analogous to the Laplacian due to the trick (ellipticity with parameter). Consider \(L_{N}u \coloneqq  Lu + Nu\), \(N\) is a constant, \(N \gg 1\). Then \(L_{N}\) is positive definite, so Riesz Representation Theorem works, and we may construct eigenvalues / eigenfunctions for \(L_{N}\) or \(L_{N}^{-1}\) by the Hilbert-Schmidt theorem. \\
+
+Finally, since \(\sigma(L) = \sigma(L_{N}) - N\), we get an orthonormal, complete system \(\{e_{n}\}_{n=1}^{\infty}\) for \(L\) and corresponding eigenvalues \(\lambda_{1} \leq \lambda_{2} \leq \lambda_{3} \leq \dots\). The only diffierence is that now \(\lambda_{1}\) is not necessarily greater than zero. \\
+
+Question: When does the maximum/comparison principle hold for \(L\)?
+
+To answer this question, we use the min-max principle (which we have already used when finding the best constant in the Friedrich's inequality)
+\begin{equation}\label{eq:3.19}
+    \lambda_{1}(L) = \min\left\{\frac{(Lu, u)}{\|u\|^{2}_{L^{2}}}\right\}
+\end{equation}
+
+\begin{corollary}{}{}
+    There exists a non-negative eigenfunction \(e_{1}(x) \geq 0\) which corresponds to the first eigenvalue \(\lambda_{1}\).
+\end{corollary}
+
+\begin{proof}
+    Let \(e_{1}(x)\) be any eigenvector of \(L\) which corresponds to the 1st eigenvalue. Then the function \(\vert e_{1}(x) \vert \) is also a minimizer of \ref{eq:3.19}. Hence, \(\vert e_{1}(x) \vert \) is an eigenvector.
+\end{proof}
+
+\begin{note}
+    Actually, the first eigenvalue is always simple and strictly positive inside of the domain \(\Omega\). This follows from the strict maximum principle which we will not prove here.
+\end{note}
+
+\begin{theorem}{}{}
+    The comparison principle from the previous lecture holds for operator \(L\) if and only if \(\lambda_{1}(L) > 0\).
+\end{theorem}
+
+\begin{proof}
+    Let \(\lambda_{1}(L) > 0\), \(u_{1}, u_{2} \in H^{1}_{0}(\Omega)\), and let \(Lu_{1} = f_{1}\), \(Lu_{2} = f_{2}\), \(\left. u_{1} \right|_{\partial \Omega} \leq \left. u_{2} \right|_{\partial \Omega}\), and \(f_{1} \leq f_{2}\). Then \(u_{1} \leq u_{2}\) a.e. 
+
+    Indeed, for \(v = u_{1} - u_{2}\), we have \(Lv \leq 0\), \(\left. v \right|_{\partial \Omega} \leq 0\). 
+
+    Multiplying by \(v_{+}\) (testing with \(v_{+} \in H^{1}_{0}(\partial \Omega)\)), we get \((Lv_{+}, v_{+}) \leq 0\). 
+    But \((Lv_{+}, v_{+}) \geq \lambda_{1}(L)\|v_{+}\|_{L^{2}}^{2}\) by min-max. This implies \(\|v_{+}\|_{L^{2}}^{2} = 0\) since \(\lambda_{1}(L) > 0 \implies v_{+} = 0\) a.e. 
+    
+    Assume now that \(\lambda_{1} < 0\). Then the non-negative 1st eigenvalue \(e_{1}\) solves
+    \[
+        Le_{1} = \lambda_{1}e_{1} \leq 0, \left. e_{1} \right|_{\partial \Omega} = 0
+    \]
+    which contradicts the maximum principle.
+\end{proof}
+
+\begin{note}
+    Same result holds for general non-self adjoint second order linear elliptic operators. More difficult. Non-self-adjoint operators need not have real spectrum. But, in the case of 2nd order scalar elliptic operators, the 1st eigenvalue remains real due to order preserving (Perron-Frobenius theorem).
 \end{note}
 
 \end{document}
