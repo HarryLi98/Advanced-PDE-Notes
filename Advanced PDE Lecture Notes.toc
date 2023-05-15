@@ -1,13 +1,15 @@
-\contentsline {chapter}{\numberline {2}Sobolev spaces}{2}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Interpolation inequalities}{2}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Sobolev inequalities}{3}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Spaces with zero boundary traces}{5}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Poincaré's and Friedrich's inequalities}{5}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Compactness}{6}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Dual spaces}{8}{section.2.6}%
-\contentsline {chapter}{\numberline {3}Linear elliptic problems}{10}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Dirichlet and Neumann problems for the Laplacian}{10}{section.3.1}%
-\contentsline {section}{\numberline {3.2}More general problems via Lax-Milgram}{14}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Introduction to spectral theory}{15}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Maximum principle}{20}{section.3.4}%
+\contentsline {chapter}{\numberline {1}Distributions}{2}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Fourier Transform on tempered distributions}{2}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Sobolev spaces}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Interpolation inequalities}{3}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Sobolev inequalities}{4}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Spaces with zero boundary traces}{6}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Poincaré's and Friedrich's inequalities}{6}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Compactness}{7}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Dual spaces}{9}{section.2.6}%
+\contentsline {chapter}{\numberline {3}Linear elliptic problems}{11}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Dirichlet and Neumann problems for the Laplacian}{11}{section.3.1}%
+\contentsline {section}{\numberline {3.2}More general problems via Lax-Milgram}{15}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Introduction to spectral theory}{16}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Maximum principle}{21}{section.3.4}%
 \contentsfinish 
