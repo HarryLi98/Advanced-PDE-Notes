@@ -928,12 +928,13 @@ under the constraint \(\|u\|_{L^{2}}^{2} = 1\). Let \(u_{n}\) be a minimising se
     \[
        (\nabla u, \nabla \varphi) + \lambda(u, \varphi) = 0.
     \]
-    Comparing this equality with \ref{eq:3.15}, we see that \(u = u_{0}\) is the eigenvector of \((-\Delta)^{-1}\) and \(\lambda^{-1}\) is the corresponding eigenvalue (in this notation, \(-\lambda > 0\)). Equivalently, \(u_{0}\) is the eigenvector of \(-\Delta\) and \(-\lambda\) is the corresponding eigenvalue. From the Hilbert-Schmidt theorem, we know that
+    Comparing this equality with \ref{eq:3.15}, we see that \(u = u_{0}\) is the eigenvector of \((-\Delta)^{-1}\) and \(-\lambda^{-1}\) is the corresponding eigenvalue (in this notation, \(-\lambda > 0\)). Equivalently, \(u_{0}\) is the eigenvector of \(-\Delta\) and \(-\lambda\) is the corresponding eigenvalue. From the Hilbert-Schmidt theorem, we know that
     \begin{equation}\label{eq:3.16}
         -\frac{1}{\lambda_{1}} \geq -\frac{1}{\lambda_{2}} \geq -\frac{1}{\lambda_{3}} \geq \dots -\frac{1}{\lambda_{i}},
     \end{equation}
-
-    where \(\lambda_{i}\) are eigenvalues of \((-\Delta)^{-1}\). Taking \(\varphi = u\), we get \(\|\nabla u\|_{L^{2}}^{2} + \lambda\|u\|_{L^{2}}^{2} = 0\), and if \(u = e_{1}\), then 
+    where \(-\frac{1}{\lambda_{i}}\) are eigenvalues of \((-\Delta)^{-1}\). From \ref{eq:3.15} and \ref{eq:3.16}, the minimal eigenvalue is \(-\lambda_{1}\).
+    
+    Taking \(\varphi = u\), we get \(\|\nabla u\|_{L^{2}}^{2} + \lambda\|u\|_{L^{2}}^{2} = 0\), and if \(u = e_{1}\), then 
     \[
         \|\nabla e_{1}\|_{L^{2}}^{2} - \lambda_{1}\|e_{1}\|_{L^{2}}^{2} = 0 
     \]
@@ -944,7 +945,8 @@ under the constraint \(\|u\|_{L^{2}}^{2} = 1\). Let \(u_{n}\) be a minimising se
     Hence for all \(u \in H^{1}_{0}(\Omega)\),
     \[
         \|u\|_{L^{2}}^{2} \leq \frac{1}{\lambda_{1}} \|\nabla u\|_{L^{2}}^{2}.
-    \] 
+    \]
+    This also shows that \(\frac{1}{\lambda_{1}}\) is the sharp constant in Friedrich's inequality.
 \end{enumerate}
 
 \section{Maximum principle}
@@ -1159,5 +1161,21 @@ To answer this question, we use the min-max principle (which we have already use
 \begin{note}
     Same result holds for general non-self adjoint second order linear elliptic operators. More difficult. Non-self-adjoint operators need not have real spectrum. But, in the case of 2nd order scalar elliptic operators, the 1st eigenvalue remains real due to order preserving (Perron-Frobenius theorem).
 \end{note}
+
+\section{p-Laplacian and variational methods}
+
+\begin{definition}{Weak convergence}{}
+    Let \(V\) be a Banach space and \(V^{*}\) its dual space. Then \(\{x_{n}\}_{n=1}^{\infty} \in V\) is weakly convergent to \(x\), denoted \(x_{n} \rightharpoondown x\), if \(\ell x_{n} \to \ell x\), \(\forall \ell \in V\).
+\end{definition}
+
+\begin{definition}{Weak-star convergence}{}
+    \(\{\ell_{n}\}_{n=1}^{\infty} \in V^{*}\) is weakly-star convergent to \(\ell\), denoted \(\ell_{n}x \overset{*}{\rightharpoondown} \ell\), if \(\ell_{n}x \to \ell x\), \(\forall x \in V\).
+\end{definition}
+
+\begin{theorem}{Banach-Alaoglu}{}
+    Let \(V\) be a separable Banach space. Then the unit ball \(\overline{B_{1}(0)} \in V^{*}\) is (sequentially) compact in the weak-star topology.
+\end{theorem}
+
+\chapter{Linear evolutionary problems}
 
 \end{document}
