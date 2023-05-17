@@ -12,6 +12,9 @@
 \contentsline {section}{\numberline {3.2}More general problems via Lax-Milgram}{15}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Introduction to spectral theory}{16}{section.3.3}%
 \contentsline {section}{\numberline {3.4}Maximum principle}{21}{section.3.4}%
-\contentsline {section}{\numberline {3.5}p-Laplacian and variational methods}{25}{section.3.5}%
+\contentsline {section}{\numberline {3.5}Localization technique and elliptic regularity}{25}{section.3.5}%
+\contentsline {section}{\numberline {3.6}p-Laplacian and variational methods}{25}{section.3.6}%
 \contentsline {chapter}{\numberline {4}Linear evolutionary problems}{26}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Functions with values in Banach spaces}{26}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Parabolic regularity and smoothing properties}{26}{section.4.2}%
 \contentsfinish 

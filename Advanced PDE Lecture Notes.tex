@@ -1162,6 +1162,18 @@ To answer this question, we use the min-max principle (which we have already use
     Same result holds for general non-self adjoint second order linear elliptic operators. More difficult. Non-self-adjoint operators need not have real spectrum. But, in the case of 2nd order scalar elliptic operators, the 1st eigenvalue remains real due to order preserving (Perron-Frobenius theorem).
 \end{note}
 
+\section{Localization technique and elliptic regularity}
+\begin{theorem}{}{}
+    Let \(f \in W^{s, p}(\Omega), s > -2 + \frac{1}{p}, \lambda_{1} > 0, 1 < p < \infty\). Then \(u \in W^{s+2, p}(\Omega)\) and
+    \begin{equation*}
+        \|u\|_{W^{s+2, p}(\Omega)} \leq C_{s, p}\|f\|_{W^{s, p}(\Omega)}
+    \end{equation*}
+\end{theorem}
+
+\begin{note}
+    Not true for the endpoints \(p = 1\) and \(p = \infty\). Conditions \(s > -2 + \frac{1}{p}\) guarantees the existence of the trace \(\left. u \right|_{\partial \Omega}\).
+\end{note}
+
 \section{p-Laplacian and variational methods}
 
 \begin{definition}{Weak convergence}{}
@@ -1177,5 +1189,33 @@ To answer this question, we use the min-max principle (which we have already use
 \end{theorem}
 
 \chapter{Linear evolutionary problems}
+
+\section{Functions with values in Banach spaces}
+\begin{definition}{Bochner-Lebesgue spaces}{}
+    \(L^{1}(a, b, V)\) is the space of strongly measurable functions \(u : L \mapsto V\), where the norm is defined as 
+    \[
+        \|u\|_{L^{1}(0, T, V)} \coloneqq \int_{0}^{T} \|u(t)\|_{V} \,\mathrm{d}t < \infty  
+    \] 
+    Analogously, for \(1 \leq p \leq \infty\), the Bochner-Lebesgue spaces \(L^{P}(0, T, V)\) are defined with the norm
+    \[
+        \|u\|_{L^{p}(0, T, V)} \coloneqq \left(\int_{0}^{T} \|u(t)\|_{V}^{p} \,\mathrm{d}t\right)^{\frac{1}{p}}
+    \]
+\end{definition}
+
+\section{Parabolic regularity and smoothing properties}
+\begin{theorem}{Parabolic regularity theorem}{}
+    Consider the parabolic equation
+    \begin{equation*}
+        \begin{cases*}
+            \partial_{t}u = \sum_{i, j} \partial_{x_{i}}(a_{ij}(t, x)\partial_{x_{j}}u) + \sum_{i}b_{i}(t, x) \partial_{x_{i}}u + c(t, x)u + h \\
+            \left. u \right|_{t = 0} = u_{0}(x), \left. u \right|_{\partial \Omega} = u^{0}(t, x)
+        \end{cases*}
+    \end{equation*}
+
+    Let \(\Omega\) be a smooth bounded domain of \(\mathbb{R}^{n}, h \in L^{p}((0, T) \times \Omega), 1 < p < \infty\); \(u_{0} \in W^{(2, 1-\frac{1}{p}), p}(\Omega)\), \(u^{0} \in W^{(1-\frac{1}{2p}, 2-\frac{1}{p}), p}((0, T) \times \partial \Omega)\) as well as the compatibility condition \(\left. u_{0} \right|_{\partial \Omega} = \left. u^{0} \right|_{t = 0}\); \(a_{ij}, b_{i}, c \in C([0, T] \times \bar{\Omega})\) and \(a_{ij}\) uniformly elliptic. Then there exists a unique solution \(u \in W^{(1, 2), p}((0, T) \times \Omega)\) and we have the estimate
+    \begin{equation*}
+        \|u\|_{W^{(1, 2), p}((0, T) \times \Omega)} \leq C_{T}\left(\|h\|_{L^{p}((0, T) \times \Omega)} + \|u_{0}\|_{W^{\left(2, 1-\frac{1}{p}\right), p}(\Omega)} + \|u^{0}\|_{W^{\left(1-\frac{1}{2p}, 2-\frac{1}{p}\right), p}((0, T) \times \partial \Omega)}\right)
+    \end{equation*}
+\end{theorem}
 
 \end{document}
