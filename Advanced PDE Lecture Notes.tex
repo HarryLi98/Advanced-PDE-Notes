@@ -1066,7 +1066,7 @@ Then \(f'(u(x))\nabla u\) is well-defined.
 \end{corollary}
 We return to the maximum principle.
 
-\begin{proposition}{}{weak_domination}
+\begin{proposition}{Weak domination / Comparison principle}{weak_domination}
     Let \(u_{1}, u_{2} \in W^{1, 2}(\Omega)\) be weak solutions of 
     \(\begin{cases}
         -\Delta u_{1} = f_{1} \\
@@ -1202,7 +1202,32 @@ To answer this question, we use the min-max principle (which we have already use
     \]
 \end{definition}
 
+\begin{theorem}{Aubin-Lions}{}
+    Let \(U \hookrightarrow V \subset W\) be a triple of Banach spaces such that the embedding \(U \hookrightarrow V\) is compact, \(V \subset W\) is continuous, and let \(1 \leq p, q, r \leq \infty, (p, q, r) \neq (\infty, \infty, 1), p \geq q\). Then the embedding
+    \[
+        L^{p}(0, T, U) \cap W^{1, 2}(0, T, W) \hookrightarrow L^{q}(0, T, V)
+    \]   
+    is compact.
+\end{theorem}
+
 \section{Parabolic regularity and smoothing properties}
+
+\begin{theorem}{Parabolic Sobolev embeddings and trace theorems}{}
+    Let \(\Omega\) be a bounded, smooth domain. Then 
+    \[
+        W^{(1, 2), p}((0, T) \times \Omega) \subset L^{q}((0, T) \times \Omega); \qquad \frac{1}{q} = \frac{1}{p} - \frac{2}{n+2}
+    \]
+    \[
+        \left. \text{Tr} \right|_{t=0} W^{(1, 2), p}((0, T) \times \Omega) = W^{\left(2, 1-\frac{1}{p}\right), p}(\Omega)
+    \]
+    \[
+        \left. \text{Tr} \right|_{\partial \Omega} W^{(1, 2), p}((0, T) \times \Omega) = W^{\left(1-\frac{1}{2p}, 2-\frac{1}{p}\right), p}((0, T) \times \partial \Omega)
+    \]
+    The exponents can be found using scaling invariance. Interpolation between usual Sobolev spaces gives the result as well.
+\end{theorem}
+
+Now we are ready to state the parabolic regularity theorem.
+
 \begin{theorem}{Parabolic regularity theorem}{}
     Consider the parabolic equation
     \begin{equation*}
@@ -1218,4 +1243,23 @@ To answer this question, we use the min-max principle (which we have already use
     \end{equation*}
 \end{theorem}
 
+\begin{note}
+    \begin{enumerate}
+        \item In contrast to elliptic problems, we get solvability directly from Localization (we need not extra assumptions like \(\lambda_{1} > 0\) for the solvability).
+        \item We have the analogue of the theorem in the space \(h \in W^{(1+\frac{s}{2}, s), p}((0, T) \times\Omega), s > 0\). Then the solution belongs to \(W^{(1+\frac{s}{2}, s+2), p}((0, T) \times\Omega)\). If everything is smooth, then \(u \in C^{\infty}((0, T) \times \Omega)\).  
+    \end{enumerate}
+    The naive analogue of max-regularity result for parabolic equations \(h \in L^{p}(W^{s, p}(\Omega)) \implies u \in L^{p}(W^{s+2, p}(\Omega)), s > \frac{1}{p}\) is wrong even if \(u_{0} = u^{0} = 0\) (problems near the boundary), true if \(\partial \Omega = \emptyset\). 
+\end{note}
+
+The key drawback is that it is difficult to extend localisation technique for the non-linear case. We consider below an alternative energy related method which is essentially worse on the linear level, but naturally works for (some) non-linear equations.
+
+The standard strategy is to start from the energy methods to verify the existence of weak solutions after obtaining some minimal regularity, we may use bootstrapping after localisation to improve the regularity (treating the non-linear terms as perturbations).
+
+From now on, we consider only the equation in the divergent form:
+\begin{equation*}
+    \begin{cases*}
+        \partial_{t}u + Lu = h, \hspace{65pt} Lu = -\sum_{i, j} \partial_{x_{i}}(a_{ij}(t, x)\partial_{x_{j}}u) + c(x)u \\
+        \left. u \right|_{t = 0} = u_{0}(x), \left. u \right|_{\partial \Omega} = 0, \qquad \lambda_{1}(L) > 0
+    \end{cases*}
+\end{equation*}
 \end{document}
